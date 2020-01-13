@@ -208,7 +208,7 @@
                                                     <div class="t-img-select__text t-text t-text_xs">Хаки </div>
                                                 </label>
                                                 <label class="t-img-select__control">
-                                                    <input type="radio" name="color" value="Кофе с молоком" class="t-img-select js-tilda-rule" data-tilda-req="1" data-img_name="km">
+                                                    <input type="radio" name="color" value="Кофе с молоком" class="t-img-select js-tilda-rule" data-price="500" data-tilda-req="1" data-img_name="km">
                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3038-3766-4264-a635-396535363665/1TFhiwnA.jpg" style="background-image:url('https://static.tildacdn.com/tild3038-3766-4264-a635-396535363665/-/resizeb/20x/1TFhiwnA.jpg');"></div>
                                                     <div class="t-img-select__text t-text t-text_xs">Кофе с молоком </div>
                                                 </label>
@@ -233,7 +233,7 @@
                                                     <div class="t-img-select__text t-text t-text_xs">Бордо </div>
                                                 </label>
                                                 <label class="t-img-select__control">
-                                                    <input type="radio" name="color" value="Фиолетовый" class="t-img-select js-tilda-rule" data-tilda-req="1" data-img_name="vl">
+                                                    <input type="radio" name="color" value="Фиолетовый" class="t-img-select js-tilda-rule" data-price="500" data-tilda-req="1" data-img_name="vl">
                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3161-3563-4431-a330-646363363836/ne4a8045_16.jpg" style="background-image:url('https://static.tildacdn.com/tild3161-3563-4431-a330-646363363836/-/resizeb/20x/ne4a8045_16.jpg');"></div>
                                                     <div class="t-img-select__text t-text t-text_xs">Фиолетовый </div>
                                                 </label>
@@ -685,12 +685,24 @@ function strstr( haystack, needle, bool ) { // Find first occurrence of a string
             };
             
         }
+        function update_amount(summa) {
+            var new_summa = window.tcart.amount+summa;
+            window.tcart.amount = new_summa;
+            window.tcart.prodamount = new_summa;
+            window.tcart.total = new_summa;
 
+            window.tcart.products[0].amount = new_summa;
+            window.tcart.products[0].price = new_summa;           
+        }
         
         $('#rec001').on('click', 'input[name="lenght"]', function(event) {
             calc_total($(this).val(),$(this).data('price'));
         });        
-
+        $('#rec001').on('click', 'input[name="color"]', function(event) {
+            if ($(this).data('price')!=undefined) {
+                update_amount($(this).data('price'));
+            }
+        });
         $('#rec001').on('click', 'input[name="lenght"],input[name="puh_top"],input[name="fasteners"],input[name="color"]', function(event) {
             get_res_image_name($(this));
         });
