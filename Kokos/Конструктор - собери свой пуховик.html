@@ -685,26 +685,32 @@ function strstr( haystack, needle, bool ) { // Find first occurrence of a string
             };
             
         }
-        function update_amount(summa) {
-            var new_summa = window.tcart.amount+summa;
+
+        function recalc(){
+            var new_summa = $('input[name="lenght"]:checked').data('price');
+            if ($('input[name="color"]:checked').data('price')!=undefined) {
+                new_summa = new_summa + $('input[name="color"]:checked').data('price');
+            }
+
             window.tcart.amount = new_summa;
             window.tcart.prodamount = new_summa;
             window.tcart.total = new_summa;
 
             window.tcart.products[0].amount = new_summa;
-            window.tcart.products[0].price = new_summa;           
+            window.tcart.products[0].price = new_summa;
         }
         
         $('#rec001').on('click', 'input[name="lenght"]', function(event) {
             calc_total($(this).val(),$(this).data('price'));
         });        
-        $('#rec001').on('click', 'input[name="color"]', function(event) {
-            if ($(this).data('price')!=undefined) {
-                update_amount($(this).data('price'));
-            }
-        });
+
         $('#rec001').on('click', 'input[name="lenght"],input[name="puh_top"],input[name="fasteners"],input[name="color"]', function(event) {
             get_res_image_name($(this));
+        });
+
+        $(".t835mev__btn_result").on('click', function(event) {
+            event.preventDefault();
+            recalc();
         });
         // $('.t835mev__btn_result').on('click', '.t-submit', function(event) {
         //     event.preventDefault();
