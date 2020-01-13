@@ -1,0 +1,207 @@
+.CsContainer {
+  max-width: 354px;
+  height: 525px;
+  width: 100%;
+  position: relative;
+  float: left;
+}
+.CsContainer .csImgneck {
+  display: none;
+  width: 64.5px;
+  height: 281.25px;
+  left: 143.25px;
+  top: 0;
+  z-index: 2;
+  position: absolute;
+}
+.CsContainer .csImgneckB {
+  display: none;
+  width: 64.5px;
+  height: 281.25px;
+  left: 143.25px;
+  top: 0;
+  z-index: 1;
+  position: absolute;
+}
+.CsContainer .csImgleft {
+  display: none;
+  width: 143.25px;
+  height: 281.25px;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  position: absolute;
+}
+.CsContainer .csImgleftB {
+  display: none;
+  width: 143.25px;
+  height: 281.25px;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  position: absolute;
+}
+.CsContainer .csImgright {
+  display: none;
+  width: 145.5px;
+  height: 281.25px;
+  left: 207.75px;
+  top: 0;
+  z-index: 2;
+  position: absolute;
+}
+.CsContainer .csImgrightB {
+  display: none;
+  width: 145.5px;
+  height: 281.25px;
+  left: 207.75px;
+  top: 0;
+  z-index: 1;
+  position: absolute;
+}
+.CsContainer .csImgskirt {
+  display: none;
+  width: 353.25px;
+  height: 243.75px;
+  left: 0;
+  top: 281.25px;
+  z-index: 2;
+  position: absolute;
+}
+.CsContainer .csImgskirtB {
+  display: none;
+  width: 353.25px;
+  height: 243.75px;
+  left: 0;
+  top: 281.25px;
+  z-index: 1;
+  position: absolute;
+}
+.CsContainer .csImgKarman {
+  width: 107px;
+  height: 94px;
+  top: 159px;
+  left: 123px;
+  position: absolute;
+  z-index: 2;
+}
+.CsContainer .csImgVorotnik {
+  width: 111px;
+  height: 112px;
+  top: 47px;
+  left: 117px;
+  position: absolute;
+  z-index: 2;
+}
+.CsContainer .csImgdlinaRukava,
+.CsContainer .csImgMangeta {
+  width: 193px;
+  height: 278px;
+  top: 87px;
+  left: 78px;
+  position: absolute;
+  z-index: 2;
+}
+.CsContainer .csImgdlinaRukava {
+  display: none;
+}
+.CsContainer .csImgBody {
+  width: 136px;
+  height: 325px;
+  top: 80px;
+  left: 106px;
+  position: absolute;
+  z-index: 1;
+}
+.CsContainer .csImgPantys {
+  width: 103px;
+  height: 301px;
+  top: 260px;
+  left: 125px;
+  position: absolute;
+  z-index: 0;
+}
+@media screen and (max-width: 960px) {
+  .CsContainer {
+    width: 95%;
+    height: 460px;
+  }
+  .CsContainer .csImgneck {
+    width: 43px;
+    height: 187.5px;
+    left: 96px;
+    top: 0;
+    z-index: 2;
+    position: absolute;
+  }
+  .CsContainer .csImgneckB {
+    width: 43px;
+    height: 187.5px;
+    left: 96px;
+    top: 0;
+    z-index: 1;
+    position: absolute;
+  }
+  .CsContainer .csImgleft {
+    width: 96px;
+    height: 187.5px;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    position: absolute;
+  }
+  .CsContainer .csImgleftB {
+    width: 96px;
+    height: 187.5px;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    position: absolute;
+  }
+  .CsContainer .csImgright {
+    width: 97px;
+    height: 188px;
+    left: 139px;
+    top: 0;
+    z-index: 2;
+    position: absolute;
+  }
+  .CsContainer .csImgrightB {
+    width: 97px;
+    height: 188px;
+    left: 139px;
+    top: 0;
+    z-index: 1;
+    position: absolute;
+  }
+  .CsContainer .csImgskirt {
+    width: 236px;
+    height: 163px;
+    left: 0;
+    top: 187.5px;
+    z-index: 2;
+    position: absolute;
+  }
+  .CsContainer .csImgskirtB {
+    width: 236px;
+    height: 163px;
+    left: 0;
+    top: 187.5px;
+    z-index: 1;
+    position: absolute;
+  }
+}
+@media screen and (max-width: 960px) {
+  .top_divswap,
+  .std-custom,
+  .step1_fx {
+    height: 680px;
+  }
+}
+@media screen and (max-width: 960px) {
+  .tab-content {
+    max-height: 100vh;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

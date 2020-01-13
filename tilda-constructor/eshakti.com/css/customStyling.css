@@ -1,0 +1,59 @@
+﻿@charset "utf-8";
+.customlargeimage { position: relative; float: left; width: 100%; max-width: 475px }
+.demoHeaders2 { text-align: center }
+.deskhide { display: none !important }
+.CsContainer .csStyle img { width: 100% }
+.CsContainer .csStyle { position: relative }
+.outerContainer ul.csDropdown { margin-top: 18%; display: inline-block }
+.outerContainer ul.csDropdown li { display: block; margin: 0 0 25px }
+.outerContainer ul.csDropdown li label { display: block; font-weight: 700; padding: 0 0 5px }
+.outerContainer ul.csDropdown li select { border: 1px solid #000 !important; -webkit-appearance: none; -moz-appearance: none; background: #fff url(../images/select-arrow.png) no-repeat 90% center; width: 250px; text-indent: .01px; text-overflow: ""; color: #000; padding: 5px; font: 400 12px/120% 'nunitolight', sans-serif; text-transform: uppercase; height: 33px; display: inline-block }
+.StyleFeatures { display: block; width: 100%; margin: 0 auto }
+.customSaveOptions { position: relative; display: block; background-color: #fff; border: 2px solid #000; cursor: pointer; text-align: center; font: 300 11px/12px 'montserratregular', sans-serif; margin: 0 auto 20px; max-width: 165px; padding: 8px 12px; text-transform: uppercase; width: 100%; -webkit-appearance: none; transition: color .5s ease 0s, background .5s ease .15s, border .5s ease .15s; vertical-align: top }
+.customSaveOptions:hover { background: #000; color: #fff }
+.btnConStyling { display: inline-block; background-color: #fff; border: 1px solid #000; cursor: pointer; text-align: center; font: 300 11px/12px 'montserratregular', sans-serif; margin: 9px auto 0; max-width: 165px; padding: 8px 10px 5px; text-transform: uppercase; width: 100%; -webkit-appearance: none; transition: color .5s ease 0s, background .5s ease .15s, border .5s ease .15s; vertical-align: top }
+.btnConStyling:hover { background: #000; color: #fff }
+a.clickTip2 { text-transform: uppercase; font: 300 11px/12px 'montserratregular', sans-serif }
+.clickTip2 img { width: 18px; margin-left: 10px; vertical-align: bottom }
+#tooltipClick2 a { text-align: center; display: block; width: 100%; border-bottom: none; margin-left: 0; vertical-align: top }
+#tiptext2 { max-width: 350px; width: 100%; border-bottom: none }
+.CsContainer { width: 471px; display: inline-block }
+li.share { display: inline-block }
+li.share a { margin-left: 0; border-bottom: none }
+abbr { position: relative }
+abbr:hover::after { position: absolute; bottom: 30%; left: 100%; display: block; padding: 1em; content: "Feedback" }
+#divShare { display: block; width: 100%; text-align: center; margin-top: 20px }
+.yourOptions .csSelOptions .csStyle { width: 150px; display: inline-block }
+.yourOptions .stitchImg { width: 150px }
+.yourOptions .stitchImg img { width: 100% }
+.stylecount { margin: 0; display: inline-block; text-align: right; width: 45%; font-size: 14px }
+.remove_csStyle { text-align: right; display: inline-block; cursor: pointer; width: 45% }
+.remove_csStyle img { width: 14px; height: 13px; text-align: right; float: right }
+.fx_contestimg { margin: 30px 0 20px }
+#fx_content-popup { max-width: 550px; width: 100% }
+.contest_prize { margin: 30px auto; text-align: center; border: 4px solid #000; padding: 20px; max-width: 300px }
+.contest_prize span:nth-child(1) { font-size: 26px }
+.contest_prize span:nth-child(2) { font-size: 20px }
+.contest_prize span:nth-child(3) { font-size: 18px }
+.fx_contest { width: 100%; max-width: 460px; margin: 0 auto; margin-top: 10px }
+.fx_contest h2 { margin: 30px 0 20px; text-transform: none; font-weight: 700; font-size: 38px; line-height: 40px; letter-spacing: 0; text-align: center }
+.fx_contest h2 span { color: #38761d }
+.fx_contest h2 span:after { content: " " }
+.fx_contest ul:first-of-type li { list-style: decimal; margin-left: 15px }
+.contest_conditions { font-size: 12px; list-style: none }
+.contest_conditions li { list-style: disc; line-height: 15px; margin-left: 10px }
+.contest_text { font-size: 13px; max-width: 450px; margin: 0 auto; width: 100% }
+.fx_contest .enter_contest { font-size: 16px; font-weight: 700 }
+.faq p { font-size: 12px }
+#fxround1 { width: 150px; text-align: right; display: inline-block; vertical-align: top; float: right; position: relative; right: 350px; top: 0 }
+@media screen and (max-width:1200px) {
+	.deskhide { display: block !important }
+	.mobhide { display: block !important }
+	.mobhide.newcustom { display: none !important }
+}
+@media screen and (max-width:768px) {
+	.fx_contestimg { margin: 30px 0 20px; text-align: center }
+	.CsContainer { width: 100% }
+	#selStyle1 { display: block; left: 36%; position: relative }
+	#fxround1 { position: relative; right: 0; top: 30px }
+}
