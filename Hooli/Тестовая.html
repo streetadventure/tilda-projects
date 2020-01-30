@@ -1,9 +1,217 @@
 <script src="https://static.tildacdn.com/js/jquery-1.10.2.min.js"></script>
 <script src="https://static.tildacdn.com/js/tilda-scripts-2.8.min.js"></script>
 <script src="https://static.tildacdn.com/js/tilda-forms-1.0.min.js" charset="utf-8"></script>
+<script src="https://static.tildacdn.com/js/tilda-cart-1.0.min.js" charset="utf-8"></script>
 
-<script src="https://todobox.ru/payment/kokoslook/hooli/t835sWhatsApp.js"></script>
-<link href="https://todobox.ru/payment/kokoslook/hooli/t835sWhatsApp.css" rel="stylesheet">
+<link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-grid-3.0.min.css" type="text/css" media="all"/>
+<link rel="stylesheet" href="https://tilda.ws/project1805264/tilda-blocks-2.12.css?t=1580372032" type="text/css" media="all"/>
+<link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-slds-1.4.min.css" type="text/css" media="all"/>
+
+<!-- <script src="https://todobox.ru/payment/kokoslook/hooli/t835sWhatsApp.js"></script>
+<link href="https://todobox.ru/payment/kokoslook/hooli/t835sWhatsApp.css" rel="stylesheet"> -->
+
+<script src="js/t835sWhatsApp.js"></script>
+<link href="css/t835sWhatsApp.css" rel="stylesheet">
+
+<link href="css/correct_for_local.css" rel="stylesheet"> 
+
+<!-- БЛОК, НУЖНЫЙ ЧТОБЫ КОРЗИНА РАБОТАЛА. ХОТЯ ПОТОМ МОЖНО УБРАТЬ. ОПЛАТА ИТАК РАБОТАТЬ НЕ БУДЕТ -->
+<div id="rec156653582" class="r t-rec" style=" " data-animationappear="off" data-record-type="706">
+<!--tcart-->
+<script type="text/javascript">
+    $(document).ready(function() {
+        tcart__init('156653582');
+        /* hack for Android */
+        var ua = navigator.userAgent.toLowerCase();
+        var isAndroid = (ua.indexOf("android") > -1);
+        if (isAndroid) {
+            $('.t-body').addClass('t-body_scrollable-hack-for-android');
+            $('head').append("<style>@media screen and (max-width: 560px) {\n.t-body_scrollable-hack-for-android {\noverflow: visible !important;\n}\n}\n</style>");
+            console.log('Android css hack was inited');
+        }
+        var cartWindow = $("#rec156653582 .t706__cartwin");
+        var curMode = $(".t-records").attr("data-tilda-mode");
+        if (cartWindow.length && curMode != "edit" && curMode != "preview") {
+            cartWindow.bind('scroll', t_throttle(function() {
+                if (window.lazy == "y") {
+                    t_lazyload_update();
+                }
+            }, 500))
+        }
+    });
+</script>
+<div class="t706" data-opencart-onorder="yes" data-project-currency="р." data-project-currency-side="r" data-project-currency-sep="," data-project-currency-code="RUB" data-payment-system="cloudpayments">
+    <div class="t706__carticon" style="">
+        <div class="t706__carticon-text t-name t-name_xs">Click to order</div>
+        <div class="t706__carticon-wrapper">
+            <!--<div class="t706__carticon-imgwrap"><img class="t706__carticon-img" src="https://static.tildacdn.com/lib/linea/930cac0f-758b-b7ee-1eb0-b18fc6e10893/ecommerce_bag.svg"></div>-->
+            <div class="t706__carticon-imgwrap">
+                <svg class="t706__carticon-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+                    <descr style="color:#bebebe;">Cart</descr>
+                    <path fill="none" stroke-width="2" stroke-miterlimit="10" d="M44 18h10v45H10V18h10z"/>
+                    <path fill="none" stroke-width="2" stroke-miterlimit="10" d="M22 24V11c0-5.523 4.477-10 10-10s10 4.477 10 10v13"/>
+                </svg>
+            </div>
+            <div class="t706__carticon-counter"></div>
+        </div>
+    </div>
+    <div class="t706__cartwin">
+        <div class="t706__cartwin-close">
+            <div class="t706__cartwin-close-wrapper">
+                <svg class="t706__cartwin-close-icon" width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd">
+                        <rect transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect>
+                        <rect transform="translate(11.313708, 11.313708) rotate(-315.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <div class="t706__cartwin-content">
+            <div class="t706__cartwin-top">
+                <div class="t706__cartwin-heading t-name t-name_xl"></div>
+            </div>
+            <div class="t706__cartwin-products"></div>
+            <div class="t706__cartwin-bottom">
+                <div class="t706__cartwin-prodamount-wrap t-descr t-descr_sm">
+                    <span class="t706__cartwin-prodamount-label">Total:&nbsp;</span>
+                    <span class="t706__cartwin-prodamount"></span>
+                </div>
+            </div>
+            <div class="t706__orderform ">
+                <form id="form156653582" name='form156653582' role="form" action='' method='POST' data-formactiontype="2" data-inputbox=".t-input-group" class="t-form js-form-proccess t-form_inputs-total_3 " data-success-callback="t862_onSuccess" data-formsended-callback="t706_onSuccessCallback">
+                    <input type="hidden" name="formservices[]" value="36c578e4a6eab1a90a34c9806caf2efd" class="js-formaction-services">
+                    <input type="hidden" name="formservices[]" value="ae3e4cab690d93ca319ec44c49357b63" class="js-formaction-services">
+                    <input type="hidden" name="formservices[]" value="3a13f50697b6015391a18d004a8c9477" class="js-formaction-services">
+                    <input type="hidden" name="formservices[]" value="1ce854f854eef2129a9d95dec1f5f43a" class="js-formaction-services">
+                    <input type="hidden" name="formservices[]" value="7d440120ee6121e587957f0913efb311" class="js-formaction-services">
+                    <input type="hidden" name="tildaspec-formname" tabindex="-1" value="Cart">
+                    <div class="js-successbox t-form__successbox t-text t-text_md" style="display:none;"></div>
+                    <div class="t-form__inputsbox">
+                        <div class="t-input-group t-input-group_nm" data-input-lid="1496239431201">
+                            <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1496239431201" style="">Your Name</div>
+                            <div class="t-input-block">
+                                <input type="text" name="Name" class="t-input js-tilda-rule " value="" data-tilda-req="1" data-tilda-rule="name" style="color:#000000; border:1px solid #000000; ">
+                                <div class="t-input-error"></div>
+                            </div>
+                        </div>
+                        <div class="t-input-group t-input-group_em" data-input-lid="1496239459190">
+                            <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1496239459190" style="">Your Email</div>
+                            <div class="t-input-block">
+                                <input type="text" name="Email" class="t-input js-tilda-rule " value="" data-tilda-req="1" data-tilda-rule="email" style="color:#000000; border:1px solid #000000; ">
+                                <div class="t-input-error"></div>
+                            </div>
+                        </div>
+                        <div class="t-input-group t-input-group_ph" data-input-lid="1496239478607">
+                            <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1496239478607" style="">Your Phone</div>
+                            <div class="t-input-block">
+                                <input type="tel" name="Phone" class="t-input js-tilda-rule " value="" data-tilda-req="1" data-tilda-rule="phone" pattern="[0-9]*" style="color:#000000; border:1px solid #000000; ">
+                                <div class="t-input-error"></div>
+                            </div>
+                        </div>
+                        <div class="t-input-group t-input-group_pm" style="margin: 40px 0;">
+                            <div class="t-input-title t-descr t-descr_md" style="">Payment method</div>
+                            <div class="t-input-block">
+                                <div class="t-radio__wrapper t-radio__wrapper-payment" data-tilda-payment-variants-hook='y'>
+                                    <label class="t-radio__control t-text t-text_xs" style="">
+                                        <input type="radio" name="paymentsystem" value="cloudpayments" checked="checked" class="t-radio t-radio_payment" data-payment-variant-system="cloudpayments">
+                                        <div class="t-radio__indicator"></div>
+                                        Кредитной картой (Visa, Mastercard) через CloudPayments 
+                                    </label>
+                                    <label class="t-radio__control t-text t-text_xs" style="">
+                                        <input type="radio" name="paymentsystem" value="paypal" class="t-radio t-radio_payment" data-payment-variant-system="paypal">
+                                        <div class="t-radio__indicator"></div>
+                                        Кредитной картой (Visa, Mastercard) или PayPal через PayPal 
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--[if IE 8]><style>.t-checkbox__control .t-checkbox, .t-radio__control .t-radio { left: 0px; z-index: 1; opacity: 1;
+}
+.t-checkbox__indicator, .t-radio__indicator { display: none;
+}
+.t-img-select__control .t-img-select { position: static;
+}</style><![endif]-->
+                        <div class="t-form__errorbox-middle">
+                            <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;">
+                                <div class="t-form__errorbox-text t-text t-text_md">
+                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p>
+                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p>
+                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p>
+                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p>
+                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p>
+                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></p>
+                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="t-form__submit">
+                            <button type="submit" class="t-submit" style="color:#ffffff;background-color:#000000;">Checkout</button>
+                        </div>
+                    </div>
+                    <div class="t-form__errorbox-bottom">
+                        <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;">
+                            <div class="t-form__errorbox-text t-text t-text_md">
+                                <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p>
+                                <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p>
+                                <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p>
+                                <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p>
+                                <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p>
+                                <p class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></p>
+                                <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <style>
+                    #rec156653582 input::-webkit-input-placeholder {
+                        color: #000000;
+                        opacity: 0.5;
+                    }
+
+                    #rec156653582 input::-moz-placeholder {
+                        color: #000000;
+                        opacity: 0.5;
+                    }
+
+                    #rec156653582 input:-moz-placeholder {
+                        color: #000000;
+                        opacity: 0.5;
+                    }
+
+                    #rec156653582 input:-ms-input-placeholder {
+                        color: #000000;
+                        opacity: 0.5;
+                    }
+
+                    #rec156653582 textarea::-webkit-input-placeholder {
+                        color: #000000;
+                        opacity: 0.5;
+                    }
+
+                    #rec156653582 textarea::-moz-placeholder {
+                        color: #000000;
+                        opacity: 0.5;
+                    }
+
+                    #rec156653582 textarea:-moz-placeholder {
+                        color: #000000;
+                        opacity: 0.5;
+                    }
+
+                    #rec156653582 textarea:-ms-input-placeholder {
+                        color: #000000;
+                        opacity: 0.5;
+                    }
+                </style>
+            </div>
+        </div>
+    </div>
+    <div class="t706__cartdata"></div>
+</div>
+<!--/tcart-->
+</div>
+<!-- END блок, нужный чтобы корзина работала. хотя потом можно убрать. оплата итак работать не будет -->
+
  <div id="rec001" class="r t-rec t-rec_pt_30 t-rec_pb_90" style="padding-top:30px;padding-bottom:90px; " data-animationappear="off" data-record-type="835">
      <!-- t835mev --> 
      <!-- cover --> 
