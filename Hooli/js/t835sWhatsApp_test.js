@@ -445,34 +445,32 @@ $(document).ready(function() {
         var text = get_res_wa_text();
         $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
     });
-
-new Vue({
-  el:'#app',
-  data() {
-    return {
-      step:1,
-      registration:{
-        name:null,
-        email:null,
-        street:null,
-        city:null,
-        state:null,
-        numtickets:0,
-        shirtsize:'XL'
-      }
-    }
-  },
-  methods:{
-    prev() {
-      this.step--;
-    },
-    next() {
-      this.step++;
-    },
-    submit() {
-      alert('Submit to blah and show blah and etc.');      
-    }
-  }
-}); 
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                step: 1,
+                registration: {
+                    name: null,
+                    email: null,
+                    street: null,
+                    city: null,
+                    state: null,
+                    numtickets: 0,
+                    shirtsize: 'XL'
+                }
+            }
+        },
+        methods: {
+            prev() {
+                this.step--;
+            },
+            next() {
+                this.step++;
+            },
+            submit() {
+                alert('Submit to blah and show blah and etc.');
+            }
+        }
+    });
 });
-
