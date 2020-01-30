@@ -55,9 +55,16 @@ function t835mev_init(recid) {
             quizQuestionNumber++;
             prevBtn.attr('disabled', !1);
 
+            if ( show_details("001") ) {
                 if(quizQuestionNumber==9){
-                    get_selected_values();
+                    var details_data = get_selected_values(),
+                        details_text = '';
+                    details_data.forEach(function(item, i, arr) {
+                        details_text += item.name+': '+item.value+'<br>'
+                    });
+                    $('.t-input-group_details .t-input-subtitle').html(details_text);
                 }
+            }
             
             if(quizQuestionNumber==8){
                 if ($('[name=dostavka]:checked').val()=='Самовывоз') {
@@ -415,7 +422,7 @@ function get_selected_values(){
 
         if(checked.length > 0){
             obj['name'] = $(el).data('name');
-            obj[checked.attr('name')] = checked.val();
+            obj['value'] = checked.val();
             data.push(obj);
         }
     });
@@ -423,7 +430,14 @@ function get_selected_values(){
     return data;
 }
 
-
+function show_details(recid){
+    var rec = $('#rec' + recid);
+    if ( rec.data('show-details')=="y" ) {
+        return true;
+    }else{
+        return false;
+    }
+}
 
 // Выполнить после загрузки документа
 $(document).ready(function() {
