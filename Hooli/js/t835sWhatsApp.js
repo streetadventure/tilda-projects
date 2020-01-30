@@ -55,6 +55,10 @@ function t835mev_init(recid) {
             quizQuestionNumber++;
             prevBtn.attr('disabled', !1);
 
+                if(quizQuestionNumber==9){
+                    get_selected_values();
+                }
+            
             if(quizQuestionNumber==8){
                 if ($('[name=dostavka]:checked').val()=='Самовывоз') {
                     quizQuestionNumber++;
@@ -359,6 +363,7 @@ function t835mev_onSuccess(form) {
     }
     prevBtn.hide()
 }
+// Посчитать общую сумму изначально
 function calc_total(length, summa) {
 
     // var length_str = strstr(length, '=', true);
@@ -375,6 +380,7 @@ function calc_total(length, summa) {
     };
 
 }
+// Отправка сообщения в whatsapp
 function get_res_wa_text(){
     var kroi = $('input[name="kroi"]:checked').val(),
         dlina = $('input[name="dlina"]:checked').val(),
@@ -400,6 +406,26 @@ function get_res_wa_text(){
         +"Цвет:"+color+"\n\n"
         +"Размер:"+size+"\n");
 }
+
+function get_selected_values(){
+    var data = [];
+    $(".t-input-group").each(function(index, el) {
+        var obj={},
+            checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked');
+
+        if(checked.length > 0){
+            obj['name'] = $(el).data('name');
+            obj[checked.attr('name')] = checked.val();
+            data.push(obj);
+        }
+    });
+
+    return data;
+}
+
+
+
+// Выполнить после загрузки документа
 $(document).ready(function() {
     $('#rec001').on('click', '.t835mev__btn_result', function(event) {
         var text = get_res_wa_text();
