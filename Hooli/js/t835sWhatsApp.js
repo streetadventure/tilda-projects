@@ -57,7 +57,7 @@ function t835mev_init(recid) {
 
             if ( show_details("001") ) {
                 if(quizQuestionNumber==9){
-                    var details_data = get_selected_values(),
+                    var details_data = get_selected_values("001"),
                         details_text = '';
                     details_data.forEach(function(item, i, arr) {
                         details_text += item.name+': '+item.value+'<br>'
@@ -414,9 +414,10 @@ function get_res_wa_text(){
         +"Размер:"+size+"\n");
 }
 
-function get_selected_values(){
-    var data = [];
-    $(".t-input-group").each(function(index, el) {
+function get_selected_values(recid){
+    var data = [],
+        rec = $('#rec' + recid);
+    rec.find(".t-input-group").each(function(index, el) {
         var obj={},
             checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked');
 
