@@ -130,28 +130,26 @@ function t835mev_init(recid) {
             form.addClass('js-form-proccess');
             t835mev_disabledPrevBtn(rec, quizQuestionNumber);
 
-            if(quizQuestionNumber==11){
-                $.ajax({
-                    url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
-                    type: 'post',
-                    dataType: 'json',
-                    data: form.serialize(),
-                })
-                .done(function(data) {
-                    // data.id - номер заказа в retailCRM
-                    // $('#order_id').val(data.id);
-                    if (fbq != undefined) {
-                        fbq('track', 'Lead');
-                    }
-                    // window.open($('#write_to_whatsapp').attr('href'), "_blank");
-                })
-                .fail(function(data) {
-                    // console.log("error");
-                })
-                .always(function() {
-                    // console.log("complete");
-                });               
-            }            
+            $.ajax({
+                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
+                type: 'post',
+                dataType: 'json',
+                data: form.serialize(),
+            })
+            .done(function(data) {
+                // data.id - номер заказа в retailCRM
+                // $('#order_id').val(data.id);
+                if (fbq != undefined) {
+                    fbq('track', 'Lead');
+                }
+                // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+            })
+            .fail(function(data) {
+                // console.log("error");
+            })
+            .always(function() {
+                // console.log("complete");
+            });
         }
         e.preventDefault()
     })
@@ -447,4 +445,3 @@ $(document).ready(function() {
         $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
     });
 });
-
