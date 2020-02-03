@@ -534,3 +534,43 @@ function calc_total(length, summa) {
     };
 
 }
+
+// Отправка сообщения в whatsapp
+function get_res_wa_text(recid){
+    var rec = $('#rec' + recid),
+        poyas = "",
+        dlina = "",
+        karman = "",
+        niz = "",
+        color = "",
+        size = "";
+        
+    if ( rec.find('input[name="poyas"]:checked').length > 0 ) {
+        var poyas = "Вариант пояса: "+rec.find('input[name="poyas"]:checked').val()+"\n";
+    }
+    if ( rec.find('input[name="dlina"]:checked').length > 0 ) {
+        var dlina = "Вариант длины: "+rec.find('input[name="dlina"]:checked').val()+"\n";
+    }
+    if ( rec.find('input[name="karman"]').length > 0 ) {
+        var karman = "Вариант кармана: "+rec.find('input[name="karman"]').val()+"\n";
+    }
+    if ( rec.find('input[name="niz"]:checked').length > 0 ) {
+        var niz = "Вариант низа: "+rec.find('input[name="niz"]:checked').val()+"\n";
+    }
+    if ( rec.find('input[name="color"]:checked').length > 0 ) {
+        var color = "Цвет: "+rec.find('input[name="color"]:checked').val()+"\n";
+    }
+    if ( rec.find('input[name="size"]:checked').length > 0 ) {
+        var size = "Размер: "+rec.find('input[name="size"]:checked').val();
+    }
+    
+    return encodeURI("Привет, Hooli! 😜 \n\n"+
+        "Хочу подтвердить свой заказ:\n\n"
+        +poyas
+        +dlina
+        +karman
+        +niz
+        +color
+        +size
+    );
+}
