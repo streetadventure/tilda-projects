@@ -90,7 +90,29 @@ function t862mev_init(recid) {
             t862mev_setProgress(rec, 1);
             t862mev_switchResultScreen(rec);
             form.addClass('js-form-proccess');
-            t862mev_disabledPrevBtn(rec, quizQuestionNumber)
+            t862mev_disabledPrevBtn(rec, quizQuestionNumber);
+
+
+            $.ajax({
+                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli_shtany.php',
+                type: 'post',
+                dataType: 'json',
+                data: form.serialize(),
+            })
+            .done(function(data) {
+                // data.id - номер заказа в retailCRM
+                // $('#order_id').val(data.id);
+                if (fbq != undefined) {
+                    fbq('track', 'Lead');
+                }
+                // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+            })
+            .fail(function(data) {
+                // console.log("error");
+            })
+            .always(function() {
+                // console.log("complete");
+            });
         }
         e.preventDefault()
     })
@@ -496,4 +518,19 @@ function t862mev_sendPopupEventToStatistics(popupname) {
             })
         }
     }
+}
+
+function calc_total(length, summa) {
+
+    window.tcart.amount = summa;
+    window.tcart.prodamount = summa;
+    window.tcart.total = summa;
+
+    window.tcart.products[0] = {
+        amount: summa,
+        name: "Штаны Hooli",
+        price: summa,
+        quantity: 1
+    };
+
 }
