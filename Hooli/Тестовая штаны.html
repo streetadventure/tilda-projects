@@ -1,4 +1,5 @@
 <!-- constructor-shtani -->
+<script type="text/javascript" async="" id="t-phonemask-script" src="https://static.tildacdn.com/js/tilda-phone-mask-1.1.min.js"></script>
 <script src="https://todobox.ru/payment/kokoslook/hooli/t862_quiz_in_popup.js"></script>
 <link href="https://static.tildacdn.com/css/tilda-popup-1.1.min.css" rel="stylesheet">
 <link href="https://todobox.ru/payment/kokoslook/hooli/t862_quiz_in_popup.css" rel="stylesheet">
@@ -311,48 +312,24 @@
                                                 <div class="t-input-error"></div>
                                             </div>
                                         </div>
-                                        <div class="t-input-group t-input-group_nm" data-input-lid="1527252201577">
+                                        <div class="t-input-group t-input-group_ri" data-input-lid="1527252201577">
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252201577" style="">Укажи имя</div>
                                             <div class="t-input-block">
                                                 <input type="text" name="Name" class="t-input js-tilda-rule t-input_bbonly" value="" data-tilda-req="1" data-tilda-rule="name" style="color:#000000; border:1px solid #b3b3b3; ">
                                                 <div class="t-input-error"></div>
                                             </div>
-                                        </div>
-                                        <div class="t-input-group t-input-group_ph" data-input-lid="1527252219292">
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252219292" style="">Укажи телефон</div>
-                                            <div class="t-input-block">
+                                            <div class="t-input-block" data-input-lid="1527252219292">
                                                 <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="001" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
                                                 <script type="text/javascript">
-                                                    if (!document.getElementById('t-phonemask-script')) {
-                                                        (function(d, w, o) {
-                                                            var n = d.getElementsByTagName(o)[0]
-                                                              , s = d.createElement(o)
-                                                              , f = function() {
-                                                                n.parentNode.insertBefore(s, n);
-                                                            };
-                                                            s.type = "text/javascript";
-                                                            s.async = true;
-                                                            s.id = 't-phonemask-script';
-                                                            s.src = "https://static.tildacdn.com/js/tilda-phone-mask-1.1.min.js";
-                                                            if (w.opera == "[object Opera]") {
-                                                                d.addEventListener("DOMContentLoaded", f, false);
-                                                            } else {
-                                                                f();
-                                                            }
+                                                    $(document).ready(function() {
+                                                        if (typeof t_form_phonemask_load == 'function') {
+                                                            t_form_phonemask_load($('#rec001 [data-phonemask-lid=1527252219292]'));
                                                         }
-                                                        )(document, window, 'script');
-                                                    } else {
-                                                        $(document).ready(function() {
-                                                            if (typeof t_form_phonemask_load == 'function') {
-                                                                t_form_phonemask_load($('#rec001 [data-phonemask-lid=1527252219292]'));
-                                                            }
-                                                        });
-                                                    }
+                                                    });
                                                 </script>
                                                 <div class="t-input-error"></div>
                                             </div>
-                                        </div>
-                                        <div class="t-input-group t-input-group_em" data-input-lid="1528360800295">
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1528360800295" style="">Укажи e-mail</div>
                                             <div class="t-input-block">
                                                 <input type="text" name="Email" class="t-input js-tilda-rule t-input_bbonly" value="" data-tilda-req="1" data-tilda-rule="email" style="color:#000000; border:1px solid #b3b3b3; ">
@@ -827,48 +804,24 @@
                                                 <div class="t-input-error"></div>
                                             </div>
                                         </div>
-                                        <div class="t-input-group t-input-group_nm" data-input-lid="1527252201577">
+                                        <div class="t-input-group t-input-group_ri" data-input-lid="1527252201577">
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252201577" style="">Укажи имя</div>
                                             <div class="t-input-block">
                                                 <input type="text" name="Name" class="t-input js-tilda-rule t-input_bbonly" value="" data-tilda-req="1" data-tilda-rule="name" style="color:#000000; border:1px solid #b3b3b3; ">
                                                 <div class="t-input-error"></div>
                                             </div>
-                                        </div>
-                                        <div class="t-input-group t-input-group_ph" data-input-lid="1527252219292">
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252219292" style="">Укажи телефон</div>
-                                            <div class="t-input-block">
+                                            <div class="t-input-block" data-input-lid="1527252219292">
                                                 <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="002" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
                                                 <script type="text/javascript">
-                                                    if (!document.getElementById('t-phonemask-script')) {
-                                                        (function(d, w, o) {
-                                                            var n = d.getElementsByTagName(o)[0]
-                                                              , s = d.createElement(o)
-                                                              , f = function() {
-                                                                n.parentNode.insertBefore(s, n);
-                                                            };
-                                                            s.type = "text/javascript";
-                                                            s.async = true;
-                                                            s.id = 't-phonemask-script';
-                                                            s.src = "https://static.tildacdn.com/js/tilda-phone-mask-1.1.min.js";
-                                                            if (w.opera == "[object Opera]") {
-                                                                d.addEventListener("DOMContentLoaded", f, false);
-                                                            } else {
-                                                                f();
-                                                            }
+                                                    $(document).ready(function() {
+                                                        if (typeof t_form_phonemask_load == 'function') {
+                                                            t_form_phonemask_load($('#rec002 [data-phonemask-lid=1527252219292]'));
                                                         }
-                                                        )(document, window, 'script');
-                                                    } else {
-                                                        $(document).ready(function() {
-                                                            if (typeof t_form_phonemask_load == 'function') {
-                                                                t_form_phonemask_load($('#rec002 [data-phonemask-lid=1527252219292]'));
-                                                            }
-                                                        });
-                                                    }
+                                                    });
                                                 </script>
                                                 <div class="t-input-error"></div>
                                             </div>
-                                        </div>
-                                        <div class="t-input-group t-input-group_em" data-input-lid="1528360800295">
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1528360800295" style="">Укажи e-mail</div>
                                             <div class="t-input-block">
                                                 <input type="text" name="Email" class="t-input js-tilda-rule t-input_bbonly" value="" data-tilda-req="1" data-tilda-rule="email" style="color:#000000; border:1px solid #b3b3b3; ">
@@ -1370,48 +1323,24 @@
                                                 <div class="t-input-error"></div>
                                             </div>
                                         </div>
-                                        <div class="t-input-group t-input-group_nm" data-input-lid="1527252201577">
+                                        <div class="t-input-group t-input-group_rd" data-input-lid="1527252201577">
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252201577" style="">Укажи имя</div>
                                             <div class="t-input-block">
                                                 <input type="text" name="Name" class="t-input js-tilda-rule t-input_bbonly" value="" data-tilda-req="1" data-tilda-rule="name" style="color:#000000; border:1px solid #b3b3b3; ">
                                                 <div class="t-input-error"></div>
                                             </div>
-                                        </div>
-                                        <div class="t-input-group t-input-group_ph" data-input-lid="1527252219292">
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252219292" style="">Укажи телефон</div>
-                                            <div class="t-input-block">
+                                            <div class="t-input-block" data-input-lid="1527252219292">
                                                 <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="003" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
                                                 <script type="text/javascript">
-                                                    if (!document.getElementById('t-phonemask-script')) {
-                                                        (function(d, w, o) {
-                                                            var n = d.getElementsByTagName(o)[0]
-                                                              , s = d.createElement(o)
-                                                              , f = function() {
-                                                                n.parentNode.insertBefore(s, n);
-                                                            };
-                                                            s.type = "text/javascript";
-                                                            s.async = true;
-                                                            s.id = 't-phonemask-script';
-                                                            s.src = "https://static.tildacdn.com/js/tilda-phone-mask-1.1.min.js";
-                                                            if (w.opera == "[object Opera]") {
-                                                                d.addEventListener("DOMContentLoaded", f, false);
-                                                            } else {
-                                                                f();
-                                                            }
+                                                    $(document).ready(function() {
+                                                        if (typeof t_form_phonemask_load == 'function') {
+                                                            t_form_phonemask_load($('#rec003 [data-phonemask-lid=1527252219292]'));
                                                         }
-                                                        )(document, window, 'script');
-                                                    } else {
-                                                        $(document).ready(function() {
-                                                            if (typeof t_form_phonemask_load == 'function') {
-                                                                t_form_phonemask_load($('#rec003 [data-phonemask-lid=1527252219292]'));
-                                                            }
-                                                        });
-                                                    }
+                                                    });
                                                 </script>
                                                 <div class="t-input-error"></div>
                                             </div>
-                                        </div>
-                                        <div class="t-input-group t-input-group_em" data-input-lid="1528360800295">
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1528360800295" style="">Укажи e-mail</div>
                                             <div class="t-input-block">
                                                 <input type="text" name="Email" class="t-input js-tilda-rule t-input_bbonly" value="" data-tilda-req="1" data-tilda-rule="email" style="color:#000000; border:1px solid #b3b3b3; ">
@@ -1844,48 +1773,24 @@
                                                 <div class="t-input-error"></div>
                                             </div>
                                         </div>
-                                        <div class="t-input-group t-input-group_nm" data-input-lid="1527252201577">
+                                        <div class="t-input-group t-input-group_rd" data-input-lid="1527252201577">
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252201577" style="">Укажи имя</div>
                                             <div class="t-input-block">
                                                 <input type="text" name="Name" class="t-input js-tilda-rule t-input_bbonly" value="" data-tilda-req="1" data-tilda-rule="name" style="color:#000000; border:1px solid #b3b3b3; ">
                                                 <div class="t-input-error"></div>
                                             </div>
-                                        </div>
-                                        <div class="t-input-group t-input-group_ph" data-input-lid="1527252219292">
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252219292" style="">Укажи телефон</div>
-                                            <div class="t-input-block">
+                                            <div class="t-input-block" data-input-lid="1527252219292">
                                                 <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="004" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
                                                 <script type="text/javascript">
-                                                    if (!document.getElementById('t-phonemask-script')) {
-                                                        (function(d, w, o) {
-                                                            var n = d.getElementsByTagName(o)[0]
-                                                              , s = d.createElement(o)
-                                                              , f = function() {
-                                                                n.parentNode.insertBefore(s, n);
-                                                            };
-                                                            s.type = "text/javascript";
-                                                            s.async = true;
-                                                            s.id = 't-phonemask-script';
-                                                            s.src = "https://static.tildacdn.com/js/tilda-phone-mask-1.1.min.js";
-                                                            if (w.opera == "[object Opera]") {
-                                                                d.addEventListener("DOMContentLoaded", f, false);
-                                                            } else {
-                                                                f();
-                                                            }
+                                                    $(document).ready(function() {
+                                                        if (typeof t_form_phonemask_load == 'function') {
+                                                            t_form_phonemask_load($('#rec004 [data-phonemask-lid=1527252219292]'));
                                                         }
-                                                        )(document, window, 'script');
-                                                    } else {
-                                                        $(document).ready(function() {
-                                                            if (typeof t_form_phonemask_load == 'function') {
-                                                                t_form_phonemask_load($('#rec004 [data-phonemask-lid=1527252219292]'));
-                                                            }
-                                                        });
-                                                    }
+                                                    });
                                                 </script>
                                                 <div class="t-input-error"></div>
                                             </div>
-                                        </div>
-                                        <div class="t-input-group t-input-group_em" data-input-lid="1528360800295">
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1528360800295" style="">Укажи e-mail</div>
                                             <div class="t-input-block">
                                                 <input type="text" name="Email" class="t-input js-tilda-rule t-input_bbonly" value="" data-tilda-req="1" data-tilda-rule="email" style="color:#000000; border:1px solid #b3b3b3; ">
