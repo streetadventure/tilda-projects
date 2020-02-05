@@ -438,10 +438,39 @@ function show_details(recid){
     }
 }
 
+// добавляем стили для show/hide вариантов в зависимости от ранее выбранных 
+function optional_dependency(){
+
+    var parent_options = $("[data-optional]");
+
+    parent_options.each(function(index, el) {
+        var parent_option = $(el);
+        parent_option.find('input').each(function(index, el) {
+            var clickable_input = $(el);
+            clickable_input.on('click', function(event) {
+                var result_input = $('input[name="'+parent_option.data('optional')+'"]');
+                result_input.each(function(index, el){
+                    var allowed_opt = $(el).data('prev-selection').split("|");
+                    if ( allowed_opt.some(function(arr_el){return clickable_input.val() == arr_el}) ) {
+                        $(el).closest('label').show();
+                    }else{
+                        $(el).closest('label').hide();
+                    }
+                })
+            });
+        });
+    });
+
+
+}
+
+
 // Выполнить после загрузки документа
 $(document).ready(function() {
     $('#rec001').on('click', '.t835mev__btn_result', function(event) {
         var text = get_res_wa_text();
         $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
     });
+
+    optional_dependency();
 });
