@@ -36,6 +36,14 @@ function t835mev_init(recid) {
                 t_lazyload_update()
             }
         }
+        if(quizQuestionNumber==4){
+            if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
+                quizQuestionNumber--;
+                $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
+            }else{
+                $('[name="rukav-dlina"]').attr('data-tilda-req',1);
+            }
+        }
         t835mev_awayFromResultScreen(rec);
         t835mev_showCounter(rec, quizQuestionNumber);
         t835mev_hideError(rec, quizQuestionNumber);
@@ -66,10 +74,12 @@ function t835mev_init(recid) {
                 }
             }
             
-            if(quizQuestionNumber==8){
-                if ($('[name=dostavka]:checked').val()=='Самовывоз') {
+            if(quizQuestionNumber==4){
+                if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
                     quizQuestionNumber++;
-                    $('[name="address"]').removeAttr('data-tilda-req');
+                    $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
+                }else{
+                    $('[name="rukav-dlina"]').attr('data-tilda-req',1);
                 }
             }
 
