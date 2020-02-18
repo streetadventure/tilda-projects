@@ -51,9 +51,9 @@ function t862mev_init(recid) {
             quizQuestionNumber++;
             prevBtn.attr('disabled', !1);
 
-            if ( show_details("001") ) {
-                if(quizQuestionNumber==9){
-                    var details_data = get_selected_values("001"),
+            if ( rec.data('show-details')=="y" ) {
+                if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
+                    var details_data = get_selected_values(rec),
                         details_text = '';
                     details_data.forEach(function(item, i, arr) {
                         details_text += item.name+': '+item.value+'<br>'
@@ -587,9 +587,8 @@ function get_res_wa_text(recid){
     );
 }
 
-function get_selected_values(recid){
-    var data = [],
-        rec = $('#rec' + recid);
+function get_selected_values(rec){
+    var data = [];
     rec.find(".t-input-group").each(function(index, el) {
         var obj={},
             checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked');
