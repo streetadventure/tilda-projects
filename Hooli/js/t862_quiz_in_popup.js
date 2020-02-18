@@ -104,12 +104,17 @@ function t862mev_init(recid) {
             form.addClass('js-form-proccess');
             t862mev_disabledPrevBtn(rec, quizQuestionNumber);
 
+            var form_data = form.serializeArray(),
+                details_data = get_selected_values(rec),
+                data_to_send = {
+                    form_data: form_data,
+                    details_data: details_data
+                };
 
             $.ajax({
-                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli_shtany.php',
+                url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
                 type: 'post',
-                dataType: 'json',
-                data: form.serialize(),
+                data: data_to_send,
             })
             .done(function(data) {
                 // data.id - номер заказа в retailCRM
