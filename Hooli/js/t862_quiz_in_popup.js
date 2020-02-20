@@ -539,7 +539,7 @@ function t862mev_sendPopupEventToStatistics(popupname) {
     }
 }
 
-function calc_total(length, summa) {
+function calc_total(summa) {
 
     window.tcart.amount = summa;
     window.tcart.prodamount = summa;
@@ -600,5 +600,7 @@ $(document).ready(function() {
         var rec = $(this).closest('[id^=rec]');
         var text = get_res_wa_text(rec);
         rec.find('.write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
+
+        calc_total(2390);
     });
 });
