@@ -247,7 +247,7 @@
 .t862mev .t862mev__btn-wrapper .t-btn[disabled],.t862mev .t-form__submit .t-submit[disabled] {
     opacity: .6
 }
-.t862mev a#write_to_whatsapp{
+.t862mev a.write_to_whatsapp{
     font-family: 'FuturaPT',Arial,sans-serif;
     height: 45px;
     line-height: 45px;
@@ -255,7 +255,7 @@
     padding-left: 30px;
     padding-right: 30px;
     display: inline-block;
-    color: #fff;
+    color: #fff !important;
     font-weight: bold;
     background-color: rgb(39, 208, 97);
     border-radius: 30px;
