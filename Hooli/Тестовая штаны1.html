@@ -887,34 +887,14 @@
                                                 <div class="t-input-error"></div>
                                             </div>
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252219292" style="">Укажи телефон</div>
-                                            <div class="t-input-block">
-                                                <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="002" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
+                                            <div class="t-input-block" data-input-lid="1527252219292">
+                                                <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="001" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
                                                 <script type="text/javascript">
-                                                    if (!document.getElementById('t-phonemask-script')) {
-                                                        (function(d, w, o) {
-                                                            var n = d.getElementsByTagName(o)[0]
-                                                              , s = d.createElement(o)
-                                                              , f = function() {
-                                                                n.parentNode.insertBefore(s, n);
-                                                            };
-                                                            s.type = "text/javascript";
-                                                            s.async = true;
-                                                            s.id = 't-phonemask-script';
-                                                            s.src = "https://static.tildacdn.com/js/tilda-phone-mask-1.1.min.js";
-                                                            if (w.opera == "[object Opera]") {
-                                                                d.addEventListener("DOMContentLoaded", f, false);
-                                                            } else {
-                                                                f();
-                                                            }
+                                                    $(document).ready(function() {
+                                                        if (typeof t_form_phonemask_load == 'function') {
+                                                            t_form_phonemask_load($('#rec001 [data-phonemask-lid=1527252219292]'));
                                                         }
-                                                        )(document, window, 'script');
-                                                    } else {
-                                                        $(document).ready(function() {
-                                                            if (typeof t_form_phonemask_load == 'function') {
-                                                                t_form_phonemask_load($('#rec002 [data-phonemask-lid=1527252219292]'));
-                                                            }
-                                                        });
-                                                    }
+                                                    });
                                                 </script>
                                                 <div class="t-input-error"></div>
                                             </div>
@@ -1438,34 +1418,14 @@
                                                 <div class="t-input-error"></div>
                                             </div>
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252219292" style="">Укажи телефон</div>
-                                            <div class="t-input-block">
-                                                <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="003" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
+                                            <div class="t-input-block" data-input-lid="1527252219292">
+                                                <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="001" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
                                                 <script type="text/javascript">
-                                                    if (!document.getElementById('t-phonemask-script')) {
-                                                        (function(d, w, o) {
-                                                            var n = d.getElementsByTagName(o)[0]
-                                                              , s = d.createElement(o)
-                                                              , f = function() {
-                                                                n.parentNode.insertBefore(s, n);
-                                                            };
-                                                            s.type = "text/javascript";
-                                                            s.async = true;
-                                                            s.id = 't-phonemask-script';
-                                                            s.src = "https://static.tildacdn.com/js/tilda-phone-mask-1.1.min.js";
-                                                            if (w.opera == "[object Opera]") {
-                                                                d.addEventListener("DOMContentLoaded", f, false);
-                                                            } else {
-                                                                f();
-                                                            }
+                                                    $(document).ready(function() {
+                                                        if (typeof t_form_phonemask_load == 'function') {
+                                                            t_form_phonemask_load($('#rec001 [data-phonemask-lid=1527252219292]'));
                                                         }
-                                                        )(document, window, 'script');
-                                                    } else {
-                                                        $(document).ready(function() {
-                                                            if (typeof t_form_phonemask_load == 'function') {
-                                                                t_form_phonemask_load($('#rec003 [data-phonemask-lid=1527252219292]'));
-                                                            }
-                                                        });
-                                                    }
+                                                    });
                                                 </script>
                                                 <div class="t-input-error"></div>
                                             </div>
@@ -1772,26 +1732,6 @@
                                                 <div class="t-input-error"></div>
                                             </div>
                                         </div>
-                                                <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-img-select-1.0.css">
-                                                <script src="https://static.tildacdn.com/js/tilda-img-select-1.0.min.js"></script>
-                                                <script type="text/javascript">
-                                                    $(document).ready(function() {
-                                                        try {
-                                                            setTimeout(function() {
-                                                                t_input_imgselect_invertColor('004');
-                                                            }, 500);
-                                                        } catch (err) {}
-                                                        ;
-                                                    });
-                                                </script>
-                                                <style>
-                                                    #rec004 .t-img-select__indicator:after {
-                                                        background-color: #000000;
-                                                    }
-                                                </style>
-                                                <div class="t-input-error"></div>
-                                            </div>
-                                        </div>
                                         <div class="t-input-group t-input-group_ri" data-input-lid="1580889660195" data-name="Карманы сзади">
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1580889660195" style="">Добавить карман сзади?</div>
                                             <div class="t-input-block">
@@ -1972,34 +1912,14 @@
                                                 <div class="t-input-error"></div>
                                             </div>
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252219292" style="">Укажи телефон</div>
-                                            <div class="t-input-block">
-                                                <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="004" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
+                                            <div class="t-input-block" data-input-lid="1527252219292">
+                                                <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="001" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
                                                 <script type="text/javascript">
-                                                    if (!document.getElementById('t-phonemask-script')) {
-                                                        (function(d, w, o) {
-                                                            var n = d.getElementsByTagName(o)[0]
-                                                              , s = d.createElement(o)
-                                                              , f = function() {
-                                                                n.parentNode.insertBefore(s, n);
-                                                            };
-                                                            s.type = "text/javascript";
-                                                            s.async = true;
-                                                            s.id = 't-phonemask-script';
-                                                            s.src = "https://static.tildacdn.com/js/tilda-phone-mask-1.1.min.js";
-                                                            if (w.opera == "[object Opera]") {
-                                                                d.addEventListener("DOMContentLoaded", f, false);
-                                                            } else {
-                                                                f();
-                                                            }
+                                                    $(document).ready(function() {
+                                                        if (typeof t_form_phonemask_load == 'function') {
+                                                            t_form_phonemask_load($('#rec001 [data-phonemask-lid=1527252219292]'));
                                                         }
-                                                        )(document, window, 'script');
-                                                    } else {
-                                                        $(document).ready(function() {
-                                                            if (typeof t_form_phonemask_load == 'function') {
-                                                                t_form_phonemask_load($('#rec004 [data-phonemask-lid=1527252219292]'));
-                                                            }
-                                                        });
-                                                    }
+                                                    });
                                                 </script>
                                                 <div class="t-input-error"></div>
                                             </div>
