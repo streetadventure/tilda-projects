@@ -133,7 +133,7 @@ function t835mev_init(recid) {
                 };
 
             $.ajax({
-                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli_shtany.php',
+                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hoolistum.php',
                 // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
                 type: 'post',
                 dataType: 'json',
@@ -458,6 +458,8 @@ $(document).ready(function() {
         var text = get_res_wa_text();
         $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
     });
+
+    calc_total(2390);
 
     optional_dependency();
 });
