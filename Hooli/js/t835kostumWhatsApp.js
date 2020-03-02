@@ -471,11 +471,11 @@ function optional_dependency(){
 // Выполнить после загрузки документа
 $(document).ready(function() {
     $('#rec001').on('click', '.t835mev__btn_result', function(event) {
-        var text = get_res_wa_text();
+        var text = get_res_wa_text('#rec001');
         $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
     });
 
-    calc_total(2390);
+    calc_total(6990);
 
     optional_dependency();
 });
