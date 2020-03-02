@@ -36,14 +36,7 @@ function t835mev_init(recid) {
                 t_lazyload_update()
             }
         }
-        if(quizQuestionNumber==4){
-            if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
-                quizQuestionNumber--;
-                $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
-            }else{
-                $('[name="rukav-dlina"]').attr('data-tilda-req',1);
-            }
-        }
+
         t835mev_awayFromResultScreen(rec);
         t835mev_showCounter(rec, quizQuestionNumber);
         t835mev_hideError(rec, quizQuestionNumber);
@@ -63,23 +56,15 @@ function t835mev_init(recid) {
             quizQuestionNumber++;
             prevBtn.attr('disabled', !1);
 
-            if ( show_details("001") ) {
-                if(quizQuestionNumber==9){
-                    var details_data = get_selected_values("001"),
+            // показывать шаг с детялями при условии что вставлен для этого div в нужном месте в коде
+            if ( rec.data('show-details')=="y" ) {
+                if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
+                    var details_data = get_selected_values(rec),
                         details_text = '';
                     details_data.forEach(function(item, i, arr) {
                         details_text += item.name+': '+item.value+'<br>'
                     });
                     $('.t-input-group_details .t-input-subtitle').html(details_text);
-                }
-            }
-            
-            if(quizQuestionNumber==4){
-                if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
-                    quizQuestionNumber++;
-                    $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
-                }else{
-                    $('[name="rukav-dlina"]').attr('data-tilda-req',1);
                 }
             }
 
@@ -140,11 +125,19 @@ function t835mev_init(recid) {
             form.addClass('js-form-proccess');
             t835mev_disabledPrevBtn(rec, quizQuestionNumber);
 
+            var form_data = form.serializeArray(),
+                details_data = get_selected_values(rec),
+                data_to_send = {
+                    form_data: form_data,
+                    details_data: details_data
+                };
+
             $.ajax({
-                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
+                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli_shtany.php',
+                // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
                 type: 'post',
                 dataType: 'json',
-                data: form.serialize(),
+                data: data_to_send,
             })
             .done(function(data) {
                 // data.id - номер заказа в retailCRM
