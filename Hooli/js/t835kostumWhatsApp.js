@@ -59,12 +59,13 @@ function t835mev_init(recid) {
             // показывать шаг с детялями при условии что вставлен для этого div в нужном месте в коде
             if ( rec.data('show-details')=="y" ) {
                 if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
-                    var details_data = get_selected_values(rec),
+                    var showproduct = $(quizQuestion[quizQuestionNumber]).data('showproduct');
+                    var details_data = get_selected_values_for_product(rec,showproduct),
                         details_text = '';
                     details_data.forEach(function(item, i, arr) {
                         details_text += item.name+': '+item.value+'<br>'
                     });
-                    $('.t-input-group_details .t-input-subtitle').html(details_text);
+                    $('[data-showproduct="'+showproduct+'"] .t-input-subtitle').html(details_text);
                 }
             }
 
@@ -405,6 +406,21 @@ function get_res_wa_text(rec){
 function get_selected_values(rec){
     var data = [];
     rec.find(".t-input-group").each(function(index, el) {
+        var obj={},
+            checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked');
+
+        if(checked.length > 0){
+            obj['name'] = $(el).data('name');
+            obj['value'] = checked.val();
+            data.push(obj);
+        }
+    });
+
+    return data;
+}
+function get_selected_values_for_product(rec,product){
+    var data = [];
+    rec.find('[data-product="'+product+'"]').each(function(index, el) {
         var obj={},
             checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked');
 
