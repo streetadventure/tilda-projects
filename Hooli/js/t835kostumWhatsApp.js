@@ -37,6 +37,15 @@ function t835mev_init(recid) {
             }
         }
 
+        if(quizQuestionNumber==5){
+            if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
+                quizQuestionNumber--;
+                $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
+            }else{
+                $('[name="rukav-dlina"]').attr('data-tilda-req',1);
+            }
+        }
+
         t835mev_awayFromResultScreen(rec);
         t835mev_showCounter(rec, quizQuestionNumber);
         t835mev_hideError(rec, quizQuestionNumber);
@@ -66,6 +75,15 @@ function t835mev_init(recid) {
                         details_text += item.name+': '+item.value+'<br>'
                     });
                     $('[data-showproduct="'+showproduct+'"] .t-input-subtitle').html(details_text);
+                }
+            }
+
+            if(quizQuestionNumber==5){
+                if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
+                    quizQuestionNumber++;
+                    $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
+                }else{
+                    $('[name="rukav-dlina"]').attr('data-tilda-req',1);
                 }
             }
 
