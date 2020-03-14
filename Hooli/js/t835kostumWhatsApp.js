@@ -113,10 +113,84 @@ function t835mev_init(recid) {
                 quizQuestionNumber++;
                 t835mev_setProgress(rec, 1);
                 if (quizQuestionNumber < questionArr.length) {
+
+                    if ( rec.data('show-details')=="y" ) {
+                        if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
+                            var showproduct = $(quizQuestion[quizQuestionNumber]).data('showproduct');
+                            var details_data = get_selected_values_for_product(rec,showproduct),
+                                details_text = '';
+                            details_data.forEach(function(item, i, arr) {
+                                details_text += item.name+': '+item.value+'<br>'
+                            });
+                            $('[data-showproduct="'+showproduct+'"] .t-input-subtitle').html(details_text);
+                        }
+                    }
+
+                    if(quizQuestionNumber==5){
+                        if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
+                            quizQuestionNumber++;
+                            $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
+                        }else{
+                            $('[name="rukav-dlina"]').attr('data-tilda-req',1);
+                        }
+                    }
+
+            
                     t835mev_switchQuestion(rec, quizQuestionNumber)
                 } else {
                     t835mev_switchResultScreen(rec);
-                    form.addClass('js-form-proccess')
+                    form.addClass('js-form-proccess');
+
+                    var form_data = form.serializeArray(),
+                        details_data = get_selected_values(rec),
+                        data_to_send = {
+                            form_data: form_data,
+                            details_data: details_data
+                        };
+
+                    $.ajax({
+                        url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hoolistum.php',
+                        // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
+                        type: 'post',
+                        dataType: 'json',
+                        data: data_to_send,
+                    })
+                    .done(function(data) {
+                        // data.id - номер заказа в retailCRM
+                        // $('#order_id').val(data.id);
+                        if (fbq != undefined) {
+                            fbq('track', 'Lead');
+                        }
+                        // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+                    })
+                    .fail(function(data) {
+                        // console.log("error");
+                    })
+                    .always(function() {
+                        // console.log("complete");
+                    });
+                    
+                    $.ajax({
+                        url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24_hoolistum.php',
+                        // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
+                        type: 'post',
+                        dataType: 'json',
+                        data: data_to_send,
+                    })
+                    .done(function(data) {
+                        // data.id - номер заказа в retailCRM
+                        // $('#order_id').val(data.id);
+                        if (fbq != undefined) {
+                            fbq('track', 'Lead');
+                        }
+                        // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+                    })
+                    .fail(function(data) {
+                        // console.log("error");
+                    })
+                    .always(function() {
+                        // console.log("complete");
+                    });
                 }
                 t835mev_scrollToTop(quizFormWrapper);
                 t835mev_disabledPrevBtn(rec, quizQuestionNumber)
@@ -153,6 +227,28 @@ function t835mev_init(recid) {
 
             $.ajax({
                 url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hoolistum.php',
+                // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
+                type: 'post',
+                dataType: 'json',
+                data: data_to_send,
+            })
+            .done(function(data) {
+                // data.id - номер заказа в retailCRM
+                // $('#order_id').val(data.id);
+                if (fbq != undefined) {
+                    fbq('track', 'Lead');
+                }
+                // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+            })
+            .fail(function(data) {
+                // console.log("error");
+            })
+            .always(function() {
+                // console.log("complete");
+            });
+            
+            $.ajax({
+                url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24_hoolistum.php',
                 // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
                 type: 'post',
                 dataType: 'json',

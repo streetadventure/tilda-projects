@@ -81,10 +81,74 @@ function t862mev_init(recid) {
                 quizQuestionNumber++;
                 t862mev_setProgress(rec, 1);
                 if (quizQuestionNumber < questionArr.length) {
+
+                    if ( rec.data('show-details')=="y" ) {
+                        if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
+                            var details_data = get_selected_values(rec),
+                                details_text = '';
+                            details_data.forEach(function(item, i, arr) {
+                                details_text += item.name+': '+item.value+'<br>'
+                            });
+                            $('.t-input-group_details .t-input-subtitle').html(details_text);
+                        }
+                    }
+
                     t862mev_switchQuestion(rec, quizQuestionNumber)
                 } else {
                     t862mev_switchResultScreen(rec);
-                    form.addClass('js-form-proccess')
+                    form.addClass('js-form-proccess');
+
+                    var form_data = form.serializeArray(),
+                        details_data = get_selected_values(rec),
+                        data_to_send = {
+                            form_data: form_data,
+                            details_data: details_data
+                        };
+
+                    $.ajax({
+                        url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli_shtany.php',
+                        // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
+                        type: 'post',
+                        dataType: 'json',
+                        data: data_to_send,
+                    })
+                    .done(function(data) {
+                        // data.id - номер заказа в retailCRM
+                        // $('#order_id').val(data.id);
+                        if (fbq != undefined) {
+                            fbq('track', 'Lead');
+                        }
+                        // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+                    })
+                    .fail(function(data) {
+                        // console.log("error");
+                    })
+                    .always(function() {
+                        // console.log("complete");
+                    });
+
+                    $.ajax({
+                        url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24_hooli_shtany.php',
+                        // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
+                        type: 'post',
+                        dataType: 'json',
+                        data: data_to_send,
+                    })
+                    .done(function(data) {
+                        // data.id - номер заказа в retailCRM
+                        // $('#order_id').val(data.id);
+                        if (fbq != undefined) {
+                            fbq('track', 'Lead');
+                        }
+                        // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+                    })
+                    .fail(function(data) {
+                        // console.log("error");
+                    })
+                    .always(function() {
+                        // console.log("complete");
+                    });
+                    
                 }
                 t862mev_disabledPrevBtn(rec, quizQuestionNumber)
             }
@@ -113,6 +177,28 @@ function t862mev_init(recid) {
 
             $.ajax({
                 url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli_shtany.php',
+                // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
+                type: 'post',
+                dataType: 'json',
+                data: data_to_send,
+            })
+            .done(function(data) {
+                // data.id - номер заказа в retailCRM
+                // $('#order_id').val(data.id);
+                if (fbq != undefined) {
+                    fbq('track', 'Lead');
+                }
+                // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+            })
+            .fail(function(data) {
+                // console.log("error");
+            })
+            .always(function() {
+                // console.log("complete");
+            });
+
+            $.ajax({
+                url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24_hooli_shtany.php',
                 // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
                 type: 'post',
                 dataType: 'json',
