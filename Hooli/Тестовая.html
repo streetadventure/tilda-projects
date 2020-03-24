@@ -751,9 +751,7 @@
     </style>
      <script type="text/javascript">
         $(document).ready(function() {            
-            $('#rec001').on('click', 'input[name="kroi"]', function(event) {
-                calc_total($(this).val(), 2990);
-            });
+            calc_total("Худи Hooli", 2990);
             $(".t835mev__btn_result").on('click', function(event) {
                 event.preventDefault();
                 recalc(2990);

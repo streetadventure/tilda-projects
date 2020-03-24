@@ -476,7 +476,7 @@ function calc_total(length, summa) {
 
     window.tcart.products[0] = {
         amount: summa,
-        name: "Худи Hooli",
+        name: length,
         price: summa,
         quantity: 1
     };
