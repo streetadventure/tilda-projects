@@ -480,30 +480,19 @@ function calc_total(length, summa) {
 
 }
 // Отправка сообщения в whatsapp
-function get_res_wa_text(){
-    var kroi = $('input[name="kroi"]:checked').val(),
-        dlina = $('input[name="dlina"]:checked').val(),
-        niz = $('input[name="niz"]:checked').val(),
-        karman = $('input[name="karman"]:checked').val(),
-        rukavDlina = $('input[name="rukav-dlina"]:checked').val(),
-        manzhet = $('input[name="manzhet"]:checked').val(),
-        kapushon = $('input[name="kapushon"]:checked').val(),
-        print = $('input[name="print"]:checked').val(),
-        color = $('input[name="color"]:checked').val(),
-        size = $('input[name="size"]:checked').val();
+function get_res_wa_text(recid){
+    var rec = $('#rec' + recid),
+        data = get_selected_values(recid);
 
+    var details_text = '';
+    data.forEach(function(item, i, arr) {
+        details_text += item.name+': '+item.value+"\n";
+    });
+    
     return encodeURI("Привет, Hooli! 😜 \n\n"+
         "Хочу подтвердить свой заказ:\n\n"
-        +"Вариант кроя:"+kroi+"\n"
-        +"Длина:"+dlina+"\n"
-        +"Обработка низа:"+niz+"\n"
-        +"Карман:"+karman+"\n"
-        +"Длина рукава:"+rukavDlina+"\n"
-        +"Обработка манжета:"+manzhet+"\n"
-        +"Капюшон:"+kapushon+"\n"
-        +"Расположение принта:"+print+"\n"
-        +"Цвет:"+color+"\n"
-        +"Размер:"+size+"");
+        +details_text
+    );
 }
 
 function get_selected_values(recid){
@@ -562,7 +551,7 @@ function optional_dependency(){
 // Выполнить после загрузки документа
 $(document).ready(function() {
     $('#rec001').on('click', '.t835mev__btn_result', function(event) {
-        var text = get_res_wa_text();
+        var text = get_res_wa_text('001');
         $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
     });
 
