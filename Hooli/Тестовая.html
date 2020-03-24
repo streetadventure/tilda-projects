@@ -227,7 +227,7 @@
                                              <div class="t-input-error"></div>
                                          </div>
                                      </div>
-                                     <div class="t-input-group t-input-group_ri" data-input-lid="1573997637017" data-name="Длина рукава">
+                                     <div class="t-input-group t-input-group_ri" data-input-lid="1573997637017" data-name="Длина рукава" data-whenshow="Классический (по фигуре)|Прямой (свободный)"  data-parent-depend-form="Крой" data-disablereq="rukav-dlina">
                                          <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1573997637017" style="">Выбери длину рукава</div>
                                          <div class="t-input-block" data-optional="manzhet">
                                              <div class="t-img-select__container" data-check-bgcolor="#000000">
@@ -750,30 +750,13 @@
         }
     </style>
      <script type="text/javascript">
-        function recalc(){
-            var new_summa = 2990;
-            if ($('input[name="dlina"]:checked').data('price')!=undefined) {
-                new_summa = new_summa + $('input[name="dlina"]:checked').data('price');
-            }
-                
-            if ($('input[name="print"]:checked').data('price')!=undefined) {
-                new_summa = new_summa + $('input[name="print"]:checked').data('price');
-            }
-
-            window.tcart.amount = new_summa;
-            window.tcart.prodamount = new_summa;
-            window.tcart.total = new_summa;
-
-            window.tcart.products[0].amount = new_summa;
-            window.tcart.products[0].price = new_summa;
-        }
         $(document).ready(function() {            
             $('#rec001').on('click', 'input[name="kroi"]', function(event) {
                 calc_total($(this).val(), 2990);
             });
             $(".t835mev__btn_result").on('click', function(event) {
                 event.preventDefault();
-                recalc();
+                recalc(2990);
             });            
         });
  </script>
