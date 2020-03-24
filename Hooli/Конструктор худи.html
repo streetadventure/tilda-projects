@@ -53,6 +53,7 @@
                         <div class="t835mev__quiz-form-wrapper t835mev__quiz-form-wrapper_withcheckbox">
                             <form id="form001" name='form001' role="form" action='' method='POST' data-formactiontype="2" data-inputbox=".t-input-group" class="t-form js-form-proccess t-form_inputs-total_13 t-form_bbonly " data-success-callback="t835mev_onSuccess" data-formcart="y">
                                 <input type="hidden" name="formservices[]" value="36c578e4a6eab1a90a34c9806caf2efd" class="js-formaction-services">
+                                <input type="hidden" name="tildaspec-formname" tabindex="-1" value="quiz-hudi-constructor"> 
                                 <div class="js-successbox t-form__successbox t-text t-text_md" style="display:none;">
                                     Спасибо,твой заказ обрабатывается! Никуда не пропадай, мы обязательно перезвоним тебе (максимум 2 раза) или напишем в мессенджер, чтобы обговорить детали заказа и условия доставки.
                                 </div>
@@ -227,7 +228,7 @@
                                             <div class="t-input-error"></div>
                                         </div>
                                     </div>
-                                    <div class="t-input-group t-input-group_ri" data-input-lid="1573997637017" data-name="Длина рукава">
+                                    <!-- <div class="t-input-group t-input-group_ri" data-input-lid="1573997637017" data-name="Длина рукава">
                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1573997637017" style="">Выбери длину рукава</div>
                                         <div class="t-input-block" data-optional="manzhet">
                                             <div class="t-img-select__container" data-check-bgcolor="#000000">
@@ -261,7 +262,7 @@
                                                         </style>
                                             <div class="t-input-error"></div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="t-input-group t-input-group_ri" data-input-lid="1573998232884" data-name="Обработка манжета">
                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1573998232884" style="">Выбери обработку манжета</div>
                                         <div class="t-input-block">
@@ -631,7 +632,7 @@
                                             <div class="t-input-error"></div>
                                         </div>
                                     </div>
-                                    <div class="t-input-group t-input-group_details" >
+                                    <div class="t-input-group t-input-group_details"  data-show-details="y">
                                          <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1574000012959" style="">Класс! Отличный выбор!</div>
                                          <div class="t-input-subtitle t-descr t-descr_xxs t-opacity_70" data-redactor-toolbar="no" field="li_subtitle__1528359927420" style="">
 
@@ -835,27 +836,12 @@
     }
 </style>
   <script type="text/javascript">
-    function recalc(){
-            var new_summa = 5990;
-            if ($('input[name="print"]:checked').data('price')!=undefined) {
-                new_summa = new_summa + $('input[name="print"]:checked').data('price');
-            }
-
-            window.tcart.amount = new_summa;
-            window.tcart.prodamount = new_summa;
-            window.tcart.total = new_summa;
-
-            window.tcart.products[0].amount = new_summa;
-            window.tcart.products[0].price = new_summa;
-        }
-        $(document).ready(function() {
-            $('#rec001').on('click', 'input[name="kroi"]', function(event) {
-                calc_total($(this).val(), 5990);
-            });
-            $(".t835mev__btn_result").on('click', function(event) {
-                event.preventDefault();
-                recalc();
-            });
+    $(document).ready(function() {
+        calc_total("Худи Hooli", 5990);
+        $(".t835mev__btn_result").on('click', function(event) {
+            event.preventDefault();
+            recalc(5990);
         });
+    });
 </script>
 </div>
