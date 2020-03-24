@@ -479,6 +479,23 @@ function calc_total(length, summa) {
     };
 
 }
+function recalc(summa){
+    var new_summa = summa;
+    if ($('input[name="dlina"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + $('input[name="dlina"]:checked').data('price');
+    }
+        
+    if ($('input[name="print"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + $('input[name="print"]:checked').data('price');
+    }
+
+    window.tcart.amount = new_summa;
+    window.tcart.prodamount = new_summa;
+    window.tcart.total = new_summa;
+
+    window.tcart.products[0].amount = new_summa;
+    window.tcart.products[0].price = new_summa;
+}
 // Отправка сообщения в whatsapp
 function get_res_wa_text(recid){
     var rec = $('#rec' + recid),
@@ -523,7 +540,6 @@ function show_details(recid){
 
 // добавляем стили для show/hide вариантов в зависимости от ранее выбранных 
 function optional_dependency(){
-
     var parent_options = $("[data-optional]");
 
     parent_options.each(function(index, el) {
@@ -543,10 +559,7 @@ function optional_dependency(){
             });
         });
     });
-
-
 }
-
 
 // Выполнить после загрузки документа
 $(document).ready(function() {
