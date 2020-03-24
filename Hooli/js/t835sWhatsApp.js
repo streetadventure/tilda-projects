@@ -36,13 +36,14 @@ function t835mev_init(recid) {
                 t_lazyload_update()
             }
         }
-        if(quizQuestionNumber==4){
-            if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
-                quizQuestionNumber--;
-                $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
-            }else{
-                $('[name="rukav-dlina"]').attr('data-tilda-req',1);
-            }
+        if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
+            quizQuestionNumber = showHideStep(
+                $(quizQuestion[quizQuestionNumber]).data('whenshow'),
+                $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
+                $(quizQuestion[quizQuestionNumber]).data('disablereq'),
+                quizQuestionNumber,
+                'prev'
+            );
         }
         t835mev_awayFromResultScreen(rec);
         t835mev_showCounter(rec, quizQuestionNumber);
@@ -63,8 +64,8 @@ function t835mev_init(recid) {
             quizQuestionNumber++;
             prevBtn.attr('disabled', !1);
 
-            if ( show_details("001") ) {
-                if(quizQuestionNumber==9){
+            if ( rec.data('show-details')=="y" ) {
+                if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
                     var details_data = get_selected_values("001"),
                         details_text = '';
                     details_data.forEach(function(item, i, arr) {
@@ -74,13 +75,14 @@ function t835mev_init(recid) {
                 }
             }
             
-            if(quizQuestionNumber==4){
-                if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
-                    quizQuestionNumber++;
-                    $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
-                }else{
-                    $('[name="rukav-dlina"]').attr('data-tilda-req',1);
-                }
+            if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
+                quizQuestionNumber = showHideStep(
+                    $(quizQuestion[quizQuestionNumber]).data('whenshow'),
+                    $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
+                    $(quizQuestion[quizQuestionNumber]).data('disablereq'),
+                    quizQuestionNumber,
+                    'next'
+                );
             }
 
             t835mev_setProgress(rec, 1);
@@ -110,8 +112,8 @@ function t835mev_init(recid) {
                 t835mev_setProgress(rec, 1);
                 if (quizQuestionNumber < questionArr.length) {
 
-                    if ( show_details("001") ) {
-                        if(quizQuestionNumber==9){
+                    if ( rec.data('show-details')=="y" ) {
+                        if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
                             var details_data = get_selected_values("001"),
                                 details_text = '';
                             details_data.forEach(function(item, i, arr) {
@@ -121,13 +123,14 @@ function t835mev_init(recid) {
                         }
                     }
                     
-                    if(quizQuestionNumber==4){
-                        if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
-                            quizQuestionNumber++;
-                            $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
-                        }else{
-                            $('[name="rukav-dlina"]').attr('data-tilda-req',1);
-                        }
+                    if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
+                        quizQuestionNumber = showHideStep(
+                            $(quizQuestion[quizQuestionNumber]).data('whenshow'),
+                            $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
+                            $(quizQuestion[quizQuestionNumber]).data('disablereq'),
+                            quizQuestionNumber,
+                            'next'
+                        );
                     }
                     
                     t835mev_switchQuestion(rec, quizQuestionNumber)
@@ -473,37 +476,43 @@ function calc_total(length, summa) {
 
     window.tcart.products[0] = {
         amount: summa,
-        name: "Худи Hooli",
+        name: length,
         price: summa,
         quantity: 1
     };
 
 }
-// Отправка сообщения в whatsapp
-function get_res_wa_text(){
-    var kroi = $('input[name="kroi"]:checked').val(),
-        dlina = $('input[name="dlina"]:checked').val(),
-        niz = $('input[name="niz"]:checked').val(),
-        karman = $('input[name="karman"]:checked').val(),
-        rukavDlina = $('input[name="rukav-dlina"]:checked').val(),
-        manzhet = $('input[name="manzhet"]:checked').val(),
-        kapushon = $('input[name="kapushon"]:checked').val(),
-        print = $('input[name="print"]:checked').val(),
-        color = $('input[name="color"]:checked').val(),
-        size = $('input[name="size"]:checked').val();
+function recalc(summa){
+    var new_summa = summa;
+    if ($('input[name="dlina"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + $('input[name="dlina"]:checked').data('price');
+    }
+        
+    if ($('input[name="print"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + $('input[name="print"]:checked').data('price');
+    }
 
+    window.tcart.amount = new_summa;
+    window.tcart.prodamount = new_summa;
+    window.tcart.total = new_summa;
+
+    window.tcart.products[0].amount = new_summa;
+    window.tcart.products[0].price = new_summa;
+}
+// Отправка сообщения в whatsapp
+function get_res_wa_text(recid){
+    var rec = $('#rec' + recid),
+        data = get_selected_values(recid);
+
+    var details_text = '';
+    data.forEach(function(item, i, arr) {
+        details_text += item.name+': '+item.value+"\n";
+    });
+    
     return encodeURI("Привет, Hooli! 😜 \n\n"+
         "Хочу подтвердить свой заказ:\n\n"
-        +"Вариант кроя:"+kroi+"\n"
-        +"Длина:"+dlina+"\n"
-        +"Обработка низа:"+niz+"\n"
-        +"Карман:"+karman+"\n"
-        +"Длина рукава:"+rukavDlina+"\n"
-        +"Обработка манжета:"+manzhet+"\n"
-        +"Капюшон:"+kapushon+"\n"
-        +"Расположение принта:"+print+"\n"
-        +"Цвет:"+color+"\n"
-        +"Размер:"+size+"");
+        +details_text
+    );
 }
 
 function get_selected_values(recid){
@@ -534,7 +543,6 @@ function show_details(recid){
 
 // добавляем стили для show/hide вариантов в зависимости от ранее выбранных 
 function optional_dependency(){
-
     var parent_options = $("[data-optional]");
 
     parent_options.each(function(index, el) {
@@ -554,15 +562,30 @@ function optional_dependency(){
             });
         });
     });
-
-
 }
+function showHideStep(whenshow,depend,disablereq,quizQuestionNumber,direction){
+    var depend_div = $('[data-name="'+depend+'"]');
+    var when_to_show = whenshow.split("|");
 
+    var depend_div_input = depend_div.find('input:checked');
+
+    if ( !when_to_show.some(function(arr_el){return depend_div_input.val() == arr_el}) ) {
+        $('[name="'+disablereq+'"]').removeAttr('data-tilda-req');
+        if ( direction == "next" ) {
+            return ++quizQuestionNumber;
+        } else if ( direction == "prev" ) {
+            return --quizQuestionNumber;
+        }
+    }else{
+        $('[name="'+disablereq+'"]').attr('data-tilda-req',1);
+        return quizQuestionNumber;
+    }
+}
 
 // Выполнить после загрузки документа
 $(document).ready(function() {
     $('#rec001').on('click', '.t835mev__btn_result', function(event) {
-        var text = get_res_wa_text();
+        var text = get_res_wa_text('001');
         $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
     });
 
