@@ -37,13 +37,14 @@ function t835mev_init(recid) {
             }
         }
 
-        if(quizQuestionNumber==5){
-            if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
-                quizQuestionNumber--;
-                $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
-            }else{
-                $('[name="rukav-dlina"]').attr('data-tilda-req',1);
-            }
+        if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
+            quizQuestionNumber = showHideStep(
+                $(quizQuestion[quizQuestionNumber]).data('whenshow'),
+                $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
+                $(quizQuestion[quizQuestionNumber]).data('disablereq'),
+                quizQuestionNumber,
+                'prev'
+            );
         }
 
         t835mev_awayFromResultScreen(rec);
@@ -78,13 +79,14 @@ function t835mev_init(recid) {
                 }
             }
 
-            if(quizQuestionNumber==5){
-                if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
-                    quizQuestionNumber++;
-                    $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
-                }else{
-                    $('[name="rukav-dlina"]').attr('data-tilda-req',1);
-                }
+            if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
+                quizQuestionNumber = showHideStep(
+                    $(quizQuestion[quizQuestionNumber]).data('whenshow'),
+                    $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
+                    $(quizQuestion[quizQuestionNumber]).data('disablereq'),
+                    quizQuestionNumber,
+                    'next'
+                );
             }
 
             t835mev_setProgress(rec, 1);
@@ -126,13 +128,14 @@ function t835mev_init(recid) {
                         }
                     }
 
-                    if(quizQuestionNumber==5){
-                        if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
-                            quizQuestionNumber++;
-                            $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
-                        }else{
-                            $('[name="rukav-dlina"]').attr('data-tilda-req',1);
-                        }
+                    if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
+                        quizQuestionNumber = showHideStep(
+                            $(quizQuestion[quizQuestionNumber]).data('whenshow'),
+                            $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
+                            $(quizQuestion[quizQuestionNumber]).data('disablereq'),
+                            quizQuestionNumber,
+                            'next'
+                        );
                     }
 
             
@@ -579,6 +582,24 @@ function optional_dependency(){
             });
         });
     });
+}
+function showHideStep(whenshow,depend,disablereq,quizQuestionNumber,direction){
+    var depend_div = $('[data-name="'+depend+'"]');
+    var when_to_show = whenshow.split("|");
+
+    var depend_div_input = depend_div.find('input:checked');
+
+    if ( !when_to_show.some(function(arr_el){return depend_div_input.val() == arr_el}) ) {
+        $('[name="'+disablereq+'"]').removeAttr('data-tilda-req');
+        if ( direction == "next" ) {
+            return ++quizQuestionNumber;
+        } else if ( direction == "prev" ) {
+            return --quizQuestionNumber;
+        }
+    }else{
+        $('[name="'+disablereq+'"]').attr('data-tilda-req',1);
+        return quizQuestionNumber;
+    }
 }
 
 
