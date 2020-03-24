@@ -64,8 +64,8 @@ function t835mev_init(recid) {
             quizQuestionNumber++;
             prevBtn.attr('disabled', !1);
 
-            if ( show_details("001") ) {
-                if(quizQuestionNumber==9){
+            if ( rec.data('show-details')=="y" ) {
+                if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
                     var details_data = get_selected_values("001"),
                         details_text = '';
                     details_data.forEach(function(item, i, arr) {
@@ -112,8 +112,8 @@ function t835mev_init(recid) {
                 t835mev_setProgress(rec, 1);
                 if (quizQuestionNumber < questionArr.length) {
 
-                    if ( show_details("001") ) {
-                        if(quizQuestionNumber==9){
+                    if ( rec.data('show-details')=="y" ) {
+                        if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
                             var details_data = get_selected_values("001"),
                                 details_text = '';
                             details_data.forEach(function(item, i, arr) {
