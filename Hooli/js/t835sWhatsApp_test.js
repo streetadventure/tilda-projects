@@ -36,6 +36,14 @@ function t835mev_init(recid) {
                 t_lazyload_update()
             }
         }
+        if(quizQuestionNumber==4){
+            if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
+                quizQuestionNumber--;
+                $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
+            }else{
+                $('[name="rukav-dlina"]').attr('data-tilda-req',1);
+            }
+        }
         t835mev_awayFromResultScreen(rec);
         t835mev_showCounter(rec, quizQuestionNumber);
         t835mev_hideError(rec, quizQuestionNumber);
@@ -57,7 +65,7 @@ function t835mev_init(recid) {
 
             if ( show_details("001") ) {
                 if(quizQuestionNumber==9){
-                    var details_data = get_selected_values(),
+                    var details_data = get_selected_values("001"),
                         details_text = '';
                     details_data.forEach(function(item, i, arr) {
                         details_text += item.name+': '+item.value+'<br>'
@@ -66,10 +74,12 @@ function t835mev_init(recid) {
                 }
             }
             
-            if(quizQuestionNumber==8){
-                if ($('[name=dostavka]:checked').val()=='Самовывоз') {
+            if(quizQuestionNumber==4){
+                if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
                     quizQuestionNumber++;
-                    $('[name="address"]').removeAttr('data-tilda-req');
+                    $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
+                }else{
+                    $('[name="rukav-dlina"]').attr('data-tilda-req',1);
                 }
             }
 
@@ -99,10 +109,73 @@ function t835mev_init(recid) {
                 quizQuestionNumber++;
                 t835mev_setProgress(rec, 1);
                 if (quizQuestionNumber < questionArr.length) {
+
+                    if ( show_details("001") ) {
+                        if(quizQuestionNumber==9){
+                            var details_data = get_selected_values("001"),
+                                details_text = '';
+                            details_data.forEach(function(item, i, arr) {
+                                details_text += item.name+': '+item.value+'<br>'
+                            });
+                            $('.t-input-group_details .t-input-subtitle').html(details_text);
+                        }
+                    }
+                    
+                    if(quizQuestionNumber==4){
+                        if ($('[name=kroi]:checked').val()=='Бочонок (оверсайз)') {
+                            quizQuestionNumber++;
+                            $('[name="rukav-dlina"]').removeAttr('data-tilda-req');
+                        }else{
+                            $('[name="rukav-dlina"]').attr('data-tilda-req',1);
+                        }
+                    }
+                    
                     t835mev_switchQuestion(rec, quizQuestionNumber)
                 } else {
                     t835mev_switchResultScreen(rec);
-                    form.addClass('js-form-proccess')
+                    form.addClass('js-form-proccess');
+
+                    $.ajax({
+                        url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
+                        type: 'post',
+                        dataType: 'json',
+                        data: form.serialize(),
+                    })
+                    .done(function(data) {
+                        // data.id - номер заказа в retailCRM
+                        // $('#order_id').val(data.id);
+                        if (fbq != undefined) {
+                            fbq('track', 'Lead');
+                        }
+                        // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+                    })
+                    .fail(function(data) {
+                        // console.log("error");
+                    })
+                    .always(function() {
+                        // console.log("complete");
+                    });
+
+                    $.ajax({
+                        url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php',
+                        type: 'post',
+                        dataType: 'json',
+                        data: form.serialize(),
+                    })
+                    .done(function(data) {
+                        // data.id - номер заказа в retailCRM
+                        // $('#order_id').val(data.id);
+                        if (fbq != undefined) {
+                            fbq('track', 'Lead');
+                        }
+                        // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+                    })
+                    .fail(function(data) {
+                        // console.log("error");
+                    })
+                    .always(function() {
+                        // console.log("complete");
+                    });
                 }
                 t835mev_scrollToTop(quizFormWrapper);
                 t835mev_disabledPrevBtn(rec, quizQuestionNumber)
@@ -130,28 +203,47 @@ function t835mev_init(recid) {
             form.addClass('js-form-proccess');
             t835mev_disabledPrevBtn(rec, quizQuestionNumber);
 
-            if(quizQuestionNumber==11){
-                $.ajax({
-                    url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
-                    type: 'post',
-                    dataType: 'json',
-                    data: form.serialize(),
-                })
-                .done(function(data) {
-                    // data.id - номер заказа в retailCRM
-                    // $('#order_id').val(data.id);
-                    if (fbq != undefined) {
-                        fbq('track', 'Lead');
-                    }
-                    // window.open($('#write_to_whatsapp').attr('href'), "_blank");
-                })
-                .fail(function(data) {
-                    // console.log("error");
-                })
-                .always(function() {
-                    // console.log("complete");
-                });               
-            }            
+            $.ajax({
+                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
+                type: 'post',
+                dataType: 'json',
+                data: form.serialize(),
+            })
+            .done(function(data) {
+                // data.id - номер заказа в retailCRM
+                // $('#order_id').val(data.id);
+                if (fbq != undefined) {
+                    fbq('track', 'Lead');
+                }
+                // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+            })
+            .fail(function(data) {
+                // console.log("error");
+            })
+            .always(function() {
+                // console.log("complete");
+            });
+
+            $.ajax({
+                url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php',
+                type: 'post',
+                dataType: 'json',
+                data: form.serialize(),
+            })
+            .done(function(data) {
+                // data.id - номер заказа в retailCRM
+                // $('#order_id').val(data.id);
+                if (fbq != undefined) {
+                    fbq('track', 'Lead');
+                }
+                // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+            })
+            .fail(function(data) {
+                // console.log("error");
+            })
+            .always(function() {
+                // console.log("complete");
+            });
         }
         e.preventDefault()
     })
@@ -402,21 +494,22 @@ function get_res_wa_text(){
 
     return encodeURI("Привет, Hooli! 😜 \n\n"+
         "Хочу подтвердить свой заказ:\n\n"
-        +"Вариант кроя:"+kroi+"\n\n"
-        +"Длина:"+dlina+"\n\n"
-        +"Обрботка низа:"+niz+"\n\n"
-        +"Карман:"+karman+"\n\n"
-        +"Длина рукава:"+rukavDlina+"\n\n"
-        +"Обрботка манжета:"+manzhet+"\n\n"
-        +"Капюшон:"+kapushon+"\n\n"
-        +"Расположение принта:"+print+"\n\n"
-        +"Цвет:"+color+"\n\n"
-        +"Размер:"+size+"\n");
+        +"Вариант кроя:"+kroi+"\n"
+        +"Длина:"+dlina+"\n"
+        +"Обработка низа:"+niz+"\n"
+        +"Карман:"+karman+"\n"
+        +"Длина рукава:"+rukavDlina+"\n"
+        +"Обработка манжета:"+manzhet+"\n"
+        +"Капюшон:"+kapushon+"\n"
+        +"Расположение принта:"+print+"\n"
+        +"Цвет:"+color+"\n"
+        +"Размер:"+size+"");
 }
 
-function get_selected_values(){
-    var data = [];
-    $(".t-input-group").each(function(index, el) {
+function get_selected_values(recid){
+    var data = [],
+        rec = $('#rec' + recid);
+    rec.find(".t-input-group").each(function(index, el) {
         var obj={},
             checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked');
 
@@ -439,38 +532,39 @@ function show_details(recid){
     }
 }
 
+// добавляем стили для show/hide вариантов в зависимости от ранее выбранных 
+function optional_dependency(){
+
+    var parent_options = $("[data-optional]");
+
+    parent_options.each(function(index, el) {
+        var parent_option = $(el);
+        parent_option.find('input').each(function(index, el) {
+            var clickable_input = $(el);
+            clickable_input.on('click', function(event) {
+                var result_input = $('input[name="'+parent_option.data('optional')+'"]');
+                result_input.each(function(index, el){
+                    var allowed_opt = $(el).data('prev-selection').split("|");
+                    if ( allowed_opt.some(function(arr_el){return clickable_input.val() == arr_el}) ) {
+                        $(el).closest('label').show();
+                    }else{
+                        $(el).closest('label').hide();
+                    }
+                })
+            });
+        });
+    });
+
+
+}
+
+
 // Выполнить после загрузки документа
 $(document).ready(function() {
     $('#rec001').on('click', '.t835mev__btn_result', function(event) {
         var text = get_res_wa_text();
         $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
     });
-    new Vue({
-        el: '#app',
-        data() {
-            return {
-                step: 1,
-                registration: {
-                    name: null,
-                    email: null,
-                    street: null,
-                    city: null,
-                    state: null,
-                    numtickets: 0,
-                    shirtsize: 'XL'
-                }
-            }
-        },
-        methods: {
-            prev() {
-                this.step--;
-            },
-            next() {
-                this.step++;
-            },
-            submit() {
-                alert('Submit to blah and show blah and etc.');
-            }
-        }
-    });
+
+    optional_dependency();
 });

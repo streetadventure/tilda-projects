@@ -1,230 +1,14 @@
-<script src="https://static.tildacdn.com/js/jquery-1.10.2.min.js"></script>
-<script src="https://static.tildacdn.com/js/lazyload-1.3.min.js" charset="utf-8"></script>
-<script src="https://static.tildacdn.com/js/tilda-scripts-2.8.min.js"></script>
-<script src="https://static.tildacdn.com/js/tilda-forms-1.0.min.js" charset="utf-8"></script>
-<script src="https://static.tildacdn.com/js/tilda-cart-1.0.min.js" charset="utf-8"></script>
-
-<link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-grid-3.0.min.css" type="text/css" media="all"/>
-<link rel="stylesheet" href="https://tilda.ws/project1805264/tilda-blocks-2.12.css?t=1580372032" type="text/css" media="all"/>
-<link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-slds-1.4.min.css" type="text/css" media="all"/>
-
-
-<script src="js/t835sWhatsApp.js"></script>
-<link href="css/t835sWhatsApp.css" rel="stylesheet">
-
-<link href="css/correct_for_local.css" rel="stylesheet"> 
-
-<!-- БЛОК, НУЖНЫЙ ЧТОБЫ КОРЗИНА РАБОТАЛА. ХОТЯ ПОТОМ МОЖНО УБРАТЬ. ОПЛАТА ИТАК РАБОТАТЬ НЕ БУДЕТ -->
-<div id="rec156653582" class="r t-rec" style=" " data-animationappear="off" data-record-type="706">
-<!--tcart-->
-<script type="text/javascript">
-    $(document).ready(function() {
-        tcart__init('156653582');
-        /* hack for Android */
-        var ua = navigator.userAgent.toLowerCase();
-        var isAndroid = (ua.indexOf("android") > -1);
-        if (isAndroid) {
-            $('.t-body').addClass('t-body_scrollable-hack-for-android');
-            $('head').append("<style>@media screen and (max-width: 560px) {\n.t-body_scrollable-hack-for-android {\noverflow: visible !important;\n}\n}\n</style>");
-            console.log('Android css hack was inited');
-        }
-        var cartWindow = $("#rec156653582 .t706__cartwin");
-        var curMode = $(".t-records").attr("data-tilda-mode");
-        if (cartWindow.length && curMode != "edit" && curMode != "preview") {
-            cartWindow.bind('scroll', t_throttle(function() {
-                if (window.lazy == "y") {
-                    t_lazyload_update();
-                }
-            }, 500))
-        }
-    });
-</script>
-<div class="t706" data-opencart-onorder="yes" data-project-currency="р." data-project-currency-side="r" data-project-currency-sep="," data-project-currency-code="RUB" data-payment-system="cloudpayments">
-    <div class="t706__carticon" style="">
-        <div class="t706__carticon-text t-name t-name_xs">Click to order</div>
-        <div class="t706__carticon-wrapper">
-            <!--<div class="t706__carticon-imgwrap"><img class="t706__carticon-img" src="https://static.tildacdn.com/lib/linea/930cac0f-758b-b7ee-1eb0-b18fc6e10893/ecommerce_bag.svg"></div>-->
-            <div class="t706__carticon-imgwrap">
-                <svg class="t706__carticon-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-                    <descr style="color:#bebebe;">Cart</descr>
-                    <path fill="none" stroke-width="2" stroke-miterlimit="10" d="M44 18h10v45H10V18h10z"/>
-                    <path fill="none" stroke-width="2" stroke-miterlimit="10" d="M22 24V11c0-5.523 4.477-10 10-10s10 4.477 10 10v13"/>
-                </svg>
-            </div>
-            <div class="t706__carticon-counter"></div>
-        </div>
-    </div>
-    <div class="t706__cartwin">
-        <div class="t706__cartwin-close">
-            <div class="t706__cartwin-close-wrapper">
-                <svg class="t706__cartwin-close-icon" width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <g stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd">
-                        <rect transform="translate(11.313708, 11.313708) rotate(-45.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect>
-                        <rect transform="translate(11.313708, 11.313708) rotate(-315.000000) translate(-11.313708, -11.313708) " x="10.3137085" y="-3.6862915" width="2" height="30"></rect>
-                    </g>
-                </svg>
-            </div>
-        </div>
-        <div class="t706__cartwin-content">
-            <div class="t706__cartwin-top">
-                <div class="t706__cartwin-heading t-name t-name_xl"></div>
-            </div>
-            <div class="t706__cartwin-products"></div>
-            <div class="t706__cartwin-bottom">
-                <div class="t706__cartwin-prodamount-wrap t-descr t-descr_sm">
-                    <span class="t706__cartwin-prodamount-label">Total:&nbsp;</span>
-                    <span class="t706__cartwin-prodamount"></span>
-                </div>
-            </div>
-            <div class="t706__orderform ">
-                <form id="form156653582" name='form156653582' role="form" action='' method='POST' data-formactiontype="2" data-inputbox=".t-input-group" class="t-form js-form-proccess t-form_inputs-total_3 " data-success-callback="t862_onSuccess" data-formsended-callback="t706_onSuccessCallback">
-                    <input type="hidden" name="formservices[]" value="36c578e4a6eab1a90a34c9806caf2efd" class="js-formaction-services">
-                    <input type="hidden" name="formservices[]" value="ae3e4cab690d93ca319ec44c49357b63" class="js-formaction-services">
-                    <input type="hidden" name="formservices[]" value="3a13f50697b6015391a18d004a8c9477" class="js-formaction-services">
-                    <input type="hidden" name="formservices[]" value="1ce854f854eef2129a9d95dec1f5f43a" class="js-formaction-services">
-                    <input type="hidden" name="formservices[]" value="7d440120ee6121e587957f0913efb311" class="js-formaction-services">
-                    <input type="hidden" name="tildaspec-formname" tabindex="-1" value="Cart">
-                    <div class="js-successbox t-form__successbox t-text t-text_md" style="display:none;"></div>
-                    <div class="t-form__inputsbox">
-                        <div class="t-input-group t-input-group_nm" data-input-lid="1496239431201">
-                            <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1496239431201" style="">Your Name</div>
-                            <div class="t-input-block">
-                                <input type="text" name="Name" class="t-input js-tilda-rule " value="" data-tilda-req="1" data-tilda-rule="name" style="color:#000000; border:1px solid #000000; ">
-                                <div class="t-input-error"></div>
-                            </div>
-                        </div>
-                        <div class="t-input-group t-input-group_em" data-input-lid="1496239459190">
-                            <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1496239459190" style="">Your Email</div>
-                            <div class="t-input-block">
-                                <input type="text" name="Email" class="t-input js-tilda-rule " value="" data-tilda-req="1" data-tilda-rule="email" style="color:#000000; border:1px solid #000000; ">
-                                <div class="t-input-error"></div>
-                            </div>
-                        </div>
-                        <div class="t-input-group t-input-group_ph" data-input-lid="1496239478607">
-                            <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1496239478607" style="">Your Phone</div>
-                            <div class="t-input-block">
-                                <input type="tel" name="Phone" class="t-input js-tilda-rule " value="" data-tilda-req="1" data-tilda-rule="phone" pattern="[0-9]*" style="color:#000000; border:1px solid #000000; ">
-                                <div class="t-input-error"></div>
-                            </div>
-                        </div>
-                        <div class="t-input-group t-input-group_pm" style="margin: 40px 0;">
-                            <div class="t-input-title t-descr t-descr_md" style="">Payment method</div>
-                            <div class="t-input-block">
-                                <div class="t-radio__wrapper t-radio__wrapper-payment" data-tilda-payment-variants-hook='y'>
-                                    <label class="t-radio__control t-text t-text_xs" style="">
-                                        <input type="hidden" name="paymentsystem" value="cloudpayments" checked="checked" class="t-radio t-radio_payment" data-payment-variant-system="cloudpayments">
-                                        <div class="t-radio__indicator"></div>
-                                        Кредитной картой (Visa, Mastercard) через CloudPayments 
-                                    </label>
-                                    <label class="t-radio__control t-text t-text_xs" style="">
-                                        <input type="hidden" name="paymentsystem" value="paypal" class="t-radio t-radio_payment" data-payment-variant-system="paypal">
-                                        <div class="t-radio__indicator"></div>
-                                        Кредитной картой (Visa, Mastercard) или PayPal через PayPal 
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <!--[if IE 8]><style>.t-checkbox__control .t-checkbox, .t-radio__control .t-radio { left: 0px; z-index: 1; opacity: 1;
-}
-.t-checkbox__indicator, .t-radio__indicator { display: none;
-}
-.t-img-select__control .t-img-select { position: static;
-}</style><![endif]-->
-                        <div class="t-form__errorbox-middle">
-                            <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;">
-                                <div class="t-form__errorbox-text t-text t-text_md">
-                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p>
-                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p>
-                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p>
-                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p>
-                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p>
-                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></p>
-                                    <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="t-form__submit">
-                            <button type="submit" class="t-submit" style="color:#ffffff;background-color:#000000;">Checkout</button>
-                        </div>
-                    </div>
-                    <div class="t-form__errorbox-bottom">
-                        <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;">
-                            <div class="t-form__errorbox-text t-text t-text_md">
-                                <p class="t-form__errorbox-item js-rule-error js-rule-error-all"></p>
-                                <p class="t-form__errorbox-item js-rule-error js-rule-error-req"></p>
-                                <p class="t-form__errorbox-item js-rule-error js-rule-error-email"></p>
-                                <p class="t-form__errorbox-item js-rule-error js-rule-error-name"></p>
-                                <p class="t-form__errorbox-item js-rule-error js-rule-error-phone"></p>
-                                <p class="t-form__errorbox-item js-rule-error js-rule-error-minlength"></p>
-                                <p class="t-form__errorbox-item js-rule-error js-rule-error-string"></p>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                <style>
-                    #rec156653582 input::-webkit-input-placeholder {
-                        color: #000000;
-                        opacity: 0.5;
-                    }
-
-                    #rec156653582 input::-moz-placeholder {
-                        color: #000000;
-                        opacity: 0.5;
-                    }
-
-                    #rec156653582 input:-moz-placeholder {
-                        color: #000000;
-                        opacity: 0.5;
-                    }
-
-                    #rec156653582 input:-ms-input-placeholder {
-                        color: #000000;
-                        opacity: 0.5;
-                    }
-
-                    #rec156653582 textarea::-webkit-input-placeholder {
-                        color: #000000;
-                        opacity: 0.5;
-                    }
-
-                    #rec156653582 textarea::-moz-placeholder {
-                        color: #000000;
-                        opacity: 0.5;
-                    }
-
-                    #rec156653582 textarea:-moz-placeholder {
-                        color: #000000;
-                        opacity: 0.5;
-                    }
-
-                    #rec156653582 textarea:-ms-input-placeholder {
-                        color: #000000;
-                        opacity: 0.5;
-                    }
-                </style>
-            </div>
-        </div>
-    </div>
-    <div class="t706__cartdata"></div>
-</div>
-<!--/tcart-->
-</div>
-<!-- END блок, нужный чтобы корзина работала. хотя потом можно убрать. оплата итак работать не будет -->
-
-<!-- --------------------------------------------------------------------------------------------------------- -->
-<!-- ВСЕ ЧТО НИЖЕ КОПИРУЕМ В ТИЛЬДУ -->
-
-<!-- <script src="https://todobox.ru/payment/kokoslook/hooli/t835sWhatsApp.js"></script>
-<link href="https://todobox.ru/payment/kokoslook/hooli/t835sWhatsApp.css" rel="stylesheet"> -->
-<div id="rec001" class="r t-rec t-rec_pt_30 t-rec_pb_90" style="padding-top:30px;padding-bottom:90px; " data-animationappear="off" data-record-type="835" data-show-details="y">
+<script src="https://todobox.ru/payment/kokoslook/hooli/t835sWhatsApp_test.js"></script>
+<link href="https://todobox.ru/payment/kokoslook/hooli/t835sWhatsApp.css" rel="stylesheet">
+ <div id="rec001" class="r t-rec t-rec_pt_30 t-rec_pb_90" style="padding-top:30px;padding-bottom:90px; " data-animationappear="off" data-record-type="835" data-show-details="y">
      <!-- t835mev --> 
      <!-- cover --> 
-    <div class="t835mev">
-        <div class="t-container">
-            <div class="t835mev__col t-col t-col_10 t-prefix_1">
-                <div class="t835mev__quiz t835mev__quiz_inner-space t835mev__quiz-preview" style="background-color: #ffffff; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);">
-                    <div class="t835mev__quiz-wrapper t835mev__quiz-published">
-                        <div class="t835mev__quiz-description-wrapper" style=" background-color: #f0f0f0;">
+     <div class="t835mev">
+         <div class="t-container">
+             <div class="t835mev__col t-col t-col_10 t-prefix_1">
+                 <div class="t835mev__quiz t835mev__quiz_inner-space t835mev__quiz-preview" style="background-color: #ffffff; box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);">
+                     <div class="t835mev__quiz-wrapper t835mev__quiz-published">
+                         <div class="t835mev__quiz-description-wrapper" style=" background-color: #f0f0f0;">
                              <div class="t-descr t-descr_xxs t835mev__quiz-description" style="">
                                  <div class="t835mev__quiz-description-title">
                                      <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
@@ -236,7 +20,7 @@
                                      </svg>
                                      <span class="t835mev__quiz-description-text" field="descr">
                                          <div style="font-size:24px;line-height:28px;" data-customstyle="yes"> <strong></strong> <strong>Пройди квиз и закажи уникальное</strong>
-                                             <strong>худи по акционной цене: 2490 вместо <del data-redactor-tag="del">7990</del></strong> 
+                                             <strong>худи по акционной цене: 2990 вместо <del data-redactor-tag="del">7990</del></strong> 
                                              <strong><span data-redactor-tag="span"> <del></del>
                                                  </span></strong> 
                                              <br/> 
@@ -259,13 +43,10 @@
                          <div class="t835mev__quiz-form-wrapper t835mev__quiz-form-wrapper_withcheckbox">
                              <form id="form001" name='form001' role="form" action='' method='POST' data-formactiontype="2" data-inputbox=".t-input-group" class="t-form js-form-proccess t-form_inputs-total_13 t-form_bbonly " data-success-callback="t835mev_onSuccess" data-formcart="y">
                                  <input type="hidden" name="formservices[]" value="36c578e4a6eab1a90a34c9806caf2efd" class="js-formaction-services"> 
-                                 <input type="hidden" name="formservices[]" value="ae3e4cab690d93ca319ec44c49357b63" class="js-formaction-services"> 
+                                 <input type="hidden" name="formservices[]" value="1ce854f854eef2129a9d95dec1f5f43a" class="js-formaction-services"> 
                                  <input type="hidden" name="tildaspec-formname" tabindex="-1" value="quiz-sale"> 
-                                 <input type="hidden" name="paymentsystem" value="paypal" class="t-radio t-radio_payment" data-payment-variant-system="paypal">
                                  <div class="js-successbox t-form__successbox t-text t-text_md" style="display:none;">
-                                     Спасибо,твой заказ обрабатывается! Мы забронировали за тобой скидку!
-                                     <br/> 
-                                     В связи с проведением акции, количество худи по скидочной цене ограничено. Никуда не пропадай, мы обязательно позвоним тебе или напишем в мессенджер, чтобы обговорить детали и условия оплаты. Обязательно ответь нам в течение часа, чтобы сохранить за собой скидку, иначе она сгорит!
+                                     Спасибо,твой заказ обрабатывается! Никуда не пропадай, мы обязательно перезвоним тебе (максимум 2 раза) или напишем в мессенджер, чтобы обговорить детали заказа и условия доставки.
                                      <br/> 
                                      <br/> 
                                      <span style="font-size: 16px;">
@@ -282,17 +63,17 @@
                                              <div class="t-img-select__container" data-check-bgcolor="#000000">
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="kroi" value="Классический (по фигуре)" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3465-3661-4061-b461-623164656661/_.jpg" style="background-image:url('https://static.tildacdn.com/tild3465-3661-4061-b461-623164656661/-/resizeb/20x/_.jpg');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3235-3337-4437-a331-366161343232/_-_.jpg" style="background-image:url('https://static.tildacdn.com/tild3235-3337-4437-a331-366161343232/_-_.jpg');"></div>
                                                      <div class="t-img-select__text t-text t-text_xs">Классический (по фигуре)</div>
                                                  </label>
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="kroi" value="Прямой (свободный)" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6231-6137-4466-b463-313564653130/photo.png" style="background-image:url('https://static.tildacdn.com/tild6231-6137-4466-b463-313564653130/-/resizeb/20x/photo.png');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3938-6338-4137-b937-396231336533/_-_.jpg" style="background-image:url('https://static.tildacdn.com/tild3938-6338-4137-b937-396231336533/_-_.jpg');"></div>
                                                      <div class="t-img-select__text t-text t-text_xs">Прямой (свободный)</div>
                                                  </label>
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="kroi" value="Бочонок (оверсайз)" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6434-6639-4037-a231-393066323761/photo.jpg" style="background-image:url('https://static.tildacdn.com/tild6434-6639-4037-a231-393066323761/-/resizeb/20x/photo.jpg');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3138-3561-4436-b733-613439623763/_-_.jpg" style="background-image:url('https://static.tildacdn.com/tild3138-3561-4436-b733-613439623763/_-_.jpg');"></div>
                                                      <div class="t-img-select__text t-text t-text_xs">Бочонок (оверсайз)</div>
                                                  </label>
                                              </div>
@@ -322,36 +103,37 @@
                                              <div class="t-img-select__container" data-check-bgcolor="#000000">
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="dlina" value="Короткий (до пояса)" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6463-6166-4661-b835-386239303334/6jYycAQg.jpeg" style="background-image:url('https://static.tildacdn.com/tild6463-6166-4661-b835-386239303334/-/resizeb/20x/6jYycAQg.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Короткий (до пояса)</div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6361-6662-4138-a662-373063333833/_-_.jpg" style="background-image:url('https://static.tildacdn.com/tild6361-6662-4138-a662-373063333833/_-_.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Короткий до пояса (47-52 см)</div>
                                                  </label>
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="dlina" value="Средний (до бедра)" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3337-6231-4431-b030-616335663963/535SkUQg.jpeg" style="background-image:url('https://static.tildacdn.com/tild3337-6231-4431-b030-616335663963/-/resizeb/20x/535SkUQg.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Средний (до бедра)</div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3330-3765-4639-b935-363564643231/_-_.jpg" style="background-image:url('https://static.tildacdn.com/tild3330-3765-4639-b935-363564643231/_-_.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Средний до бедра (75 см) </div>
                                                  </label>
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="dlina" value="Длинный (до колена)" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3338-3665-4263-b761-636136366236/aQuTZciw.jpeg" style="background-image:url('https://static.tildacdn.com/tild3338-3665-4263-b761-636136366236/-/resizeb/20x/aQuTZciw.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Длинный (до колена)</div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3062-3566-4530-b262-376162326138/_-_.jpg" style="background-image:url('https://static.tildacdn.com/tild3062-3566-4530-b262-376162326138/_-_.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Длинный до колена (92 см) </div>
                                                  </label>
                                              </div>
-                                             <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-img-select-1.0.css">
+                                             <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-img-select-1.0.css"> 
                                              <script src="https://static.tildacdn.com/js/tilda-img-select-1.0.min.js"></script>
                                              <script type="text/javascript">
-                                                $(document).ready(function() {
-                                                    try {
-                                                        setTimeout(function() {
-                                                            t_input_imgselect_invertColor('001');
-                                                        }, 500);
-                                                    } catch (err) {};
-                                                });
-                                            </script>
+                                                            $(document).ready(function() {
+                                                                try {
+                                                                    setTimeout(function() {
+                                                                        t_input_imgselect_invertColor('001');
+                                                                    }, 500);
+                                                                } catch (err) {}
+                                                                ;
+                                                            });
+                                                        </script>
                                              <style>
-                                                #rec001 .t-img-select__indicator:after {
-                                                    background-color: #000000;
-                                                }
-                                            </style>
+                                                            #rec001 .t-img-select__indicator:after {
+                                                                background-color: #000000;
+                                                            }
+                                                        </style>
                                              <div class="t-input-error"></div>
                                          </div>
                                      </div>
@@ -361,22 +143,22 @@
                                              <div class="t-img-select__container" data-check-bgcolor="#000000">
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="niz" value="С резинкой кашкорсе" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3130-3637-4562-a464-656238356531/T9qbzk3Q.jpg" style="background-image:url('https://static.tildacdn.com/tild3130-3637-4562-a464-656238356531/-/resizeb/20x/T9qbzk3Q.jpg');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3966-3133-4631-b932-393437656439/__-_-.jpg" style="background-image:url('https://static.tildacdn.com/tild3966-3133-4631-b932-393437656439/__-_-.jpg');"></div>
                                                      <div class="t-img-select__text t-text t-text_xs">С резинкой кашкорсе</div>
                                                  </label>
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="niz" value="Без резинки" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6435-3639-4533-b932-663237363534/ue6PJOKA.jpg" style="background-image:url('https://static.tildacdn.com/tild6435-3639-4533-b932-663237363534/-/resizeb/20x/ue6PJOKA.jpg');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6366-3535-4131-b737-346138373430/__-__.jpg" style="background-image:url('https://static.tildacdn.com/tild6366-3535-4131-b737-346138373430/__-__.jpg');"></div>
                                                      <div class="t-img-select__text t-text t-text_xs">Без резинки</div>
                                                  </label>
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="niz" value="Оборванный край" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3764-3931-4639-b865-313763613230/gnAD7piQ.jpeg" style="background-image:url('https://static.tildacdn.com/tild3764-3931-4639-b865-313763613230/-/resizeb/20x/gnAD7piQ.jpeg');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3732-3935-4331-b663-323762366261/__-_-.jpg" style="background-image:url('https://static.tildacdn.com/tild3732-3935-4331-b663-323762366261/__-_-.jpg');"></div>
                                                      <div class="t-img-select__text t-text t-text_xs">Оборванный край</div>
                                                  </label>
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="niz" value="На резинке с затяжками" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3031-3664-4037-b936-303434383738/qduUqTkA.jpg" style="background-image:url('https://static.tildacdn.com/tild3031-3664-4037-b936-303434383738/-/resizeb/20x/qduUqTkA.jpg');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3266-3239-4636-b339-363435376338/__-_.jpg" style="background-image:url('https://static.tildacdn.com/tild3266-3239-4636-b339-363435376338/__-_.jpg');"></div>
                                                      <div class="t-img-select__text t-text t-text_xs">На резинке с затяжками</div>
                                                  </label>
                                              </div>
@@ -406,158 +188,23 @@
                                              <div class="t-img-select__container" data-check-bgcolor="#000000">
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="karman" value="С карманами сбоку" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Средний (до бедра)|Длинный (до колена)"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://thumb.tildacdn.com/tild3131-3961-4336-a266-356465363637/-/cover/320x320/left/top/-/format/webp/DSC02762.jpg" style="background-image:url('https://thumb.tildacdn.com/tild3131-3961-4336-a266-356465363637/-/cover/320x320/left/top/-/format/webp/DSC02762.jpg');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6464-3835-4139-b864-613430333039/_-_.jpg" ></div>
                                                      <div class="t-img-select__text t-text t-text_xs">С карманами сбоку</div>
                                                  </label>
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="karman" value="Карман кенгуру" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Короткий (до пояса)|Средний (до бедра)|Длинный (до колена)"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6162-6632-4266-a234-626266636266/rPMC7LXg.jpg" style="background-image:url('https://static.tildacdn.com/tild6162-6632-4266-a234-626266636266/-/resizeb/20x/rPMC7LXg.jpg');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3234-3262-4438-a637-663437613661/_-_.jpg" style="background-image:url('https://static.tildacdn.com/tild3234-3262-4438-a637-663437613661/_-_.jpg');"></div>
                                                      <div class="t-img-select__text t-text t-text_xs">Карман кенгуру</div>
                                                  </label>
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="karman" value="Карман-тайник" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Короткий (до пояса)|Средний (до бедра)|Длинный (до колена)"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3965-3464-4762-b461-386662633565/FMlk2W8Q.jpeg" style="background-image:url('https://static.tildacdn.com/tild3965-3464-4762-b461-386662633565/-/resizeb/20x/FMlk2W8Q.jpeg');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6135-6533-4034-a236-343564383136/ONRXiFXA.jpg" style="background-image:url('https://static.tildacdn.com/tild6135-6533-4034-a236-343564383136/ONRXiFXA.jpg');"></div>
                                                      <div class="t-img-select__text t-text t-text_xs">Карман-тайник</div>
                                                  </label>
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="karman" value="Без карманов" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Короткий (до пояса)|Средний (до бедра)|Длинный (до колена)"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3764-3837-4565-b831-656366386539/Ep6x25hw.jpeg" style="background-image:url('https://static.tildacdn.com/tild3764-3837-4565-b831-656366386539/-/resizeb/20x/Ep6x25hw.jpeg');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6536-6338-4162-b062-653736633464/_-__.jpg" style="background-image:url('https://static.tildacdn.com/tild6536-6338-4162-b062-653736633464/_-__.jpg');"></div>
                                                      <div class="t-img-select__text t-text t-text_xs">Без карманов</div>
-                                                 </label>
-                                             </div>
-                                             <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-img-select-1.0.css"> 
-                                             <script src="https://static.tildacdn.com/js/tilda-img-select-1.0.min.js"></script>
-                                             <script type="text/javascript">
-                                                $(document).ready(function() {
-                                                    try {
-                                                        setTimeout(function() {
-                                                            t_input_imgselect_invertColor('001');
-                                                        }, 500);
-                                                    } catch (err) {}
-                                                    ;
-                                                });
-                                            </script>
-                                             <style>
-                                                #rec001 .t-img-select__indicator:after {
-                                                    background-color: #000000;
-                                                }
-                                            </style>
-                                             <div class="t-input-error"></div>
-                                         </div>
-                                     </div>
-                                     <div class="t-input-group t-input-group_ri" data-input-lid="1573997637017" data-name="Длина рукава">
-                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1573997637017" style="">Выбери длину рукава</div>
-                                         <div class="t-input-block" data-optional="manzhet">
-                                             <div class="t-img-select__container" data-check-bgcolor="#000000">
-                                                 <label class="t-img-select__control">
-                                                     <input type="radio" name="rukav-dlina" value="Классический (до середины кисти)" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3138-6534-4235-b232-643365333038/R5gJ_YSw.jpeg" style="background-image:url('https://static.tildacdn.com/tild3138-6534-4235-b232-643365333038/-/resizeb/20x/R5gJ_YSw.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Классический (до середины кисти)</div>
-                                                 </label>
-                                                 <label class="t-img-select__control">
-                                                     <input type="radio" name="rukav-dlina" value="Удлиненный (+1 кисть)" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://thumb.tildacdn.com/tild6634-3935-4339-b031-346163623737/-/cover/320x320/left/top/-/format/webp/-.jpg" style="background-image:url('https://thumb.tildacdn.com/tild6634-3935-4339-b031-346163623737/-/cover/320x320/left/top/-/format/webp/-.jpg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Удлиненный (+1 кисть)</div>
-                                                 </label>
-                                             </div>
-                                             <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-img-select-1.0.css"> 
-                                             <script src="https://static.tildacdn.com/js/tilda-img-select-1.0.min.js"></script>
-                                             <script type="text/javascript">
-                                                $(document).ready(function() {
-                                                    try {
-                                                        setTimeout(function() {
-                                                            t_input_imgselect_invertColor('001');
-                                                        }, 500);
-                                                    } catch (err) {}
-                                                    ;
-                                                });
-                                                        </script>
-                                             <style>
-                                                #rec001 .t-img-select__indicator:after {
-                                                    background-color: #000000;
-                                                }
-                                            </style>
-                                             <div class="t-input-error"></div>
-                                         </div>
-                                     </div>
-                                     <div class="t-input-group t-input-group_ri" data-input-lid="1573998232884" data-name="Обработка манжета">
-                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1573998232884" style="">Выбери обработку манжета</div>
-                                         <div class="t-input-block">
-                                             <div class="t-img-select__container" data-check-bgcolor="#000000">
-                                                 <label class="t-img-select__control">
-                                                     <input type="radio" name="manzhet" value="С резинкой кашкорсе" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Классический (до середины кисти)|Удлиненный (+1 кисть)"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6463-6635-4366-a163-303231323463/nCxLCpeA.jpeg" style="background-image:url('https://static.tildacdn.com/tild6463-6635-4366-a163-303231323463/-/resizeb/20x/nCxLCpeA.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">С резинкой кашкорсе</div>
-                                                 </label>
-                                                 <label class="t-img-select__control">
-                                                     <input type="radio" name="manzhet" value="Расклешенный рукав" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Классический (до середины кисти)"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6131-6130-4433-a465-633861306534/AkQcL7HQ.jpeg" style="background-image:url('https://static.tildacdn.com/tild6131-6130-4433-a465-633861306534/-/resizeb/20x/AkQcL7HQ.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Расклешенный рукав</div>
-                                                 </label>
-                                                 <label class="t-img-select__control">
-                                                     <input type="radio" name="manzhet" value="Прямой рукав без резинки" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Классический (до середины кисти)"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6466-3735-4232-a434-643064313830/p56BoM3Q.jpeg" style="background-image:url('https://static.tildacdn.com/tild6466-3735-4232-a434-643064313830/-/resizeb/20x/p56BoM3Q.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Прямой рукав без резинки</div>
-                                                 </label>
-                                                 <label class="t-img-select__control">
-                                                     <input type="radio" name="manzhet" value="С дыркой в манжете" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Классический (до середины кисти)|Удлиненный (+1 кисть)"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://thumb.tildacdn.com/tild6566-3763-4363-a233-386163303433/-/cover/320x320/left/top/-/format/webp/DSC02757_.jpg" style="background-image:url('https://thumb.tildacdn.com/tild6566-3763-4363-a233-386163303433/-/cover/320x320/left/top/-/format/webp/DSC02757_.jpg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">С дыркой в манжете</div>
-                                                 </label>
-                                                 <label class="t-img-select__control">
-                                                     <input type="radio" name="manzhet" value="Оборванные края" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Классический (до середины кисти)"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3738-6133-4764-a131-353265613031/j28kPyZA.jpeg" style="background-image:url('https://static.tildacdn.com/tild3738-6133-4764-a131-353265613031/-/resizeb/20x/j28kPyZA.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Оборванные края</div>
-                                                 </label>
-                                             </div>
-                                             <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-img-select-1.0.css"> 
-                                             <script src="https://static.tildacdn.com/js/tilda-img-select-1.0.min.js"></script>
-                                             <script type="text/javascript">
-                                                $(document).ready(function() {
-                                                    try {
-                                                        setTimeout(function() {
-                                                            t_input_imgselect_invertColor('001');
-                                                        }, 500);
-                                                    } catch (err) {}
-                                                    ;
-                                                });
-                                            </script>
-                                             <style>
-                                                #rec001 .t-img-select__indicator:after {
-                                                    background-color: #000000;
-                                                }
-                                            </style>
-                                             <div class="t-input-error"></div>
-                                         </div>
-                                     </div>
-                                     <div class="t-input-group t-input-group_ri" data-input-lid="1573998808977" data-name="Капюшон">
-                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1573998808977" style="">Выбери капюшон</div>
-                                         <div class="t-input-block">
-                                             <div class="t-img-select__container" data-check-bgcolor="#000000">
-                                                 <label class="t-img-select__control">
-                                                     <input type="radio" name="kapushon" value="Классический с веревками" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3261-6238-4739-b033-643531383939/N1UbVPJw.jpeg" style="background-image:url('https://static.tildacdn.com/tild3261-6238-4739-b033-643531383939/-/resizeb/20x/N1UbVPJw.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Классический с веревками</div>
-                                                 </label>
-                                                 <label class="t-img-select__control">
-                                                     <input type="radio" name="kapushon" value="Внахлест без веревок" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3232-3634-4237-b362-373430353965/eneAynwq.jpeg" style="background-image:url('https://static.tildacdn.com/tild3232-3634-4237-b362-373430353965/-/resizeb/20x/eneAynwq.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Внахлест без веревок</div>
-                                                 </label>
-                                                 <label class="t-img-select__control">
-                                                     <input type="radio" name="kapushon" value="Анорак" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://thumb.tildacdn.com/tild6636-3561-4337-a637-633337313861/-/cover/320x320/left/top/-/format/webp/photo.jpg" style="background-image:url('https://thumb.tildacdn.com/tild6636-3561-4337-a637-633337313861/-/cover/320x320/left/top/-/format/webp/photo.jpg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Анорак</div>
-                                                 </label>
-                                                 <label class="t-img-select__control">
-                                                     <input type="radio" name="kapushon" value="Капюшон на молнии" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://thumb.tildacdn.com/tild6236-3239-4332-a465-616638656464/-/cover/320x320/left/top/-/format/webp/-.jpg" style="background-image:url('https://thumb.tildacdn.com/tild6236-3239-4332-a465-616638656464/-/cover/320x320/left/top/-/format/webp/-.jpg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Капюшон на молнии</div>
-                                                 </label>
-                                                 <label class="t-img-select__control">
-                                                     <input type="radio" name="kapushon" value="Двойной капюшон" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6333-3335-4763-a433-626138616163/jtR9eOMQ.jpeg" style="background-image:url('https://static.tildacdn.com/tild6333-3335-4763-a433-626138616163/-/resizeb/20x/jtR9eOMQ.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Двойной капюшон</div>
                                                  </label>
                                              </div>
                                              <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-img-select-1.0.css"> 
@@ -580,29 +227,169 @@
                                              <div class="t-input-error"></div>
                                          </div>
                                      </div>
-                                     <div class="t-input-group t-input-group_ri" data-input-lid="1577112042426">
-                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1577112042426" style="">Выбери место принта</div>
+                                     <div class="t-input-group t-input-group_ri" data-input-lid="1573997637017" data-name="Длина рукава">
+                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1573997637017" style="">Выбери длину рукава</div>
+                                         <div class="t-input-block" data-optional="manzhet">
+                                             <div class="t-img-select__container" data-check-bgcolor="#000000">
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="rukav-dlina" value="Классический (до середины кисти)" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3239-3834-4934-b539-616665363564/__-_.jpg" style="background-image:url('https://static.tildacdn.com/tild3239-3834-4934-b539-616665363564/__-_.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Классический (до середины кисти)</div>
+                                                 </label>
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="rukav-dlina" value="Удлиненный (+1 кисть)" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3662-3566-4536-a639-633337336436/__-_.jpg" ></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Удлиненный (+1 кисть)</div>
+                                                 </label>
+                                             </div>
+                                             <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-img-select-1.0.css"> 
+                                             <script src="https://static.tildacdn.com/js/tilda-img-select-1.0.min.js"></script>
+                                             <script type="text/javascript">
+                                                            $(document).ready(function() {
+                                                                try {
+                                                                    setTimeout(function() {
+                                                                        t_input_imgselect_invertColor('001');
+                                                                    }, 500);
+                                                                } catch (err) {}
+                                                                ;
+                                                            });
+                                                        </script>
+                                             <style>
+                                                            #rec001 .t-img-select__indicator:after {
+                                                                background-color: #000000;
+                                                            }
+                                                        </style>
+                                             <div class="t-input-error"></div>
+                                         </div>
+                                     </div>
+                                     <div class="t-input-group t-input-group_ri" data-input-lid="1573998232884" data-name="Обработка манжета">
+                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1573998232884" style="">Выбери обработку манжета</div>
                                          <div class="t-input-block">
                                              <div class="t-img-select__container" data-check-bgcolor="#000000">
                                                  <label class="t-img-select__control">
-                                                     <input type="radio" name="print" value="Спереди на груди" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6465-6636-4366-b130-346363633835/4r7AkcJA.jpeg" style="background-image:url('https://static.tildacdn.com/tild6465-6636-4366-b130-346363633835/-/resizeb/20x/4r7AkcJA.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Спереди на груди</div>
+                                                     <input type="radio" name="manzhet" value="С резинкой кашкорсе" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Классический (до середины кисти)|Удлиненный (+1 кисть)"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6231-6136-4564-b433-613930616332/g7RtlUMg.jpg" style="background-image:url('https://static.tildacdn.com/tild6231-6136-4564-b433-613930616332/g7RtlUMg.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">С резинкой кашкорсе</div>
+                                                 </label>
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="manzhet" value="Расклешенный рукав" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Классический (до середины кисти)"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3135-3333-4535-a335-343538313937/AkQcL7HQ.jpg" style="background-image:url('https://static.tildacdn.com/tild3135-3333-4535-a335-343538313937/AkQcL7HQ.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Расклешенный рукав</div>
+                                                 </label>
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="manzhet" value="Прямой рукав без резинки" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Классический (до середины кисти)"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3961-3631-4937-b964-313831343339/p56BoM3Q.jpg" style="background-image:url('https://static.tildacdn.com/tild3961-3631-4937-b964-313831343339/p56BoM3Q.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Прямой рукав без резинки</div>
+                                                 </label>
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="manzhet" value="С дыркой в манжете" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Классический (до середины кисти)|Удлиненный (+1 кисть)"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6665-3063-4461-a366-633962666162/DSC02757_.jpg"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">С дыркой в манжете</div>
+                                                 </label>
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="manzhet" value="Оборванные края" class="t-img-select js-tilda-rule" data-tilda-req="1" data-prev-selection="Классический (до середины кисти)"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6238-3266-4737-b339-353237393163/j28kPyZA.jpg" style="background-image:url('https://static.tildacdn.com/tild6238-3266-4737-b339-353237393163/j28kPyZA.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Оборванные края</div>
+                                                 </label>
+                                             </div>
+                                             <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-img-select-1.0.css"> 
+                                             <script src="https://static.tildacdn.com/js/tilda-img-select-1.0.min.js"></script>
+                                             <script type="text/javascript">
+                                                            $(document).ready(function() {
+                                                                try {
+                                                                    setTimeout(function() {
+                                                                        t_input_imgselect_invertColor('001');
+                                                                    }, 500);
+                                                                } catch (err) {}
+                                                                ;
+                                                            });
+                                                        </script>
+                                             <style>
+                                                            #rec001 .t-img-select__indicator:after {
+                                                                background-color: #000000;
+                                                            }
+                                                        </style>
+                                             <div class="t-input-error"></div>
+                                         </div>
+                                     </div>
+                                     <div class="t-input-group t-input-group_ri" data-input-lid="1573998808977" data-name="Капюшон">
+                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1573998808977" style="">Выбери капюшон</div>
+                                         <div class="t-input-block">
+                                             <div class="t-img-select__container" data-check-bgcolor="#000000">
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="kapushon" value="Классический с веревками" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3237-3165-4931-b862-353865363839/_-__.jpg" style="background-image:url('https://static.tildacdn.com/tild3237-3165-4931-b862-353865363839/_-__.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Классический с веревками</div>
+                                                 </label>
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="kapushon" value="Внахлест без веревок" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6361-6639-4365-b463-396533393835/_-_.jpg" style="background-image:url('https://static.tildacdn.com/tild6361-6639-4365-b463-396533393835/_-_.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Внахлест без веревок</div>
+                                                 </label>
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="kapushon" value="Анорак" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3531-3532-4231-b861-663735643763/_-_.jpg"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Анорак</div>
+                                                 </label>
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="kapushon" value="Капюшон на молнии" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6566-3434-4563-a636-373564303263/_-__.jpg"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Капюшон на молнии</div>
+                                                 </label>
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="kapushon" value="Двойной капюшон" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6237-6130-4233-a134-666161633163/_-_.jpg" style="background-image:url('https://static.tildacdn.com/tild6237-6130-4233-a134-666161633163/_-_.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Двойной капюшон</div>
+                                                 </label>
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="kapushon" value="Анорак+двойной капюшон" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6463-3336-4134-b436-626637303431/_-__.jpg"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Анорак+двойной капюшон</div>
+                                                 </label>
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="kapushon" value="Капюшон+воротник" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3130-3262-4530-a162-343864393732/_-__.jpg"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Капюшон+воротник</div>
+                                                 </label>
+                                             </div>
+                                             <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-img-select-1.0.css"> 
+                                             <script src="https://static.tildacdn.com/js/tilda-img-select-1.0.min.js"></script>
+                                             <script type="text/javascript">
+                                                            $(document).ready(function() {
+                                                                try {
+                                                                    setTimeout(function() {
+                                                                        t_input_imgselect_invertColor('001');
+                                                                    }, 500);
+                                                                } catch (err) {}
+                                                                ;
+                                                            });
+                                                        </script>
+                                             <style>
+                                                            #rec001 .t-img-select__indicator:after {
+                                                                background-color: #000000;
+                                                            }
+                                                        </style>
+                                             <div class="t-input-error"></div>
+                                         </div>
+                                     </div>
+                                     <div class="t-input-group t-input-group_ri" data-input-lid="1577112042426" data-name="Вышивка">
+                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1577112042426" style="">Выбери место вышивки: </div>
+                                         <div class="t-input-block">
+                                             <div class="t-img-select__container" data-check-bgcolor="#000000">
+                                                 <label class="t-img-select__control">
+                                                 <input type="radio" name="print" value="Спереди на груди" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6530-3962-4030-b638-353837323537/_-_hooli_3.jpg" style="background-image:url('https://static.tildacdn.com/tild6530-3962-4030-b638-353837323537/_-_hooli_3.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Спереди на груди </div>
                                                  </label>
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="print" value="Сзади на лопатке" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3039-6537-4861-a234-383262643063/ogpAIVRA.jpeg" style="background-image:url('https://static.tildacdn.com/tild3039-6537-4861-a234-383262643063/-/resizeb/20x/ogpAIVRA.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Сзади на лопатке</div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3066-6335-4832-a365-613939663362/_-_hooli_2.jpg" style="background-image:url('https://static.tildacdn.com/tild3066-6335-4832-a365-613939663362/_-_hooli_2.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Сзади на лопатке </div>
                                                  </label>
                                                  <label class="t-img-select__control">
-                                                     <input type="radio" name="print" value="Сбоку на капюшоне" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6361-3437-4165-b734-306266373061/7W0Zti3A.jpg" style="background-image:url('https://static.tildacdn.com/tild6361-3437-4165-b734-306266373061/-/resizeb/20x/7W0Zti3A.jpg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Сбоку на капюшоне</div>
-                                                 </label>
-                                                 <label class="t-img-select__control">
-                                                     <input type="radio" name="print" value="Без принта" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3736-6539-4765-b437-386335666336/nO4RhH5A.jpeg" style="background-image:url('https://static.tildacdn.com/tild3736-6539-4765-b437-386335666336/-/resizeb/20x/nO4RhH5A.jpeg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Без принта</div>
+                                                     <input type="radio" name="print" value="Сбоку на капюшоне" class="t-img-select js-tilda-rule" data-tilda-req="1" > 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3963-3837-4237-a263-376461326236/_-_hooli_1.jpg" style="background-image:url('https://static.tildacdn.com/tild3963-3837-4237-a263-376461326236/_-_hooli_1.jpg');"></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Сбоку на капюшоне </div>
                                                  </label>
                                              </div>
                                              <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-img-select-1.0.css"> 
@@ -631,33 +418,38 @@
                                              <div class="t-img-select__container" data-check-bgcolor="#000000">
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="color" value="Белый" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3361-6531-4765-b130-613132303535/01_.jpg" style="background-image:url('https://static.tildacdn.com/tild3361-6531-4765-b130-613132303535/01_.jpg');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3439-3639-4734-b664-313330393532/photo.jpg"></div>
                                                      <div class="t-img-select__text t-text t-text_xs">Белый</div>
                                                  </label>
                                                  <label class="t-img-select__control">
-                                                     <input type="radio" name="color" value="Бежевый" class="t-img-select js-tilda-rule" data-price="400" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3730-3532-4366-b666-376639376432/15_.jpg" style="background-image:url('https://static.tildacdn.com/tild3730-3532-4366-b666-376639376432/15_.jpg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Бежевый +400р</div>
+                                                     <input type="radio" name="color" value="Бежевый" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3863-3233-4535-b436-633835336665/photo.jpg" ></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Бежевый</div>
                                                  </label>
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="color" value="Маршмеллоу" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6636-6331-4362-a163-376264396365/05_.jpg" style="background-image:url('https://static.tildacdn.com/tild6636-6331-4362-a163-376264396365/05_.jpg');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3330-3433-4433-b165-383135303462/photo.jpg" ></div>
                                                      <div class="t-img-select__text t-text t-text_xs">Маршмеллоу</div>
                                                  </label>
                                                  <label class="t-img-select__control">
                                                      <input type="radio" name="color" value="Черный" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3435-3333-4034-b066-336535616363/10_.jpg" style="background-image:url('https://static.tildacdn.com/tild3435-3333-4034-b066-336535616363/10_.jpg');"></div>
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6364-3261-4964-a461-336363316530/photo.jpg" ></div>
                                                      <div class="t-img-select__text t-text t-text_xs">Черный</div>
                                                  </label>
                                                  <label class="t-img-select__control">
-                                                     <input type="radio" name="color" value="Фиолет" class="t-img-select js-tilda-rule" data-price="500" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3735-3166-4162-b236-626637363435/09_.jpg" style="background-image:url('https://static.tildacdn.com/tild3735-3166-4162-b236-626637363435/09_.jpg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Фиолет +500р</div>
+                                                     <input type="radio" name="color" value="Фиолет" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3837-3934-4437-a331-663862393663/photo.jpg" ></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Фиолет</div>
                                                  </label>
                                                  <label class="t-img-select__control">
-                                                     <input type="radio" name="color" value="Кофе" class="t-img-select js-tilda-rule" data-price="500" data-tilda-req="1"> 
-                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3765-6539-4830-a562-643939383232/13_.jpg" style="background-image:url('https://static.tildacdn.com/tild3765-6539-4830-a562-643939383232/13_.jpg');"></div>
-                                                     <div class="t-img-select__text t-text t-text_xs">Кофе +500р</div>
+                                                     <input type="radio" name="color" value="Кофе" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild6362-6138-4361-b061-316636623632/photo.jpg" ></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Кофе</div>
+                                                 </label>
+                                                 <label class="t-img-select__control">
+                                                     <input type="radio" name="color" value="Лаванда" class="t-img-select js-tilda-rule" data-tilda-req="1"> 
+                                                     <div class="t-bgimg t-img-select__indicator t-img-select__indicator_1-1" data-original="https://static.tildacdn.com/tild3262-3530-4730-b735-633134666133/93a29fac-0c8a-4529-9.jpg" ></div>
+                                                     <div class="t-img-select__text t-text t-text_xs">Лаванда</div>
                                                  </label>
                                              </div>
                                              <link rel="stylesheet" href="https://static.tildacdn.com/css/tilda-img-select-1.0.css"> 
@@ -739,12 +531,7 @@
                                                     <div class="t-radio__indicator" style="border-color:#000000"></div>
                                                     7XL
                                                 </label>
-                                                 <label class="t-radio__control t-text t-text_xs" style="">
-                                                     <input type="radio" name="size" value="ОВЕРСАЙЗ" class="t-radio js-tilda-rule" data-tilda-req="1"> 
-                                                     <div class="t-radio__indicator" style="border-color:#000000"></div>
-                                                     ОВЕРСАЙЗ
-                                                 </label>
-                                                 <label class="t-radio__control t-text t-text_xs" style="">
+                                                <label class="t-radio__control t-text t-text_xs" style="">
                                                      <input type="radio" name="size" value="Нужна консультация" class="t-radio js-tilda-rule" data-tilda-req="1"> 
                                                      <div class="t-radio__indicator" style="border-color:#000000"></div>
                                                      Нужна консультация
@@ -759,15 +546,13 @@
                                              <div class="t-input-error"></div>
                                          </div>
                                      </div>
-
-                                    <div class="t-input-group t-input-group_details" >
+                                     <div class="t-input-group t-input-group_details" >
                                          <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1574000012959" style="">Класс! Отличный выбор!</div>
                                          <div class="t-input-subtitle t-descr t-descr_xxs t-opacity_70" data-redactor-toolbar="no" field="li_subtitle__1528359927420" style="">
-                                             
+
                                          </div>
                                      </div>
-
-                                     <div class="t-input-group t-input-group_ri" data-input-lid="1527252201577" data-name="Контакты">
+                                     <div class="t-input-group t-input-group_ri" data-input-lid="1527252201577">
                                          <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252201577" style="">Укажи имя</div>
                                          <div class="t-input-block">
                                              <input type="text" name="Name" class="t-input js-tilda-rule t-input_bbonly" value="" data-tilda-req="1" data-tilda-rule="name" style="color:#000000; border:1px solid #b3b3b3; "> 
@@ -775,7 +560,7 @@
                                          </div>
                                          <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252219292" style="">Укажи телефон</div>
                                          <div class="t-input-block">
-                                             <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="001" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
+                                             <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="001" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; "> 
                                              <script type="text/javascript">
                                                     if (!document.getElementById('t-phonemask-script')) {
                                                         (function(d, w, o) {
@@ -812,7 +597,7 @@
                                          </div>
 
                                      </div>
-                                     <input type="hidden" name="quiz" tabindex="-1" value="Тестовая форма для проверок. Игнорить!"> 
+                                     <input type="hidden" name="quiz" tabindex="-1" value="Акционный квиз со скидкой"> 
                                      <!--[if IE 8]> 
                                      <style>.t-checkbox__control .t-checkbox, .t-radio__control .t-radio { left: 0px; z-index: 1; opacity: 1;
                                         }
@@ -823,7 +608,7 @@
                                      <![endif]--> 
                                      <div class="t835mev__capture-form">
                                          <div class="t-descr t-descr_sm" data-redactor-toolbar="no" field="li_title__1528360800295" style="">
-                                            Чтобы приобрести худи по акционной цене всего за 2490 руб. вместо 7990 руб. нужно произвести оплату сейчас, нажав на кнопку «Оплатить».<br><br>
+                                            Чтобы приобрести худи по акционной цене всего за 2990 руб. вместо 7990 руб. нужно произвести оплату сейчас, нажав на кнопку «Оплатить».<br><br>
 
                                             <button type="submit" class="t-submit" style="color:#0a0a0a;background-color:#efa23a;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;">Оплатить</button>
                                             <br><br>
@@ -934,8 +719,8 @@
                                          </tr>
                                      </tbody>
                                  </table>
-                             </button>
-                         </div>
+                             </div>
+                         </button>
                      </div>
                  </div>
              </div>
@@ -955,7 +740,7 @@
         $(document).ready(function() {
             t835mev_init('001');
         });
-     </script>
+    </script>
      <style>
         #rec001 .t-btn[data-btneffects-first], #rec001 .t-btn[data-btneffects-second], #rec001 .t-submit[data-btneffects-first], #rec001 .t-submit[data-btneffects-second] {
             position: relative;
@@ -963,12 +748,16 @@
             -webkit-transform: translate3d(0,0,0);
             transform: translate3d(0,0,0);
         }
-     </style>
+    </style>
      <script type="text/javascript">
         function recalc(){
-            var new_summa = 2490;
-            if ($('input[name="color"]:checked').data('price')!=undefined) {
-                new_summa = new_summa + $('input[name="color"]:checked').data('price');
+            var new_summa = 2990;
+            if ($('input[name="dlina"]:checked').data('price')!=undefined) {
+                new_summa = new_summa + $('input[name="dlina"]:checked').data('price');
+            }
+                
+            if ($('input[name="print"]:checked').data('price')!=undefined) {
+                new_summa = new_summa + $('input[name="print"]:checked').data('price');
             }
 
             window.tcart.amount = new_summa;
@@ -979,13 +768,14 @@
             window.tcart.products[0].price = new_summa;
         }
         $(document).ready(function() {
+            
             $('#rec001').on('click', 'input[name="kroi"]', function(event) {
-                calc_total($(this).val(), 2490);
+                calc_total($(this).val(), 2990);
             });
             $(".t835mev__btn_result").on('click', function(event) {
                 event.preventDefault();
                 recalc();
             });            
         });
-     </script>
+ </script>
  </div>
