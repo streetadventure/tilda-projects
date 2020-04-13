@@ -512,6 +512,20 @@ function calc_total(summa) {
     };
 
 }
+function recalc(summa){
+    var new_summa = summa;
+   
+    if ($('input[name="uteplitel"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + $('input[name="uteplitel"]:checked').data('price');
+    }
+
+    window.tcart.amount = new_summa;
+    window.tcart.prodamount = new_summa;
+    window.tcart.total = new_summa;
+
+    window.tcart.products[0].amount = new_summa;
+    window.tcart.products[0].price = new_summa;
+}
 // Отправка сообщения в whatsapp
 function get_res_wa_text(rec){
     var rec = $(rec),
