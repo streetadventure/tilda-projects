@@ -495,9 +495,13 @@ function recalc(summa){
     if ($('input[name="dlina"]:checked').data('price')!=undefined) {
         new_summa = new_summa + $('input[name="dlina"]:checked').data('price');
     }
-        
+
     if ($('input[name="print"]:checked').data('price')!=undefined) {
         new_summa = new_summa + $('input[name="print"]:checked').data('price');
+    }
+    
+    if ($('input[name="uteplitel"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + $('input[name="uteplitel"]:checked').data('price');
     }
 
     window.tcart.amount = new_summa;
