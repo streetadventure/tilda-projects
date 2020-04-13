@@ -633,16 +633,22 @@ function t862mev_sendPopupEventToStatistics(popupname) {
     }
 }
 
-function calc_total(summa) {
+function calc_total(rec, summa) {
+    
+    var new_summa = summa;
 
-    window.tcart.amount = summa;
-    window.tcart.prodamount = summa;
-    window.tcart.total = summa;
+    if (rec.find('input[name="uteplitel"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + rec.find('input[name="uteplitel"]:checked').data('price');
+    }    
+
+    window.tcart.amount = new_summa;
+    window.tcart.prodamount = new_summa;
+    window.tcart.total = new_summa;
 
     window.tcart.products[0] = {
-        amount: summa,
+        amount: new_summa,
         name: "Штаны Hooli",
-        price: summa,
+        price: new_summa,
         quantity: 1
     };
 
@@ -695,6 +701,6 @@ $(document).ready(function() {
         var text = get_res_wa_text(rec);
         rec.find('.write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
 
-        calc_total(2990);
+        calc_total(rec,2990);
     });
 });
