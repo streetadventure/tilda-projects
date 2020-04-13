@@ -138,7 +138,7 @@ function t835mev_init(recid) {
                     t835mev_switchResultScreen(rec);
                     form.addClass('js-form-proccess');
 
-                    $.ajax({
+                    /*$.ajax({
                         url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
                         type: 'post',
                         dataType: 'json',
@@ -157,7 +157,7 @@ function t835mev_init(recid) {
                     })
                     .always(function() {
                         // console.log("complete");
-                    });
+                    });*/
 
                     $.ajax({
                         url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php',
@@ -171,6 +171,12 @@ function t835mev_init(recid) {
                         if (fbq != undefined) {
                             fbq('track', 'Lead');
                         }
+
+                        $('<input></input>',{
+                            'type':'hidden',
+                            'name':'InvoiceId',
+                        }).val(data.ID).appendTo(form);
+
                         // window.open($('#write_to_whatsapp').attr('href'), "_blank");
                     })
                     .fail(function(data) {
@@ -206,7 +212,7 @@ function t835mev_init(recid) {
             form.addClass('js-form-proccess');
             t835mev_disabledPrevBtn(rec, quizQuestionNumber);
 
-            $.ajax({
+            /*$.ajax({
                 url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
                 type: 'post',
                 dataType: 'json',
@@ -225,7 +231,7 @@ function t835mev_init(recid) {
             })
             .always(function() {
                 // console.log("complete");
-            });
+            });*/
 
             $.ajax({
                 url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php',
@@ -239,6 +245,13 @@ function t835mev_init(recid) {
                 if (fbq != undefined) {
                     fbq('track', 'Lead');
                 }
+
+
+                $('<input></input>', {
+                    'type': 'hidden',
+                    'name': 'InvoiceId',
+                }).val(data.ID).appendTo(form);
+
                 // window.open($('#write_to_whatsapp').attr('href'), "_blank");
             })
             .fail(function(data) {

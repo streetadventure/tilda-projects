@@ -140,6 +140,10 @@ function t862mev_init(recid) {
                         if (fbq != undefined) {
                             fbq('track', 'Lead');
                         }
+                        $('<input></input>', {
+                            'type': 'hidden',
+                            'name': 'InvoiceId',
+                        }).val(data.ID).appendTo(form);                         
                         // window.open($('#write_to_whatsapp').attr('href'), "_blank");
                     })
                     .fail(function(data) {
@@ -210,6 +214,10 @@ function t862mev_init(recid) {
                 if (fbq != undefined) {
                     fbq('track', 'Lead');
                 }
+                $('<input></input>', {
+                    'type': 'hidden',
+                    'name': 'InvoiceId',
+                }).val(data.ID).appendTo(form);                 
                 // window.open($('#write_to_whatsapp').attr('href'), "_blank");
             })
             .fail(function(data) {
