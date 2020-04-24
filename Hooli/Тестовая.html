@@ -54,7 +54,9 @@
                             </div>
                         </div>
                         <div class="t835mev__quiz-form-wrapper t835mev__quiz-form-wrapper_withcheckbox">
+
                             <form id="form001" name='form001' role="form" action='' method='POST' data-formactiontype="2" data-inputbox=".t-input-group" class="t-form js-form-proccess t-form_inputs-total_15 t-form_bbonly " data-success-callback="t835mev_onSuccess" data-formcart="y">
+
                                 <input type="hidden" name="formservices[]" value="19840fa82df86ad1def3c2a5aa0b9775" class="js-formaction-services">
                                 <input type="hidden" name="formservices[]" value="36c578e4a6eab1a90a34c9806caf2efd" class="js-formaction-services">
                                 <input type="hidden" name="formservices[]" value="3a13f50697b6015391a18d004a8c9477" class="js-formaction-services">
@@ -69,7 +71,7 @@
                                     </a>
                                 </div>
                                 <div class="t-form__inputsbox">
-                                    <div class="t-input-group t-input-group_ri" data-input-lid="1528465523680">
+                                    <div class="t-input-group t-input-group_ri" data-input-lid="1528465523680" data-name="Пол">
                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1528465523680" style="">Выбери для кого</div>
                                         <div class="t-input-block">
                                             <div class="t-img-select__container" data-check-bgcolor="#000000">
@@ -523,54 +525,80 @@
                                             <div class="t-input-error"></div>
                                         </div>
                                     </div>
-                                    <div class="t-input-group t-input-group_nm" data-input-lid="1527252201577">
+
+                                    <div class="t-input-group t-input-group_details"  data-show-details="y">
+                                        <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1574000012959" style="">Класс!
+                                        Отличный выбор!</div>
+                                        <div class="t-input-subtitle t-descr t-descr_xxs t-opacity_70" data-redactor-toolbar="no" field="li_subtitle__1528359927420" style="">
+
+                                        </div>
+                                    </div>
+                                    <div class="t-input-group t-input-group_ri" data-input-lid="1527252201577">
                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252201577" style="">Укажи имя</div>
                                         <div class="t-input-block">
                                             <input type="text" name="Name" class="t-input js-tilda-rule t-input_bbonly" value="" data-tilda-req="1" data-tilda-rule="name" style="color:#000000; border:1px solid #b3b3b3; ">
                                             <div class="t-input-error"></div>
                                         </div>
-                                    </div>
-                                    <div class="t-input-group t-input-group_ph" data-input-lid="1527252219292">
                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1527252219292" style="">Укажи телефон</div>
                                         <div class="t-input-block">
                                             <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="001" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
                                             <script type="text/javascript">
-                                                if (!document.getElementById('t-phonemask-script')) {
-                                                    (function(d, w, o) {
-                                                        var n = d.getElementsByTagName(o)[0]
-                                                          , s = d.createElement(o)
-                                                          , f = function() {
-                                                            n.parentNode.insertBefore(s, n);
-                                                        };
-                                                        s.type = "text/javascript";
-                                                        s.async = true;
-                                                        s.id = 't-phonemask-script';
-                                                        s.src = "https://static.tildacdn.com/js/tilda-phone-mask-1.1.min.js";
-                                                        if (w.opera == "[object Opera]") {
-                                                            d.addEventListener("DOMContentLoaded", f, false);
-                                                        } else {
-                                                            f();
+                                                    if (!document.getElementById('t-phonemask-script')) {
+                                                        (function(d, w, o) {
+                                                            var n = d.getElementsByTagName(o)[0]
+                                                              , s = d.createElement(o)
+                                                              , f = function() {
+                                                                n.parentNode.insertBefore(s, n);
+                                                            };
+                                                            s.type = "text/javascript";
+                                                            s.async = true;
+                                                            s.id = 't-phonemask-script';
+                                                            s.src = "https://static.tildacdn.com/js/tilda-phone-mask-1.1.min.js";
+                                                            if (w.opera == "[object Opera]") {
+                                                                d.addEventListener("DOMContentLoaded", f, false);
+                                                            } else {
+                                                                f();
+                                                            }
                                                         }
+                                                        )(document, window, 'script');
+                                                    } else {
+                                                        $(document).ready(function() {
+                                                            if (typeof t_form_phonemask_load == 'function') {
+                                                                t_form_phonemask_load($('#rec001 [data-phonemask-lid=1527252219292]'));
+                                                            }
+                                                        });
                                                     }
-                                                    )(document, window, 'script');
-                                                } else {
-                                                    $(document).ready(function() {
-                                                        if (typeof t_form_phonemask_load == 'function') {
-                                                            t_form_phonemask_load($('#rec001 [data-phonemask-lid=1527252219292]'));
-                                                        }
-                                                    });
-                                                }
-                                            </script>
+                                                </script>
                                             <div class="t-input-error"></div>
                                         </div>
-                                    </div>
-                                    <div class="t-input-group t-input-group_em" data-input-lid="1528360800295">
                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1528360800295" style="">Укажи e-mail</div>
                                         <div class="t-input-block">
                                             <input type="text" name="Email" class="t-input js-tilda-rule t-input_bbonly" value="" data-tilda-req="1" data-tilda-rule="email" style="color:#000000; border:1px solid #b3b3b3; ">
                                             <div class="t-input-error"></div>
                                         </div>
+
                                     </div>
+
+
+                                    <div class="t835mev__capture-form">
+                                        <div class="t-descr t-descr_sm" data-redactor-toolbar="no" field="li_title__1528360800295" style="">
+                                             Чтобы приобрести худи по акционной цене всего за 2190 руб. вместо <del>3990 руб</del>. нужно произвести оплату сейчас, нажав на кнопку «Оплатить».<br><br>
+
+                                            <button type="submit" class="t-submit" style="color:#0a0a0a;background-color:#efa23a;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;">Оплатить</button>
+                                            <br><br>
+                                            Если вы не имеете возможности оплатить заказ сейчас - запросите резерв скидки в WhatsApp, нажав следующую кнопку:<br><br>
+
+                                            <a href="" id="write_to_whatsapp">Whatsapp</a><br><br>
+
+                                            <strong>Внимание!</strong> Если вы не произведёте оплату и забронируете скидку, стоимость покупке будет выше.
+                                        </div>
+                                    </div>
+
+
+
+
+
+
                                     <div class="t-input-group t-input-group_cb" data-input-lid="1585228698525">
                                         <div class="t-input-block">
                                             <label class="t-checkbox__control t-text t-text_xs" style="">
@@ -730,7 +758,7 @@
             calc_total("Худи Hooli", 2990);
 
 
-            $(".t835mev__btn_result").on('click', function(event) {
+            $(".t-submit").on('click', function(event) {
                 event.preventDefault();
                 recalc(2990);
             });
