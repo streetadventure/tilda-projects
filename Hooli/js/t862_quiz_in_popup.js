@@ -674,7 +674,7 @@ function get_selected_values(rec){
     var data = [];
     rec.find(".t-input-group").each(function(index, el) {
         var obj={},
-            checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked');
+            checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked,input.y_rost');
 
         if(checked.length > 0){
             obj['name'] = $(el).data('name');

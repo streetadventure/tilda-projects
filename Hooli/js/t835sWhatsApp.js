@@ -504,6 +504,10 @@ function recalc(summa){
         new_summa = new_summa + $('input[name="uteplitel"]:checked').data('price');
     }
 
+    if ($('input[name="rukav-dlina"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + $('input[name="rukav-dlina"]:checked').data('price');
+    }
+
     window.tcart.amount = new_summa;
     window.tcart.prodamount = new_summa;
     window.tcart.total = new_summa;
@@ -532,7 +536,7 @@ function get_selected_values(recid){
         rec = $('#rec' + recid);
     rec.find(".t-input-group").each(function(index, el) {
         var obj={},
-            checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked');
+            checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked,input.y_rost');
 
         if(checked.length > 0){
             obj['name'] = $(el).data('name');

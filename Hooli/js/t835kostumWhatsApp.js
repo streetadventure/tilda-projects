@@ -561,7 +561,7 @@ function get_selected_values_for_product(rec,product){
     var data = [];
     rec.find('[data-product="'+product+'"]').each(function(index, el) {
         var obj={},
-            checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked');
+            checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked,input.y_rost');
 
         if(checked.length > 0){
             obj['name'] = $(el).data('name');
