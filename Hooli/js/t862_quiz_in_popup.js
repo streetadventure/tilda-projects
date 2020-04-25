@@ -678,6 +678,7 @@ function get_res_wa_text(rec){
 
     details_text += rec.find("input[name=Phone]").val()+"\n";
     details_text += rec.find("input[name=Email]").val()+"\n";
+    details_text += rec.find("input[name=quiz_type]").val()+"\n";
 
     return encodeURI("Привет, Hooli! 😜 \n\n"+
         "Хочу подтвердить свой заказ:\n\n"
