@@ -138,11 +138,18 @@ function t835mev_init(recid) {
                     t835mev_switchResultScreen(rec);
                     form.addClass('js-form-proccess');
 
+                    var form_data = form.serializeArray(),
+                    details_data = get_selected_values('001'),
+                    data_to_send = {
+                        form_data: form_data,
+                        details_data: details_data
+                    };
+
                     $.ajax({
                         url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
                         type: 'post',
                         dataType: 'json',
-                        data: form.serialize(),
+                        data: data_to_send,
                     })
                     .done(function(data) {
                         // data.id - номер заказа в retailCRM
@@ -163,7 +170,7 @@ function t835mev_init(recid) {
                         url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php',
                         type: 'post',
                         dataType: 'json',
-                        data: form.serialize(),
+                        data: data_to_send,
                     })
                     .done(function(data) {
                         // data.id - номер заказа в retailCRM
@@ -210,11 +217,18 @@ function t835mev_init(recid) {
             form.addClass('js-form-proccess');
             t835mev_disabledPrevBtn(rec, quizQuestionNumber);
 
+            var form_data = form.serializeArray(),
+            details_data = get_selected_values('001'),
+            data_to_send = {
+                form_data: form_data,
+                details_data: details_data
+            };
+
             $.ajax({
                 url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
                 type: 'post',
                 dataType: 'json',
-                data: form.serialize(),
+                data: data_to_send,
             })
             .done(function(data) {
                 // data.id - номер заказа в retailCRM
@@ -235,7 +249,7 @@ function t835mev_init(recid) {
                 url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php',
                 type: 'post',
                 dataType: 'json',
-                data: form.serialize(),
+                data: data_to_send,
             })
             .done(function(data) {
                 // data.id - номер заказа в retailCRM
