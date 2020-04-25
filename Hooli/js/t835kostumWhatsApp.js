@@ -535,7 +535,10 @@ function get_res_wa_text(rec){
     data.forEach(function(item, i, arr) {
         details_text += item.name+': '+item.value+"\n";
     });
-    
+
+    details_text += rec.find("input[name=Phone]").val()+"\n";
+    details_text += rec.find("input[name=Email]").val()+"\n";
+
     return encodeURI("Привет, Hooli! 😜 \n\n"+
         "Хочу подтвердить свой заказ:\n\n"
         +details_text
@@ -546,7 +549,7 @@ function get_selected_values(rec){
     var data = [];
     rec.find(".t-input-group").each(function(index, el) {
         var obj={},
-            checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked');
+            checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked,input.y_rost');
 
         if(checked.length > 0){
             obj['name'] = $(el).data('name');

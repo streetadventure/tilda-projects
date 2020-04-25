@@ -524,7 +524,10 @@ function get_res_wa_text(recid){
     data.forEach(function(item, i, arr) {
         details_text += item.name+': '+item.value+"\n";
     });
-    
+
+    details_text += rec.find("input[name=Phone]").val()+"\n";
+    details_text += rec.find("input[name=Email]").val()+"\n";
+
     return encodeURI("Привет, Hooli! 😜 \n\n"+
         "Хочу подтвердить свой заказ:\n\n"
         +details_text

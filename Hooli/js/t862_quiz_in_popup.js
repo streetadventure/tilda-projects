@@ -637,9 +637,21 @@ function calc_total(rec, summa) {
     
     var new_summa = summa;
 
-    if (rec.find('input[name="uteplitel"]:checked').data('price')!=undefined) {
-        new_summa = new_summa + rec.find('input[name="uteplitel"]:checked').data('price');
-    }    
+    if ($('input[name="dlina"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + $('input[name="dlina"]:checked').data('price');
+    }
+
+    if ($('input[name="print"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + $('input[name="print"]:checked').data('price');
+    }
+
+    if ($('input[name="uteplitel"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + $('input[name="uteplitel"]:checked').data('price');
+    }
+
+    if ($('input[name="rukav-dlina"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + $('input[name="rukav-dlina"]:checked').data('price');
+    }
 
     window.tcart.amount = new_summa;
     window.tcart.prodamount = new_summa;
@@ -663,7 +675,10 @@ function get_res_wa_text(rec){
     data.forEach(function(item, i, arr) {
         details_text += item.name+': '+item.value+"\n";
     });
-    
+
+    details_text += rec.find("input[name=Phone]").val()+"\n";
+    details_text += rec.find("input[name=Email]").val()+"\n";
+
     return encodeURI("Привет, Hooli! 😜 \n\n"+
         "Хочу подтвердить свой заказ:\n\n"
         +details_text
