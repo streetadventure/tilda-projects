@@ -98,12 +98,19 @@ function t862mev_init(recid) {
                     t862mev_switchResultScreen(rec);
                     form.addClass('js-form-proccess');
 
+                    calc_total(rec,2990);
+
                     var form_data = form.serializeArray(),
                         details_data = get_selected_values(rec),
                         data_to_send = {
                             form_data: form_data,
                             details_data: details_data
                         };
+
+                    form_data.push({
+                        'name':'product_price',
+                        'value':window.tcart.amount
+                    })
 
                     $.ajax({
                         url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli_shtany.php',
@@ -172,12 +179,19 @@ function t862mev_init(recid) {
             form.addClass('js-form-proccess');
             t862mev_disabledPrevBtn(rec, quizQuestionNumber);
 
+            calc_total(rec,2990);
+
             var form_data = form.serializeArray(),
                 details_data = get_selected_values(rec),
                 data_to_send = {
                     form_data: form_data,
                     details_data: details_data
                 };
+
+            form_data.push({
+                'name':'product_price',
+                'value':window.tcart.amount
+            })
 
             $.ajax({
                 url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli_shtany.php',

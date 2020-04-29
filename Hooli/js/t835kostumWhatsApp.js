@@ -144,12 +144,19 @@ function t835mev_init(recid) {
                     t835mev_switchResultScreen(rec);
                     form.addClass('js-form-proccess');
 
+                    recalc(window.tcart.amount);
+
                     var form_data = form.serializeArray(),
                         details_data = get_selected_values(rec),
                         data_to_send = {
                             form_data: form_data,
                             details_data: details_data
                         };
+
+                    form_data.push({
+                        'name':'product_price',
+                        'value':window.tcart.amount
+                    })
 
                     $.ajax({
                         url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hoolistum.php',
@@ -225,12 +232,19 @@ function t835mev_init(recid) {
             form.addClass('js-form-proccess');
             t835mev_disabledPrevBtn(rec, quizQuestionNumber);
 
+            recalc(window.tcart.amount);
+
             var form_data = form.serializeArray(),
                 details_data = get_selected_values(rec),
                 data_to_send = {
                     form_data: form_data,
                     details_data: details_data
                 };
+
+            form_data.push({
+                'name':'product_price',
+                'value':window.tcart.amount
+            })
 
             $.ajax({
                 url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hoolistum.php',
@@ -517,6 +531,14 @@ function recalc(summa){
    
     if ($('input[name="uteplitel"]:checked').data('price')!=undefined) {
         new_summa = new_summa + $('input[name="uteplitel"]:checked').data('price');
+    }
+
+    if ($('input[name="print"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + $('input[name="print"]:checked').data('price');
+    }    
+   
+    if ($('input[name="uteplitel"]:checked').data('price')!=undefined) {
+        new_summa = new_summa + $('input[name="kapushon"]:checked').data('price');
     }
 
     window.tcart.amount = new_summa;
