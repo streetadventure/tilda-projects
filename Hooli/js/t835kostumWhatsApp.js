@@ -156,10 +156,14 @@ function t835mev_init(recid) {
                     form_data.push({
                         'name':'product_price',
                         'value':window.tcart.amount
+                    });
+                    form_data.push({
+                        'name':'site_url',
+                        'value':window.location.hostname+window.location.pathname
                     })
 
                     $.ajax({
-                        url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hoolistum.php',
+                        url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hoolistum.php'+window.location.search,
                         // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
                         type: 'post',
                         dataType: 'json',
@@ -181,7 +185,7 @@ function t835mev_init(recid) {
                     });
                     
                     $.ajax({
-                        url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24_hoolistum.php',
+                        url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24_hoolistum.php'+window.location.search,
                         // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
                         type: 'post',
                         dataType: 'json',
@@ -244,10 +248,14 @@ function t835mev_init(recid) {
             form_data.push({
                 'name':'product_price',
                 'value':window.tcart.amount
+            });
+            form_data.push({
+                'name':'site_url',
+                'value':window.location.hostname+window.location.pathname
             })
 
             $.ajax({
-                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hoolistum.php',
+                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hoolistum.php'+window.location.search,
                 // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
                 type: 'post',
                 dataType: 'json',
@@ -269,7 +277,7 @@ function t835mev_init(recid) {
             });
             
             $.ajax({
-                url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24_hoolistum.php',
+                url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24_hoolistum.php'+window.location.search,
                 // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
                 type: 'post',
                 dataType: 'json',

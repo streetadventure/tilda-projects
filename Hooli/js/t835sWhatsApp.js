@@ -150,10 +150,14 @@ function t835mev_init(recid) {
                     form_data.push({
                         'name':'product_price',
                         'value':window.tcart.amount
+                    });
+                    form_data.push({
+                        'name':'site_url',
+                        'value':window.location.hostname+window.location.pathname
                     })
 
                     $.ajax({
-                        url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
+                        url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php'+window.location.search,
                         type: 'post',
                         dataType: 'json',
                         data: data_to_send,
@@ -174,7 +178,7 @@ function t835mev_init(recid) {
                     });
 
                     $.ajax({
-                        url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php',
+                        url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php'+window.location.search,
                         type: 'post',
                         dataType: 'json',
                         data: data_to_send,
@@ -236,10 +240,14 @@ function t835mev_init(recid) {
             form_data.push({
                 'name':'product_price',
                 'value':window.tcart.amount
+            });
+            form_data.push({
+                'name':'site_url',
+                'value':window.location.hostname+window.location.pathname
             })
 
             $.ajax({
-                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
+                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php'+window.location.search,
                 type: 'post',
                 dataType: 'json',
                 data: data_to_send,
@@ -260,7 +268,7 @@ function t835mev_init(recid) {
             });
 
             $.ajax({
-                url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php',
+                url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php'+window.location.search,
                 type: 'post',
                 dataType: 'json',
                 data: data_to_send,
