@@ -647,39 +647,40 @@ function strstr( haystack, needle, bool ) { // Find first occurrence of a string
             return haystack.slice( pos );
         }
     }
-}    
-    $(document).ready(function() {
-        function get_res_image_name(el){
-            var s = $('input[name="lenght"]:checked').data('img_name'),
-                pt = $('input[name="puh_top"]:checked').data('img_name'),
-                f = $('input[name="fasteners"]:checked').data('img_name'),
-                c = $('input[name="color"]:checked').data('img_name');
+}
 
-            $('#prod_res_img').attr('src', 'https://todobox.ru/payment/kokoslook/constr_photos/'+s+pt+f+c+'.jpg');
-            $('#prod_res_img_input').attr('value', 'https://todobox.ru/payment/kokoslook/constr_photos/'+s+pt+f+c+'.jpg');
+$(document).ready(function() {
+    function get_res_image_name(el){
+        var s = $('input[name="lenght"]:checked').data('img_name'),
+            pt = $('input[name="puh_top"]:checked').data('img_name'),
+            f = $('input[name="fasteners"]:checked').data('img_name'),
+            c = $('input[name="color"]:checked').data('img_name');
 
-            $('#res_constr_lenght').html($('input[name="lenght"]:checked').data('lenght-text'));
-            $('#res_constr_puh_top').text($('input[name="puh_top"]:checked').val());
-            $('#res_constr_fasteners').text($('input[name="fasteners"]:checked').val());
-            $('#res_constr_color').text($('input[name="color"]:checked').val());
+        $('#prod_res_img').attr('src', 'https://todobox.ru/payment/kokoslook/constr_photos/'+s+pt+f+c+'.jpg');
+        $('#prod_res_img_input').attr('value', 'https://todobox.ru/payment/kokoslook/constr_photos/'+s+pt+f+c+'.jpg');
+
+        $('#res_constr_lenght').html($('input[name="lenght"]:checked').data('lenght-text'));
+        $('#res_constr_puh_top').text($('input[name="puh_top"]:checked').val());
+        $('#res_constr_fasteners').text($('input[name="fasteners"]:checked').val());
+        $('#res_constr_color').text($('input[name="color"]:checked').val());
 
 
-            if (c=='al'||c=='sm') {
-                $('.prod_res_img_wrap').hide();
-            }else{
-                $('.prod_res_img_wrap').show();
-            }
+        if (c=='al'||c=='sm') {
+            $('.prod_res_img_wrap').hide();
+        }else{
+            $('.prod_res_img_wrap').show();
         }
+    }
 
-        $('#rec001').on('click', 'input[name="lenght"],input[name="puh_top"],input[name="fasteners"],input[name="color"]', function(event) {
-            get_res_image_name($(this));
-        });
-
-        calc_total("Пуховик", 1);
-        $(".t835mev__btn_result").on('click', function(event) {
-            event.preventDefault();
-            recalc(1);
-        });
+    $('#rec001').on('click', 'input[name="lenght"],input[name="puh_top"],input[name="fasteners"],input[name="color"]', function(event) {
+        get_res_image_name($(this));
     });
+
+    calc_total("Пуховик", 1);
+    $(".t835mev__btn_result").on('click', function(event) {
+        event.preventDefault();
+        recalc(1);
+    });
+});
 </script>
 </div>
