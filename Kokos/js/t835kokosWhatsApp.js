@@ -138,6 +138,8 @@ function t835mev_init(recid) {
                     t835mev_switchResultScreen(rec);
                     form.addClass('js-form-proccess');
 
+                    resultBtn.hide();
+
                     recalc(window.tcart.amount);
 
                     var form_data = form.serializeArray(),
@@ -227,6 +229,8 @@ function t835mev_init(recid) {
             t835mev_scrollToTop(quizFormWrapper);
             form.addClass('js-form-proccess');
             t835mev_disabledPrevBtn(rec, quizQuestionNumber);
+
+            $(this).hide(); // прячем кнопку result_button
 
             recalc(window.tcart.amount);
 
