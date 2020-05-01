@@ -671,57 +671,15 @@ function strstr( haystack, needle, bool ) { // Find first occurrence of a string
             }
         }
 
-        function calc_total(length,summa) {
-
-            var length_str = strstr(length, '=', true);
-
-            window.tcart.amount = summa;
-            window.tcart.prodamount = summa;
-            window.tcart.total = summa;
-
-            window.tcart.products[0] = {
-                amount: summa,
-                name: "Пуховик "+length_str,
-                price: summa,
-                quantity: 1
-            };
-            
-        }
-
-        function recalc(){
-            var new_summa = $('input[name="lenght"]:checked').data('price');
-            if ($('input[name="color"]:checked').data('price')!=undefined) {
-                new_summa = new_summa + $('input[name="color"]:checked').data('price');
-            }
-
-            window.tcart.amount = new_summa;
-            window.tcart.prodamount = new_summa;
-            window.tcart.total = new_summa;
-
-            window.tcart.products[0].amount = new_summa;
-            window.tcart.products[0].price = new_summa;
-        }
-        
-        $('#rec001').on('click', 'input[name="lenght"]', function(event) {
-            calc_total($(this).val(),$(this).data('price'));
-        });        
-
         $('#rec001').on('click', 'input[name="lenght"],input[name="puh_top"],input[name="fasteners"],input[name="color"]', function(event) {
             get_res_image_name($(this));
         });
 
+        calc_total("Пуховик", 1);
         $(".t835mev__btn_result").on('click', function(event) {
             event.preventDefault();
-            recalc();
+            recalc(1);
         });
-        // $('.t835mev__btn_result').on('click', '.t-submit', function(event) {
-        //     event.preventDefault();
-        //     if($(this).attr('id')=="askManager"){
-        //         $(this).closest('form').data('formcart', 'n').submit();
-        //     }else{
-        //         $(this).closest('form').data('formcart', 'y').submit();
-        //     }
-        // });
     });
 </script>
 </div>

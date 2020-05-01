@@ -157,7 +157,7 @@ function t835mev_init(recid) {
                     })
 
                     $.ajax({
-                        url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php'+window.location.search,
+                        url: 'https://todobox.ru/payment/kokoslook/quiz_puhan_a.php'+window.location.search,
                         type: 'post',
                         dataType: 'json',
                         data: data_to_send,
@@ -178,7 +178,7 @@ function t835mev_init(recid) {
                     });
 
                     $.ajax({
-                        url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php'+window.location.search,
+                        url: 'https://todobox.ru/payment/kokoslook/kokos/bitrix24-sdk.php'+window.location.search,
                         type: 'post',
                         dataType: 'json',
                         data: data_to_send,
@@ -247,7 +247,7 @@ function t835mev_init(recid) {
             })
 
             $.ajax({
-                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php'+window.location.search,
+                url: 'https://todobox.ru/payment/kokoslook/quiz_puhan_a.php'+window.location.search,
                 type: 'post',
                 dataType: 'json',
                 data: data_to_send,
@@ -268,7 +268,7 @@ function t835mev_init(recid) {
             });
 
             $.ajax({
-                url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php'+window.location.search,
+                url: 'https://todobox.ru/payment/kokoslook/kokos/bitrix24-sdk.php'+window.location.search,
                 type: 'post',
                 dataType: 'json',
                 data: data_to_send,
