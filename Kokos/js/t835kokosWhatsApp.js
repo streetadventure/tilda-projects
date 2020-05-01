@@ -462,7 +462,7 @@ function t835mev_switchResultScreen(rec) {
     quizDescription.hide();
     resultTitle.show();
     // submitBtnWrapper.show();
-    prevBtn.hide();
+    // prevBtn.hide();
     submitBtnWrapper.css('display', 'flex');
 
 }
