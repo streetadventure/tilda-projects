@@ -100,7 +100,7 @@ function t835mev_init(recid) {
                 quizQuestionNumber++;
                 t835mev_setProgress(rec, 1);
                 if (quizQuestionNumber < questionArr.length) {
-                    
+
                     if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
                         quizQuestionNumber = showHideStep(
                             $(quizQuestion[quizQuestionNumber]).data('whenshow'),
@@ -110,7 +110,7 @@ function t835mev_init(recid) {
                             'next'
                         );
                     }
-                    
+
                     t835mev_switchQuestion(rec, quizQuestionNumber)
                 } else {
                     t835mev_switchResultScreen(rec);
@@ -547,7 +547,7 @@ function get_res_wa_text(recid){
     details_text += rec.find("input[name=Email]").val()+"\n";
     details_text += rec.find("input[name=quiz_type]").val()+"\n";
 
-    return encodeURI("Привет, Hooli! 😜 \n\n"+
+    return encodeURI("Привет, Kokos! 😜 \n\n"+
         "Хочу подтвердить свой заказ:\n\n"
         +details_text
     );
