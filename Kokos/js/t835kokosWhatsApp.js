@@ -446,6 +446,7 @@ function t835mev_switchResultScreen(rec) {
     var resultBtn = rec.find('.t835mev__btn_result');
     var submitBtnWrapper = rec.find('.t835mev .t-form__submit');
     var questionArr = t835mev_createQuestionArr(rec);
+    get_res_image_name();
     $(questionArr).hide();
     $(captureForm).show();
     resultBtn.hide();
@@ -454,7 +455,6 @@ function t835mev_switchResultScreen(rec) {
     // submitBtnWrapper.show();
     // prevBtn.hide();
     submitBtnWrapper.css('display', 'flex');
-    get_res_image_name();
 }
 function t835mev_awayFromResultScreen(rec) {
     var captureForm = rec.find('.t835mev__capture-form');
