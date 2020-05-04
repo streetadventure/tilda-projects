@@ -497,10 +497,11 @@
 
                                         <div class="prod_res_img_wrap" >
                                             <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1528359927420" style="">Класс! Отличный выбор!</div>
-                                            <div class="t-input-subtitle t-descr t-descr_xxs t-opacity_70" data-redactor-toolbar="no" field="li_subtitle__1528359927420" style="">Длина: <span id="res_constr_lenght"></span></div>
-                                            <div class="t-input-subtitle t-descr t-descr_xxs t-opacity_70" data-redactor-toolbar="no" field="li_subtitle__1528359927420" style="">Верх: <span id="res_constr_puh_top"></span></div>
-                                            <div class="t-input-subtitle t-descr t-descr_xxs t-opacity_70" data-redactor-toolbar="no" field="li_subtitle__1528359927420" style="">Застежки: <span id="res_constr_fasteners"></span></div>
-                                            <div class="t-input-subtitle t-descr t-descr_xxs t-opacity_70" data-redactor-toolbar="no" field="li_subtitle__1528359927420" style="">Цвет: <span id="res_constr_color"></span></div>
+                                            <!-- сюда пишем описание что заказали -->
+                                            <div class="t-input-subtitle t-descr t-descr_xxs t-opacity_70" data-redactor-toolbar="no" field="li_subtitle__1528359927420" style="">
+
+                                            </div>
+
                                             <div class="prod_res_img">
                                                 <img src="" alt="" id="prod_res_img">
                                                 <input id="prod_res_img_input" name="prod_res_img_input" type="hidden">
@@ -689,7 +690,7 @@ function strstr( haystack, needle, bool ) { // Find first occurrence of a string
 
 $(document).ready(function() {
     calc_total("Пуховик", 1);
-    
+
     $(".t835mev__btn_result").on('click', function(event) {
         event.preventDefault();
         get_res_image_name();

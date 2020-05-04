@@ -63,18 +63,7 @@ function t835mev_init(recid) {
         if (!showErrors) {
             quizQuestionNumber++;
             prevBtn.attr('disabled', !1);
-
-            if ( rec.data('show-details')=="y" ) {
-                if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
-                    var details_data = get_selected_values("001"),
-                        details_text = '';
-                    details_data.forEach(function(item, i, arr) {
-                        details_text += item.name+': '+item.value+'<br>'
-                    });
-                    $('.t-input-group_details .t-input-subtitle').html(details_text);
-                }
-            }
-            
+           
             if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
                 quizQuestionNumber = showHideStep(
                     $(quizQuestion[quizQuestionNumber]).data('whenshow'),
@@ -111,17 +100,6 @@ function t835mev_init(recid) {
                 quizQuestionNumber++;
                 t835mev_setProgress(rec, 1);
                 if (quizQuestionNumber < questionArr.length) {
-
-                    if ( rec.data('show-details')=="y" ) {
-                        if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
-                            var details_data = get_selected_values("001"),
-                                details_text = '';
-                            details_data.forEach(function(item, i, arr) {
-                                details_text += item.name+': '+item.value+'<br>'
-                            });
-                            $('.t-input-group_details .t-input-subtitle').html(details_text);
-                        }
-                    }
                     
                     if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
                         quizQuestionNumber = showHideStep(
@@ -138,12 +116,18 @@ function t835mev_init(recid) {
                     t835mev_switchResultScreen(rec);
                     form.addClass('js-form-proccess');
 
+                    var details_data = get_selected_values("001"),
+                        details_text = '';
+                    details_data.forEach(function(item, i, arr) {
+                        details_text += item.name+': '+item.value+'<br>'
+                    });
+                    $('.prod_res_img_wrap .t-input-subtitle').html(details_text);
+
                     resultBtn.hide();
 
                     recalc(window.tcart.amount);
 
                     var form_data = form.serializeArray(),
-                    details_data = get_selected_values('001'),
                     data_to_send = {
                         form_data: form_data,
                         details_data: details_data
@@ -232,10 +216,16 @@ function t835mev_init(recid) {
 
             $(this).hide(); // прячем кнопку result_button
 
+            var details_data = get_selected_values("001"),
+                details_text = '';
+            details_data.forEach(function(item, i, arr) {
+                details_text += item.name+': '+item.value+'<br>'
+            });
+            $('.prod_res_img_wrap .t-input-subtitle').html(details_text);            
+
             recalc(window.tcart.amount);
 
             var form_data = form.serializeArray(),
-            details_data = get_selected_values('001'),
             data_to_send = {
                 form_data: form_data,
                 details_data: details_data
