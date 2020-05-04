@@ -366,7 +366,34 @@
                                         </div>    
                                         <!-- Phone -->
                                         <div class="t-input-block">
-                                            <input type="tel" name="Phone" class="t-input js-tilda-rule t-input_bbonly" value="" placeholder="Укажи телефон (Не забудь указать код страны)" data-tilda-req="1" data-tilda-rule="phone" pattern="[0-9]*" style="color:#000000; border:1px solid #b3b3b3;">
+                                            <input type="tel" name="Phone" data-phonemask-init="no" data-phonemask-id="001" data-phonemask-lid="1527252219292" data-phonemask-maskcountry="RU" class="t-input js-phonemask-input js-tilda-rule t-input_bbonly" value="" placeholder="+1(999)999-9999" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
+                                            <script type="text/javascript">
+                                                    if (!document.getElementById('t-phonemask-script')) {
+                                                        (function(d, w, o) {
+                                                            var n = d.getElementsByTagName(o)[0]
+                                                              , s = d.createElement(o)
+                                                              , f = function() {
+                                                                n.parentNode.insertBefore(s, n);
+                                                            };
+                                                            s.type = "text/javascript";
+                                                            s.async = true;
+                                                            s.id = 't-phonemask-script';
+                                                            s.src = "https://static.tildacdn.com/js/tilda-phone-mask-1.1.min.js";
+                                                            if (w.opera == "[object Opera]") {
+                                                                d.addEventListener("DOMContentLoaded", f, false);
+                                                            } else {
+                                                                f();
+                                                            }
+                                                        }
+                                                        )(document, window, 'script');
+                                                    } else {
+                                                        $(document).ready(function() {
+                                                            if (typeof t_form_phonemask_load == 'function') {
+                                                                t_form_phonemask_load($('#rec001 [data-phonemask-lid=1527252219292]'));
+                                                            }
+                                                        });
+                                                    }
+                                                </script>
                                             <div class="t-input-error"></div>
                                         </div>
                                         <!-- Email -->
@@ -495,7 +522,7 @@
                                              Чтобы приобрести худи по акционной цене всего за 5990 руб. вместо 7990 руб. нужно произвести оплату сейчас, нажав на кнопку «Оплатить».<br><br>
 
                                             <button type="submit" class="t-submit" style="color:#0a0a0a;background-color:#efa23a;border-radius:30px; -moz-border-radius:30px; -webkit-border-radius:30px;">Оплатить</button>
-<br><br>
+                                            <br><br>
                                             Если вы не имеете возможности оплатить заказ сейчас - запросите резерв скидки в WhatsApp, нажав следующую кнопку:<br><br>
 
                                             <a href="" id="write_to_whatsapp">Whatsapp</a><br><br>
@@ -504,11 +531,11 @@
                                         </div>
                                     </div>                                    
                                     <!--[if IE 8]><style>.t-checkbox__control .t-checkbox, .t-radio__control .t-radio { left: 0px; z-index: 1; opacity: 1;
-}
-.t-checkbox__indicator, .t-radio__indicator { display: none;
-}
-.t-img-select__control .t-img-select { position: static;
-}</style><![endif]-->
+                                    }
+                                    .t-checkbox__indicator, .t-radio__indicator { display: none;
+                                    }
+                                    .t-img-select__control .t-img-select { position: static;
+                                    }</style><![endif]-->
                                     <div class="t-form__errorbox-middle">
                                         <div class="js-errorbox-all t-form__errorbox-wrapper" style="display:none;">
                                             <div class="t-form__errorbox-text t-text t-text_md">
@@ -661,28 +688,6 @@ function strstr( haystack, needle, bool ) { // Find first occurrence of a string
 }
 
 $(document).ready(function() {
-    function get_res_image_name(el){
-        var s = $('input[name="lenght"]:checked').data('img_name'),
-            pt = $('input[name="puh_top"]:checked').data('img_name'),
-            f = $('input[name="fasteners"]:checked').data('img_name'),
-            c = $('input[name="color"]:checked').data('img_name');
-
-        $('#prod_res_img').attr('src', 'https://todobox.ru/payment/kokoslook/constr_photos/'+s+pt+f+c+'.jpg');
-        $('#prod_res_img_input').attr('value', 'https://todobox.ru/payment/kokoslook/constr_photos/'+s+pt+f+c+'.jpg');
-
-        $('#res_constr_lenght').html($('input[name="lenght"]:checked').data('lenght-text'));
-        $('#res_constr_puh_top').text($('input[name="puh_top"]:checked').val());
-        $('#res_constr_fasteners').text($('input[name="fasteners"]:checked').val());
-        $('#res_constr_color').text($('input[name="color"]:checked').val());
-
-
-        if (c=='al'||c=='sm') {
-            $('.prod_res_img_wrap').hide();
-        }else{
-            $('.prod_res_img_wrap').show();
-        }
-    }
-
     $('#rec001').on('click', 'input[name="lenght"],input[name="puh_top"],input[name="fasteners"],input[name="color"]', function(event) {
         get_res_image_name($(this));
     });
