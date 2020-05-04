@@ -522,24 +522,8 @@ function calc_total(length, summa) {
 }
 function recalc(summa){
     var new_summa = summa;
-    if ($('input[name="dlina"]:checked').data('price')!=undefined) {
-        new_summa = new_summa + $('input[name="dlina"]:checked').data('price');
-    }
-
-    if ($('input[name="print"]:checked').data('price')!=undefined) {
-        new_summa = new_summa + $('input[name="print"]:checked').data('price');
-    }
-    
-    if ($('input[name="uteplitel"]:checked').data('price')!=undefined) {
-        new_summa = new_summa + $('input[name="uteplitel"]:checked').data('price');
-    }
-
-    if ($('input[name="rukav-dlina"]:checked').data('price')!=undefined) {
-        new_summa = new_summa + $('input[name="rukav-dlina"]:checked').data('price');
-    }
-
-    if ($('input[name="kapushon"]:checked').data('price')!=undefined) {
-        new_summa = new_summa + $('input[name="kapushon"]:checked').data('price');
+    if ($('input[name="lenght"]:checked').data('price')!=undefined) {
+        new_summa = $('input[name="lenght"]:checked').data('price');
     }
 
     window.tcart.amount = new_summa;
