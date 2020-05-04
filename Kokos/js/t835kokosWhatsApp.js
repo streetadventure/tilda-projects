@@ -579,7 +579,7 @@ function get_res_wa_text(recid){
     );
 }
 
-function get_res_image_name(el){
+function get_res_image_name(){
     var s = $('input[name="lenght"]:checked').data('img_name'),
         pt = $('input[name="puh_top"]:checked').data('img_name'),
         f = $('input[name="fasteners"]:checked').data('img_name'),
@@ -587,12 +587,6 @@ function get_res_image_name(el){
 
     $('#prod_res_img').attr('src', 'https://todobox.ru/payment/kokoslook/constr_photos/'+s+pt+f+c+'.jpg');
     $('#prod_res_img_input').attr('value', 'https://todobox.ru/payment/kokoslook/constr_photos/'+s+pt+f+c+'.jpg');
-
-    $('#res_constr_lenght').html($('input[name="lenght"]:checked').data('lenght-text'));
-    $('#res_constr_puh_top').text($('input[name="puh_top"]:checked').val());
-    $('#res_constr_fasteners').text($('input[name="fasteners"]:checked').val());
-    $('#res_constr_color').text($('input[name="color"]:checked').val());
-
 
     if (c=='al'||c=='sm') {
         $('.prod_res_img_wrap').hide();

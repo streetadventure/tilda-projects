@@ -688,13 +688,11 @@ function strstr( haystack, needle, bool ) { // Find first occurrence of a string
 }
 
 $(document).ready(function() {
-    $('#rec001').on('click', 'input[name="lenght"],input[name="puh_top"],input[name="fasteners"],input[name="color"]', function(event) {
-        get_res_image_name($(this));
-    });
-
     calc_total("Пуховик", 1);
+    
     $(".t835mev__btn_result").on('click', function(event) {
         event.preventDefault();
+        get_res_image_name();
         recalc(1);
     });
 });
