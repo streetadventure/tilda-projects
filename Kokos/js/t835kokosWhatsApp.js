@@ -63,7 +63,7 @@ function t835mev_init(recid) {
         if (!showErrors) {
             quizQuestionNumber++;
             prevBtn.attr('disabled', !1);
-           
+
             if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
                 quizQuestionNumber = showHideStep(
                     $(quizQuestion[quizQuestionNumber]).data('whenshow'),
@@ -609,8 +609,10 @@ function optional_dependency(){
                     var allowed_opt = $(el).data('prev-selection').split("|");
                     if ( allowed_opt.some(function(arr_el){return clickable_input.val() == arr_el}) ) {
                         $(el).closest('label').show();
+                        $(el).data('tilda-req',1);
                     }else{
                         $(el).closest('label').hide();
+                        $(el).data('tilda-req',0);
                     }
                 })
             });

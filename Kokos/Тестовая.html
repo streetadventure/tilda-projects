@@ -457,7 +457,7 @@
                                         </div>
                                     </div>
                                     <!-- dostavka 9 -->
-                                    <div class="t-input-group t-input-group_rd" data-input-lid="1571058020634" data-name="Доставка">
+                                    <div class="t-input-group t-input-group_rd" data-input-lid="1571058020634" data-name="Доставка" data-optional="address">
                                         <div class="t-input-title t-descr t-descr_md" data-redactor-toolbar="no" field="li_title__1571058020634" style="">Как тебе удобнее получить пуховик?</div>
                                         <div class="t-input-block">
                                             <div class="t-radio__wrapper">
@@ -488,8 +488,12 @@
                                     <!-- adress 10 -->
                                     <div class="t-input-group t-input-group_in" data-input-lid="1545508986823" data-name="Адрес доставки">
                                         <div class="t-input-block">
-                                            <input type="text" name="address" class="t-input js-tilda-rule t-input_bbonly" value="" placeholder="Укажи адрес доставки" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; ">
-                                            <div class="t-input-error"></div>
+                                            <label>
+                                                <input type="text" name="address" class="t-input js-tilda-rule t-input_bbonly" value="" placeholder="Укажи адрес доставки" data-tilda-req="1" style="color:#000000; border:1px solid #b3b3b3; "
+                                                data-prev-selection="Доставка по России|Доставка по миру"
+                                                >
+                                                <div class="t-input-error"></div>
+                                            </label>
                                         </div>
                                     </div>
 
