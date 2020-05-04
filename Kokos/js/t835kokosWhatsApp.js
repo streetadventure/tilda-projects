@@ -454,7 +454,7 @@ function t835mev_switchResultScreen(rec) {
     // submitBtnWrapper.show();
     // prevBtn.hide();
     submitBtnWrapper.css('display', 'flex');
-
+    get_res_image_name();
 }
 function t835mev_awayFromResultScreen(rec) {
     var captureForm = rec.find('.t835mev__capture-form');
