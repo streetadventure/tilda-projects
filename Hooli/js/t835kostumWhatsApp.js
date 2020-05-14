@@ -144,7 +144,7 @@ function t835mev_init(recid) {
                     t835mev_switchResultScreen(rec);
                     form.addClass('js-form-proccess');
 
-                    recalc(window.tcart.amount);
+                    recalc(window.mev_amount);
 
                     var form_data = form.serializeArray(),
                         details_data = get_selected_values(rec),
@@ -200,7 +200,8 @@ function t835mev_init(recid) {
                         $('<input></input>', {
                             'type': 'hidden',
                             'name': 'InvoiceId',
-                        }).val(data.ID).appendTo(form);                        
+                        }).val(data.ID).appendTo(form);
+                        window.bitrix24DealId = data.ID;
                         // window.open($('#write_to_whatsapp').attr('href'), "_blank");
                     })
                     .fail(function(data) {
@@ -236,7 +237,7 @@ function t835mev_init(recid) {
             form.addClass('js-form-proccess');
             t835mev_disabledPrevBtn(rec, quizQuestionNumber);
 
-            recalc(window.tcart.amount);
+            recalc(window.mev_amount);
 
             var form_data = form.serializeArray(),
                 details_data = get_selected_values(rec),
@@ -292,7 +293,8 @@ function t835mev_init(recid) {
                 $('<input></input>', {
                     'type': 'hidden',
                     'name': 'InvoiceId',
-                }).val(data.ID).appendTo(form);                
+                }).val(data.ID).appendTo(form);
+                window.bitrix24DealId = data.ID;
                 // window.open($('#write_to_whatsapp').attr('href'), "_blank");
             })
             .fail(function(data) {
@@ -537,16 +539,17 @@ function calc_total(summa) {
 function recalc(summa){
     var new_summa = summa;
    
-    if ($('input[name="uteplitel"]:checked').data('price')!=undefined) {
-        new_summa = new_summa + $('input[name="uteplitel"]:checked').data('price');
-    }
+    $('input:checked').each(function(index, el) {
+        if ( $(el).data('price')!=undefined ) {
+            new_summa = new_summa + $(el).data('price');
+        }
+    });
 
-    if ($('input[name="print"]:checked').data('price')!=undefined) {
-        new_summa = new_summa + $('input[name="print"]:checked').data('price');
-    }    
-   
-    if ($('input[name="uteplitel"]:checked').data('price')!=undefined) {
-        new_summa = new_summa + $('input[name="kapushon"]:checked').data('price');
+    if( $('input[name=Promocode]').length ){
+        var userPromocode = $('input[name=Promocode]').val();
+        if( userPromocode.toUpperCase() =="3GIRLS" || userPromocode.toUpperCase() =="ANYUTAMOM"){
+            new_summa = new_summa*0.9;
+        }
     }
 
     window.tcart.amount = new_summa;
@@ -661,12 +664,97 @@ function showHideStep(whenshow,depend,disablereq,quizQuestionNumber,direction){
 
 // Выполнить после загрузки документа
 $(document).ready(function() {
+window.tildaForm.cloudpaymentPay = function(n, s) {
+    if (!0 !== window.cloudpaymentsapiiscalled)
+        return window.tildaForm.cloudpaymentLoad(),
+        window.setTimeout(function() {
+            window.tildaForm.cloudpaymentPay(n, s)
+        }, 200),
+        !1;
+    var d = s.currency
+      , t = s.language
+      , e = {};
+    if (t = t || ("RUB" == d || "BYR" == d || "BYN" == d || "RUR" == d ? "ru-RU" : "UAH" == d ? "uk" : "en-US"),
+    !window.cloudpaymentshandler) {
+        if ("object" != typeof window.cp)
+            return window.setTimeout(function() {
+                window.tildaForm.cloudpaymentPay(n, s)
+            }, 200),
+            !1;
+        e = {
+            language: t
+        },
+        s.applePaySupport && "off" == s.applePaySupport && (e.applePaySupport = !1),
+        s.googlePaySupport && "off" == s.googlePaySupport && (e.googlePaySupport = !1),
+        window.cloudpaymentshandler = new cp.CloudPayments(e)
+    }
+    var r = {};
+    r.projectid = s.projectid,
+    r.bitrixDealId = window.bitrix24DealId;
+    s.cloudPayments && (s.cloudPayments.recurrent || s.cloudPayments.customerReceipt) && (r.cloudPayments = s.cloudPayments);
+    var l = n.closest(".t-popup_show");
+    return l && 0 != l.length || (l = n.closest(".t706__cartwin_showed")),
+    l.data("old-style", l.attr("style")),
+    l.attr("style", "z-index:100"),
+    window.tildaForm.orderIdForStat = s.invoiceId,
+    s.skin || (s.skin = "classic"),
+    window.cloudpaymentshandler.charge({
+        publicId: s.publicId,
+        description: s.description,
+        amount: parseFloat(s.amount),
+        currency: d,
+        accountId: s.accountId,
+        invoiceId: s.invoiceId,
+        requireEmail: 1 == s.requireEmail,
+        email: s.email,
+        skin: s.skin,
+        data: r
+    }, function(t) {
+        window.cloudpaymentshandler = !1,
+        l.attr("style", l.data("old-style"));
+        var e = "/tilda/" + n.attr("id") + "/payment/"
+          , r = "Pay order in form " + n.attr("id")
+          , a = s.amount
+          , o = s.description;
+        $("#allrecords").data("tilda-currency", d),
+        window.Tilda && "function" == typeof Tilda.sendEventToStatistics && Tilda.sendEventToStatistics(e, r, o, a),
+        window.tildaForm.clearTCart(n),
+        "" < s.successurl && window.setTimeout(function() {
+            window.location.href = s.successurl
+        }, 300),
+        "" < n.data("successmessage") ? n.find(".js-successbox").html(n.data("successmessage")) : n.find(".js-successbox").html(""),
+        n.data("successmessage", "");
+        var i = n.data("success-callback");
+        window.tildaForm.successEnd(n, s.successurl, i),
+        n.trigger("tildaform:aftersuccess")
+    }, function(t, e) {
+        if (l.attr("style", l.data("old-style")),
+        n.find(".js-successbox").hide(),
+        "" < n.data("successmessage") ? n.find(".js-successbox").html(n.data("successmessage")) : n.find(".js-successbox").html(""),
+        n.data("successmessage", ""),
+        window.cloudpaymentshandler = !1,
+        "" < s.failureurl)
+            window.location.href = s.failureurl;
+        else {
+            l.find(".t706__cartwin-products").show(),
+            l.find(".t706__cartwin-prodamount-wrap").show(),
+            l.find(".t706__form-bottom-text").show(),
+            n.find(".t-form__inputsbox").show();
+            try {
+                tcart__lockScroll()
+            } catch (t) {}
+        }
+    }),
+    !1
+}
+
     $('#rec001').on('click', '.t835mev__btn_result', function(event) {
         var text = get_res_wa_text('#rec001');
         $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
     });
 
     calc_total(6990);
+    window.mev_amount = 6990;
 
     optional_dependency();
 });
