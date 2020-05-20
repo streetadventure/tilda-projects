@@ -538,7 +538,17 @@ function recalc(summa){
 
     if( $('input[name=Promocode]').length ){
         var userPromocode = $('input[name=Promocode]').val();
-        if( userPromocode.toUpperCase() =="3GIRLS" || userPromocode.toUpperCase() =="ANYUTAMOM"){
+        if
+        ( userPromocode.toUpperCase() =="3GIRLS"
+            || userPromocode.toUpperCase() =="ANYUTAMOM"
+            || userPromocode.toUpperCase() =="VLR_ALL"
+            || userPromocode.toUpperCase() =="IODA"
+            || userPromocode.toUpperCase() =="MAZEPINA"
+            || userPromocode.toUpperCase() =="SCAR"
+            || userPromocode.toUpperCase() =="KRIS_ZH"
+            || userPromocode.toUpperCase() =="VIXXKEI"
+            || userPromocode.toUpperCase() =="PAVELETSKAYA"
+        ){
             new_summa = new_summa*0.9;
         }
     }
