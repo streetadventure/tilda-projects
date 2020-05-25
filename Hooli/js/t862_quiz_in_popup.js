@@ -679,6 +679,23 @@ function calc_total(rec, summa) {
             || userPromocode.toUpperCase() =="KRIS_ZH"
             || userPromocode.toUpperCase() =="VIXXKEI"
             || userPromocode.toUpperCase() =="PAVELETSKAYA"
+            || userPromocode.toUpperCase() =="ANNNEMY"
+            || userPromocode.toUpperCase() =="MILASYA"
+            || userPromocode.toUpperCase() =="KHODZHULYA"
+            || userPromocode.toUpperCase() =="IRINA_IS"
+            || userPromocode.toUpperCase() =="OSGARD"
+            || userPromocode.toUpperCase() =="REPINA"
+            || userPromocode.toUpperCase() =="PUSHKINA"
+            || userPromocode.toUpperCase() =="SINITSYNA"
+            || userPromocode.toUpperCase() =="KOSHKINA"
+            || userPromocode.toUpperCase() =="VALUYSKAYA"
+            || userPromocode.toUpperCase() =="TANIMANI"
+            || userPromocode.toUpperCase() =="FARTUNA"
+            || userPromocode.toUpperCase() =="CRYBABY"
+            || userPromocode.toUpperCase() =="DANAGE"
+            || userPromocode.toUpperCase() =="ISV"
+            || userPromocode.toUpperCase() =="NIKULA"
+            || userPromocode.toUpperCase() =="BUPSIKITTY"
         ){
             new_summa = new_summa*0.9;
         }
