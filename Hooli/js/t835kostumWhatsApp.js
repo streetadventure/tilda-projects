@@ -648,7 +648,6 @@ function show_details(recid){
 
 // добавляем стили для show/hide вариантов в зависимости от ранее выбранных 
 function optional_dependency(){
-
     var parent_options = $("[data-optional]");
 
     parent_options.each(function(index, el) {
@@ -656,15 +655,19 @@ function optional_dependency(){
         parent_option.find('input').each(function(index, el) {
             var clickable_input = $(el);
             clickable_input.on('click', function(event) {
-                var result_input = $('input[name="'+parent_option.data('optional')+'"]');
-                result_input.each(function(index, el){
-                    var allowed_opt = $(el).data('prev-selection').split("|");
-                    if ( allowed_opt.some(function(arr_el){return clickable_input.val() == arr_el}) ) {
-                        $(el).closest('label').show();
-                    }else{
-                        $(el).closest('label').hide();
-                    }
-                })
+                var resultating_inputs_str = parent_option.data('optional');
+                var resultating_inputs_arr = resultating_inputs_str.split("|");
+                for (var input_key in resultating_inputs_arr){
+                    var result_input = $('input[name="'+resultating_inputs_arr[input_key]+'"]');
+                    result_input.each(function(index, el){
+                        var allowed_opt = $(el).data('prev-selection').split("|");
+                        if ( allowed_opt.some(function(arr_el){return clickable_input.val() == arr_el}) ) {
+                            $(el).closest('label').show();
+                        }else{
+                            $(el).closest('label').hide();
+                        }
+                    })
+                }
             });
         });
     });
