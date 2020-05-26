@@ -1,0 +1,4 @@
+# 4 space indentation
+[{*.css,*.less,*.php,*.html}]
+indent_style = space
+indent_size = 4
