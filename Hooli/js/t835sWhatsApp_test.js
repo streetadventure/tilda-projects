@@ -177,6 +177,10 @@ function t835mev_init(recid) {
                         // console.log("complete");
                     });*/
 
+                    if (fbq != undefined) {
+                        fbq('track', 'Lead');
+                    }                    
+
                     $.ajax({
                         url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php'+window.location.search,
                         type: 'post',
@@ -186,9 +190,7 @@ function t835mev_init(recid) {
                     .done(function(data) {
                         // data.id - номер заказа в retailCRM
                         // $('#order_id').val(data.id);
-                        if (fbq != undefined) {
-                            fbq('track', 'Lead');
-                        }
+
 
                         $('<input></input>',{
                             'type':'hidden',

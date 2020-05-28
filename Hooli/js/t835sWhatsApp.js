@@ -147,6 +147,7 @@ function t835mev_init(recid) {
                         details_data: details_data
                     };
 
+
                     form_data.push({
                         'name':'product_price',
                         'value':window.tcart.amount
@@ -155,6 +156,10 @@ function t835mev_init(recid) {
                         'name':'site_url',
                         'value':window.location.hostname+window.location.pathname
                     })
+
+                    if (fbq != undefined) {
+                        fbq('track', 'Lead');
+                    }                    
 
                     $.ajax({
                         url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php'+window.location.search,
@@ -165,9 +170,6 @@ function t835mev_init(recid) {
                     .done(function(data) {
                         // data.id - номер заказа в retailCRM
                         // $('#order_id').val(data.id);
-                        if (fbq != undefined) {
-                            fbq('track', 'Lead');
-                        }
                         // window.open($('#write_to_whatsapp').attr('href'), "_blank");
                     })
                     .fail(function(data) {
@@ -186,9 +188,6 @@ function t835mev_init(recid) {
                     .done(function(data) {
                         // data.id - номер заказа в retailCRM
                         // $('#order_id').val(data.id);
-                        if (fbq != undefined) {
-                            fbq('track', 'Lead');
-                        }
                         $('<input></input>', {
                             'type': 'hidden',
                             'name': 'InvoiceId',
@@ -246,6 +245,9 @@ function t835mev_init(recid) {
                 'name':'site_url',
                 'value':window.location.hostname+window.location.pathname
             })
+                    if (fbq != undefined) {
+                        fbq('track', 'Lead');
+                    }            
 
             $.ajax({
                 url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php'+window.location.search,
@@ -256,9 +258,7 @@ function t835mev_init(recid) {
             .done(function(data) {
                 // data.id - номер заказа в retailCRM
                 // $('#order_id').val(data.id);
-                if (fbq != undefined) {
-                    fbq('track', 'Lead');
-                }
+
                 // window.open($('#write_to_whatsapp').attr('href'), "_blank");
             })
             .fail(function(data) {
@@ -277,9 +277,7 @@ function t835mev_init(recid) {
             .done(function(data) {
                 // data.id - номер заказа в retailCRM
                 // $('#order_id').val(data.id);
-                if (fbq != undefined) {
-                    fbq('track', 'Lead');
-                }
+
                 $('<input></input>', {
                     'type': 'hidden',
                     'name': 'InvoiceId',

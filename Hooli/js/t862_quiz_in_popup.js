@@ -116,6 +116,10 @@ function t862mev_init(recid) {
                         'value':window.location.hostname+window.location.pathname
                     })
 
+                    if (fbq != undefined) {
+                        fbq('track', 'Lead');
+                    }
+
                     $.ajax({
                         url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli_shtany.php'+window.location.search,
                         // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
@@ -126,9 +130,7 @@ function t862mev_init(recid) {
                     .done(function(data) {
                         // data.id - номер заказа в retailCRM
                         // $('#order_id').val(data.id);
-                        if (fbq != undefined) {
-                            fbq('track', 'Lead');
-                        }
+                        
                         // window.open($('#write_to_whatsapp').attr('href'), "_blank");
                     })
                     .fail(function(data) {
@@ -148,9 +150,7 @@ function t862mev_init(recid) {
                     .done(function(data) {
                         // data.id - номер заказа в retailCRM
                         // $('#order_id').val(data.id);
-                        if (fbq != undefined) {
-                            fbq('track', 'Lead');
-                        }
+                        
                         $('<input></input>', {
                             'type': 'hidden',
                             'name': 'InvoiceId',
@@ -202,6 +202,10 @@ function t862mev_init(recid) {
                 'value':window.location.hostname+window.location.pathname
             })
 
+                    if (fbq != undefined) {
+                        fbq('track', 'Lead');
+                    }            
+
             $.ajax({
                 url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli_shtany.php'+window.location.search,
                 // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
@@ -212,9 +216,6 @@ function t862mev_init(recid) {
             .done(function(data) {
                 // data.id - номер заказа в retailCRM
                 // $('#order_id').val(data.id);
-                if (fbq != undefined) {
-                    fbq('track', 'Lead');
-                }
                 // window.open($('#write_to_whatsapp').attr('href'), "_blank");
             })
             .fail(function(data) {
@@ -234,9 +235,6 @@ function t862mev_init(recid) {
             .done(function(data) {
                 // data.id - номер заказа в retailCRM
                 // $('#order_id').val(data.id);
-                if (fbq != undefined) {
-                    fbq('track', 'Lead');
-                }
                 $('<input></input>', {
                     'type': 'hidden',
                     'name': 'InvoiceId',
