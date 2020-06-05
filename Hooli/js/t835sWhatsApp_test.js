@@ -36,15 +36,18 @@ function t835mev_init(recid) {
                 t_lazyload_update()
             }
         }
+
         if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
             quizQuestionNumber = showHideStep(
                 $(quizQuestion[quizQuestionNumber]).data('whenshow'),
                 $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
                 $(quizQuestion[quizQuestionNumber]).data('disablereq'),
                 quizQuestionNumber,
-                'prev'
+                'prev',
+                quizQuestion
             );
         }
+
         t835mev_awayFromResultScreen(rec);
         t835mev_showCounter(rec, quizQuestionNumber);
         t835mev_hideError(rec, quizQuestionNumber);
@@ -64,24 +67,27 @@ function t835mev_init(recid) {
             quizQuestionNumber++;
             prevBtn.attr('disabled', !1);
 
+            // показывать шаг с детялями при условии что вставлен для этого div в нужном месте в коде
             if ( rec.data('show-details')=="y" ) {
                 if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
-                    var details_data = get_selected_values("001"),
+                    var showproduct = $(quizQuestion[quizQuestionNumber]).data('showproduct');
+                    var details_data = get_selected_values_for_product(rec,showproduct),
                         details_text = '';
                     details_data.forEach(function(item, i, arr) {
                         details_text += item.name+': '+item.value+'<br>'
                     });
-                    $('.t-input-group_details .t-input-subtitle').html(details_text);
+                    $('[data-showproduct="'+showproduct+'"] .t-input-subtitle').html(details_text);
                 }
             }
-            
+
             if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
                 quizQuestionNumber = showHideStep(
                     $(quizQuestion[quizQuestionNumber]).data('whenshow'),
                     $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
                     $(quizQuestion[quizQuestionNumber]).data('disablereq'),
                     quizQuestionNumber,
-                    'next'
+                    'next',
+                    quizQuestion
                 );
             }
 
@@ -114,25 +120,28 @@ function t835mev_init(recid) {
 
                     if ( rec.data('show-details')=="y" ) {
                         if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
-                            var details_data = get_selected_values("001"),
+                            var showproduct = $(quizQuestion[quizQuestionNumber]).data('showproduct');
+                            var details_data = get_selected_values_for_product(rec,showproduct),
                                 details_text = '';
                             details_data.forEach(function(item, i, arr) {
                                 details_text += item.name+': '+item.value+'<br>'
                             });
-                            $('.t-input-group_details .t-input-subtitle').html(details_text);
+                            $('[data-showproduct="'+showproduct+'"] .t-input-subtitle').html(details_text);
                         }
                     }
-                    
+
                     if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
                         quizQuestionNumber = showHideStep(
                             $(quizQuestion[quizQuestionNumber]).data('whenshow'),
                             $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
                             $(quizQuestion[quizQuestionNumber]).data('disablereq'),
                             quizQuestionNumber,
-                            'next'
+                            'next',
+                            quizQuestion
                         );
                     }
-                    
+
+            
                     t835mev_switchQuestion(rec, quizQuestionNumber)
                 } else {
                     t835mev_switchResultScreen(rec);
@@ -141,11 +150,11 @@ function t835mev_init(recid) {
                     recalc(window.mev_amount);
 
                     var form_data = form.serializeArray(),
-                    details_data = get_selected_values('001'),
-                    data_to_send = {
-                        form_data: form_data,
-                        details_data: details_data
-                    };
+                        details_data = get_selected_values(rec),
+                        data_to_send = {
+                            form_data: form_data,
+                            details_data: details_data
+                        };
 
                     form_data.push({
                         'name':'product_price',
@@ -156,33 +165,13 @@ function t835mev_init(recid) {
                         'value':window.location.hostname+window.location.pathname
                     })
 
-                    /*$.ajax({
-                        url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
-                        type: 'post',
-                        dataType: 'json',
-                        data: form.serialize(),
-                    })
-                    .done(function(data) {
-                        // data.id - номер заказа в retailCRM
-                        // $('#order_id').val(data.id);
-                        if (fbq != undefined) {
-                            fbq('track', 'Lead');
-                        }
-                        // window.open($('#write_to_whatsapp').attr('href'), "_blank");
-                    })
-                    .fail(function(data) {
-                        // console.log("error");
-                    })
-                    .always(function() {
-                        // console.log("complete");
-                    });*/
-
                     if (fbq != undefined) {
                         fbq('track', 'Lead');
                     }                    
 
                     $.ajax({
-                        url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php'+window.location.search,
+                        url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hoolistum.php'+window.location.search,
+                        // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
                         type: 'post',
                         dataType: 'json',
                         data: data_to_send,
@@ -191,14 +180,31 @@ function t835mev_init(recid) {
                         // data.id - номер заказа в retailCRM
                         // $('#order_id').val(data.id);
 
+                        // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+                    })
+                    .fail(function(data) {
+                        // console.log("error");
+                    })
+                    .always(function() {
+                        // console.log("complete");
+                    });
+                    
+                    $.ajax({
+                        url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24_hoolistum.php'+window.location.search,
+                        // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
+                        type: 'post',
+                        dataType: 'json',
+                        data: data_to_send,
+                    })
+                    .done(function(data) {
+                        // data.id - номер заказа в retailCRM
+                        // $('#order_id').val(data.id);
 
-                        $('<input></input>',{
-                            'type':'hidden',
-                            'name':'InvoiceId',
+                        $('<input></input>', {
+                            'type': 'hidden',
+                            'name': 'InvoiceId',
                         }).val(data.ID).appendTo(form);
-
                         window.bitrix24DealId = data.ID;
-
                         // window.open($('#write_to_whatsapp').attr('href'), "_blank");
                     })
                     .fail(function(data) {
@@ -237,39 +243,28 @@ function t835mev_init(recid) {
             recalc(window.mev_amount);
 
             var form_data = form.serializeArray(),
-            details_data = get_selected_values('001'),
-            data_to_send = {
-                form_data: form_data,
-                details_data: details_data
-            };
+                details_data = get_selected_values(rec),
+                data_to_send = {
+                    form_data: form_data,
+                    details_data: details_data
+                };
 
             form_data.push({
                 'name':'product_price',
                 'value':window.tcart.amount
+            });
+            form_data.push({
+                'name':'site_url',
+                'value':window.location.hostname+window.location.pathname
             })
-            /*$.ajax({
-                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php',
-                type: 'post',
-                dataType: 'json',
-                data: form.serialize(),
-            })
-            .done(function(data) {
-                // data.id - номер заказа в retailCRM
-                // $('#order_id').val(data.id);
-                if (fbq != undefined) {
-                    fbq('track', 'Lead');
-                }
-                // window.open($('#write_to_whatsapp').attr('href'), "_blank");
-            })
-            .fail(function(data) {
-                // console.log("error");
-            })
-            .always(function() {
-                // console.log("complete");
-            });*/
+
+                    if (fbq != undefined) {
+                        fbq('track', 'Lead');
+                    }            
 
             $.ajax({
-                url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24-sdk.php'+window.location.search,
+                url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hoolistum.php'+window.location.search,
+                // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
                 type: 'post',
                 dataType: 'json',
                 data: data_to_send,
@@ -277,18 +272,32 @@ function t835mev_init(recid) {
             .done(function(data) {
                 // data.id - номер заказа в retailCRM
                 // $('#order_id').val(data.id);
-                if (fbq != undefined) {
-                    fbq('track', 'Lead');
-                }
 
+                // window.open($('#write_to_whatsapp').attr('href'), "_blank");
+            })
+            .fail(function(data) {
+                // console.log("error");
+            })
+            .always(function() {
+                // console.log("complete");
+            });
+            
+            $.ajax({
+                url: 'https://todobox.ru/payment/kokoslook/hooli/bitrix24_hoolistum.php'+window.location.search,
+                // url: 'https://webhook.site/68606da9-00c8-40ea-8617-4fec4fb00b85',
+                type: 'post',
+                dataType: 'json',
+                data: data_to_send,
+            })
+            .done(function(data) {
+                // data.id - номер заказа в retailCRM
+                // $('#order_id').val(data.id);
 
                 $('<input></input>', {
                     'type': 'hidden',
                     'name': 'InvoiceId',
                 }).val(data.ID).appendTo(form);
-
                 window.bitrix24DealId = data.ID;
-
                 // window.open($('#write_to_whatsapp').attr('href'), "_blank");
             })
             .fail(function(data) {
@@ -464,7 +473,7 @@ function t835mev_switchResultScreen(rec) {
     quizDescription.hide();
     resultTitle.show();
     // submitBtnWrapper.show();
-    // prevBtn.hide();
+    prevBtn.hide();
     submitBtnWrapper.css('display', 'flex');
 
 }
@@ -516,9 +525,7 @@ function t835mev_onSuccess(form) {
     prevBtn.hide()
 }
 // Посчитать общую сумму изначально
-function calc_total(length, summa) {
-
-    // var length_str = strstr(length, '=', true);
+function calc_total(summa) {
 
     window.tcart.amount = summa;
     window.tcart.prodamount = summa;
@@ -526,7 +533,7 @@ function calc_total(length, summa) {
 
     window.tcart.products[0] = {
         amount: summa,
-        name: length,
+        name: "Hooliстюм",
         price: summa,
         quantity: 1
     };
@@ -534,7 +541,7 @@ function calc_total(length, summa) {
 }
 function recalc(summa){
     var new_summa = summa;
-
+   
     $('input:checked').each(function(index, el) {
         if ( $(el).data('price')!=undefined ) {
             new_summa = new_summa + $(el).data('price');
@@ -543,7 +550,34 @@ function recalc(summa){
 
     if( $('input[name=Promocode]').length ){
         var userPromocode = $('input[name=Promocode]').val();
-        if( userPromocode.toUpperCase() =="3GIRLS" || userPromocode.toUpperCase() =="ANYUTAMOM"){
+        if
+        ( userPromocode.toUpperCase() =="3GIRLS"
+            || userPromocode.toUpperCase() =="ANYUTAMOM"
+            || userPromocode.toUpperCase() =="VLR_ALL"
+            || userPromocode.toUpperCase() =="IODA"
+            || userPromocode.toUpperCase() =="MAZEPINA"
+            || userPromocode.toUpperCase() =="SCAR"
+            || userPromocode.toUpperCase() =="KRIS_ZH"
+            || userPromocode.toUpperCase() =="VIXXKEI"
+            || userPromocode.toUpperCase() =="PAVELETSKAYA"
+            || userPromocode.toUpperCase() =="ANNNEMY"
+            || userPromocode.toUpperCase() =="MILASYA"
+            || userPromocode.toUpperCase() =="KHODZHULYA"
+            || userPromocode.toUpperCase() =="IRINA_IS"
+            || userPromocode.toUpperCase() =="OSGARD"
+            || userPromocode.toUpperCase() =="REPINA"
+            || userPromocode.toUpperCase() =="PUSHKINA"
+            || userPromocode.toUpperCase() =="SINITSYNA"
+            || userPromocode.toUpperCase() =="KOSHKINA"
+            || userPromocode.toUpperCase() =="VALUYSKAYA"
+            || userPromocode.toUpperCase() =="TANIMANI"
+            || userPromocode.toUpperCase() =="FARTUNA"
+            || userPromocode.toUpperCase() =="CRYBABY"
+            || userPromocode.toUpperCase() =="DANAGE"
+            || userPromocode.toUpperCase() =="ISV"
+            || userPromocode.toUpperCase() =="NIKULA"
+            || userPromocode.toUpperCase() =="BUPSIKITTY"
+        ){
             new_summa = new_summa*0.9;
         }
     }
@@ -556,25 +590,43 @@ function recalc(summa){
     window.tcart.products[0].price = new_summa;
 }
 // Отправка сообщения в whatsapp
-function get_res_wa_text(recid){
-    var rec = $('#rec' + recid),
-        data = get_selected_values(recid);
+function get_res_wa_text(rec){
+    var rec = $(rec),
+        data = get_selected_values(rec);
 
     var details_text = '';
     data.forEach(function(item, i, arr) {
         details_text += item.name+': '+item.value+"\n";
     });
-    
+
+    details_text += rec.find("input[name=Phone]").val()+"\n";
+    details_text += rec.find("input[name=Email]").val()+"\n";
+    details_text += rec.find("input[name=quiz_type]").val()+"\n";
+
     return encodeURI("Привет, Hooli! 😜 \n\n"+
         "Хочу подтвердить свой заказ:\n\n"
         +details_text
     );
 }
 
-function get_selected_values(recid){
-    var data = [],
-        rec = $('#rec' + recid);
+function get_selected_values(rec){
+    var data = [];
     rec.find(".t-input-group").each(function(index, el) {
+        var obj={},
+            checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked,input.y_rost');
+
+        if(checked.length > 0){
+            obj['name'] = $(el).data('name');
+            obj['value'] = checked.val();
+            data.push(obj);
+        }
+    });
+
+    return data;
+}
+function get_selected_values_for_product(rec,product){
+    var data = [];
+    rec.find('[data-product="'+product+'"]').each(function(index, el) {
         var obj={},
             checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked,input.y_rost');
 
@@ -623,7 +675,7 @@ function optional_dependency(){
         });
     });
 }
-function showHideStep(whenshow,depend,disablereq,quizQuestionNumber,direction){
+function showHideStep(whenshow,depend,disablereq,quizQuestionNumber,direction, quizQuestion){
     var depend_div = $('[data-name="'+depend+'"]');
     var when_to_show = whenshow.split("|");
 
@@ -631,29 +683,35 @@ function showHideStep(whenshow,depend,disablereq,quizQuestionNumber,direction){
 
     if ( !when_to_show.some(function(arr_el){return depend_div_input.val() == arr_el}) ) {
         $('[name="'+disablereq+'"]').removeAttr('data-tilda-req');
+        
         if ( direction == "next" ) {
-            return ++quizQuestionNumber;
+            ++quizQuestionNumber;
         } else if ( direction == "prev" ) {
-            return --quizQuestionNumber;
+            --quizQuestionNumber;
         }
+
+        if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
+            quizQuestionNumber = showHideStep(
+                $(quizQuestion[quizQuestionNumber]).data('whenshow'),
+                $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
+                $(quizQuestion[quizQuestionNumber]).data('disablereq'),
+                quizQuestionNumber,
+                direction,
+                quizQuestion
+            );
+        } 
+
+        return quizQuestionNumber;
+
     }else{
         $('[name="'+disablereq+'"]').attr('data-tilda-req',1);
         return quizQuestionNumber;
     }
 }
 
+
 // Выполнить после загрузки документа
 $(document).ready(function() {
-    $('#rec001').on('click', '.t835mev__btn_result', function(event) {
-        var text = get_res_wa_text('001');
-        $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
-    });
-
-    optional_dependency();
-});
-
-$(document).ready(function() {
-
 window.tildaForm.cloudpaymentPay = function(n, s) {
     if (!0 !== window.cloudpaymentsapiiscalled)
         return window.tildaForm.cloudpaymentLoad(),
@@ -738,4 +796,13 @@ window.tildaForm.cloudpaymentPay = function(n, s) {
     !1
 }
 
+    $('#rec001').on('click', '.t835mev__btn_result', function(event) {
+        var text = get_res_wa_text('#rec001');
+        $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
+    });
+
+    calc_total(6990);
+    window.mev_amount = 6990;
+
+    optional_dependency();
 });

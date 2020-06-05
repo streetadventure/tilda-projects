@@ -43,7 +43,8 @@ function t835mev_init(recid) {
                 $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
                 $(quizQuestion[quizQuestionNumber]).data('disablereq'),
                 quizQuestionNumber,
-                'prev'
+                'prev',
+                quizQuestion
             );
         }
 
@@ -85,7 +86,8 @@ function t835mev_init(recid) {
                     $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
                     $(quizQuestion[quizQuestionNumber]).data('disablereq'),
                     quizQuestionNumber,
-                    'next'
+                    'next',
+                    quizQuestion
                 );
             }
 
@@ -134,7 +136,8 @@ function t835mev_init(recid) {
                             $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
                             $(quizQuestion[quizQuestionNumber]).data('disablereq'),
                             quizQuestionNumber,
-                            'next'
+                            'next',
+                            quizQuestion
                         );
                     }
 
@@ -672,7 +675,7 @@ function optional_dependency(){
         });
     });
 }
-function showHideStep(whenshow,depend,disablereq,quizQuestionNumber,direction){
+function showHideStep(whenshow,depend,disablereq,quizQuestionNumber,direction, quizQuestion){
     var depend_div = $('[data-name="'+depend+'"]');
     var when_to_show = whenshow.split("|");
 
@@ -680,11 +683,26 @@ function showHideStep(whenshow,depend,disablereq,quizQuestionNumber,direction){
 
     if ( !when_to_show.some(function(arr_el){return depend_div_input.val() == arr_el}) ) {
         $('[name="'+disablereq+'"]').removeAttr('data-tilda-req');
+        
         if ( direction == "next" ) {
-            return ++quizQuestionNumber;
+            ++quizQuestionNumber;
         } else if ( direction == "prev" ) {
-            return --quizQuestionNumber;
+            --quizQuestionNumber;
         }
+
+        if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
+            quizQuestionNumber = showHideStep(
+                $(quizQuestion[quizQuestionNumber]).data('whenshow'),
+                $(quizQuestion[quizQuestionNumber]).data('parent-depend-form'),
+                $(quizQuestion[quizQuestionNumber]).data('disablereq'),
+                quizQuestionNumber,
+                direction,
+                quizQuestion
+            );
+        } 
+
+        return quizQuestionNumber;
+
     }else{
         $('[name="'+disablereq+'"]').attr('data-tilda-req',1);
         return quizQuestionNumber;
