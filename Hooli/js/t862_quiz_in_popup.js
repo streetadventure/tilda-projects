@@ -694,6 +694,11 @@ function calc_total(rec, summa) {
             || userPromocode.toUpperCase() =="ISV"
             || userPromocode.toUpperCase() =="NIKULA"
             || userPromocode.toUpperCase() =="BUPSIKITTY"
+            || userPromocode.toUpperCase() =="LUDMILABO"
+            || userPromocode.toUpperCase() =="SVETAKELLY"
+            || userPromocode.toUpperCase() =="ALINASMB"
+            || userPromocode.toUpperCase() =="MAXON"
+            || userPromocode.toUpperCase() =="PAPRIKA"
         ){
             new_summa = new_summa*0.9;
         }
