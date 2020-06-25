@@ -64,6 +64,12 @@ function t835mev_init(recid) {
             quizQuestionNumber++;
             prevBtn.attr('disabled', !1);
 
+            if(quizQuestionNumber==1){
+                if (gtag != undefined) {
+                    gtag( 'event', 'start_quiz' );
+                }
+            }
+
             if ( rec.data('show-details')=="y" ) {
                 if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
                     var details_data = get_selected_values("001"),
@@ -110,6 +116,13 @@ function t835mev_init(recid) {
             if (!showErrors) {
                 quizQuestionNumber++;
                 t835mev_setProgress(rec, 1);
+
+                if(quizQuestionNumber==1){
+                    if (gtag != undefined) {
+                        gtag( 'event', 'start_quiz' );
+                    }
+                }
+
                 if (quizQuestionNumber < questionArr.length) {
 
                     if ( rec.data('show-details')=="y" ) {
@@ -159,7 +172,11 @@ function t835mev_init(recid) {
 
                     if (fbq != undefined) {
                         fbq('track', 'Lead');
-                    }                    
+                    }
+
+                    if (gtag != undefined) {
+                        gtag( 'event', 'order_form', 'value': window.tcart.amount );
+                    }
 
                     $.ajax({
                         url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php'+window.location.search,
@@ -245,9 +262,13 @@ function t835mev_init(recid) {
                 'name':'site_url',
                 'value':window.location.hostname+window.location.pathname
             })
-                    if (fbq != undefined) {
-                        fbq('track', 'Lead');
-                    }            
+            
+            if (fbq != undefined) {
+                fbq('track', 'Lead');
+            }
+            if (gtag != undefined) {
+                gtag( 'event', 'order_form', 'value': window.tcart.amount );
+            }
 
             $.ajax({
                 url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php'+window.location.search,

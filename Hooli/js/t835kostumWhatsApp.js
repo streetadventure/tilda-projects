@@ -67,6 +67,12 @@ function t835mev_init(recid) {
             quizQuestionNumber++;
             prevBtn.attr('disabled', !1);
 
+            if(quizQuestionNumber==1){
+                if (gtag != undefined) {
+                    gtag( 'event', 'start_quiz' );
+                }
+            }
+
             // показывать шаг с детялями при условии что вставлен для этого div в нужном месте в коде
             if ( rec.data('show-details')=="y" ) {
                 if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
@@ -115,6 +121,13 @@ function t835mev_init(recid) {
             prevBtn.attr('disabled', !1);
             if (!showErrors) {
                 quizQuestionNumber++;
+
+                if(quizQuestionNumber==1){
+                    if (gtag != undefined) {
+                        gtag( 'event', 'start_quiz' );
+                    }
+                }
+
                 t835mev_setProgress(rec, 1);
                 if (quizQuestionNumber < questionArr.length) {
 
@@ -167,7 +180,10 @@ function t835mev_init(recid) {
 
                     if (fbq != undefined) {
                         fbq('track', 'Lead');
-                    }                    
+                    }
+                    if (gtag != undefined) {
+                        gtag( 'event', 'order_form', 'value': window.tcart.amount );
+                    }
 
                     $.ajax({
                         url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hoolistum.php'+window.location.search,
@@ -258,9 +274,12 @@ function t835mev_init(recid) {
                 'value':window.location.hostname+window.location.pathname
             })
 
-                    if (fbq != undefined) {
-                        fbq('track', 'Lead');
-                    }            
+            if (fbq != undefined) {
+                fbq('track', 'Lead');
+            }
+            if (gtag != undefined) {
+                gtag( 'event', 'order_form', 'value': window.tcart.amount );
+            }
 
             $.ajax({
                 url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hoolistum.php'+window.location.search,

@@ -51,6 +51,12 @@ function t862mev_init(recid) {
             quizQuestionNumber++;
             prevBtn.attr('disabled', !1);
 
+            if(quizQuestionNumber==1){
+                if (gtag != undefined) {
+                    gtag( 'event', 'start_quiz' );
+                }
+            }
+
             if ( rec.data('show-details')=="y" ) {
                 if($(quizQuestion[quizQuestionNumber]).data('show-details')=="y"){
                     var details_data = get_selected_values(rec),
@@ -79,6 +85,13 @@ function t862mev_init(recid) {
             prevBtn.attr('disabled', !1);
             if (!showErrors) {
                 quizQuestionNumber++;
+
+                if(quizQuestionNumber==1){
+                    if (gtag != undefined) {
+                        gtag( 'event', 'start_quiz' );
+                    }
+                }
+
                 t862mev_setProgress(rec, 1);
                 if (quizQuestionNumber < questionArr.length) {
 
@@ -118,6 +131,9 @@ function t862mev_init(recid) {
 
                     if (fbq != undefined) {
                         fbq('track', 'Lead');
+                    }
+                    if (gtag != undefined) {
+                        gtag( 'event', 'order_form', 'value': window.tcart.amount );
                     }
 
                     $.ajax({
@@ -202,9 +218,12 @@ function t862mev_init(recid) {
                 'value':window.location.hostname+window.location.pathname
             })
 
-                    if (fbq != undefined) {
-                        fbq('track', 'Lead');
-                    }            
+            if (fbq != undefined) {
+                fbq('track', 'Lead');
+            }
+            if (gtag != undefined) {
+                gtag( 'event', 'order_form', 'value': window.tcart.amount );
+            }
 
             $.ajax({
                 url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli_shtany.php'+window.location.search,
