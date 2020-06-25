@@ -65,7 +65,7 @@ function t835mev_init(recid) {
             prevBtn.attr('disabled', !1);
 
             if(quizQuestionNumber==1){
-                if (gtag != undefined) {
+                if (window.gtag != undefined) {
                     gtag( 'event', 'start_quiz' );
                 }
             }
@@ -118,7 +118,7 @@ function t835mev_init(recid) {
                 t835mev_setProgress(rec, 1);
 
                 if(quizQuestionNumber==1){
-                    if (gtag != undefined) {
+                    if (window.gtag != undefined) {
                         gtag( 'event', 'start_quiz' );
                     }
                 }
@@ -174,8 +174,8 @@ function t835mev_init(recid) {
                         fbq('track', 'Lead');
                     }
 
-                    if (gtag != undefined) {
-                        gtag( 'event', 'order_form', 'value': window.tcart.amount );
+                    if (window.gtag != undefined) {
+                        gtag( 'event', 'order_form', {'value': window.tcart.amount} );
                     }
 
                     $.ajax({
@@ -266,8 +266,8 @@ function t835mev_init(recid) {
             if (fbq != undefined) {
                 fbq('track', 'Lead');
             }
-            if (gtag != undefined) {
-                gtag( 'event', 'order_form', 'value': window.tcart.amount );
+            if (window.gtag != undefined) {
+                gtag( 'event', 'order_form', {'value': window.tcart.amount} );
             }
 
             $.ajax({
@@ -786,14 +786,14 @@ window.tildaForm.cloudpaymentPay = function(n, s) {
     optional_dependency();
 
     $('.t835mev__capture-form').find('button').click(function(event) {
-        if(gtag!=undefined){
-            gtag( 'event', 'startpayment', 'value': window.tcart.amount );
+        if(window.gtag!=undefined){
+            gtag( 'event', 'startpayment', {'value': window.tcart.amount} );
         }
     });
 
     $('.t835mev__capture-form').find('#write_to_whatsapp').click(function(event) {
-        if(gtag!=undefined){
-            gtag( 'event', 'startwatsapp', 'value': window.tcart.amount );
+        if(window.gtag!=undefined){
+            gtag( 'event', 'startwatsapp', {'value': window.tcart.amount} );
         }
     });
 });
