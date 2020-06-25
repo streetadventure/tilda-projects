@@ -873,4 +873,16 @@ window.tildaForm.cloudpaymentPay = function(n, s) {
 
         calc_total(rec,2990);
     });
+
+    $('.t835mev__capture-form').find('button').click(function(event) {
+        if(gtag!=undefined){
+            gtag( 'event', 'startpayment', 'value': window.tcart.amount );
+        }
+    });
+
+    $('.t835mev__capture-form').find('#write_to_whatsapp').click(function(event) {
+        if(gtag!=undefined){
+            gtag( 'event', 'startwatsapp', 'value': window.tcart.amount );
+        }
+    });
 });
