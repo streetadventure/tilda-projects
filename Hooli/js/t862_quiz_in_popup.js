@@ -730,7 +730,7 @@ function calc_total(rec, summa) {
 
     window.tcart.products[0] = {
         amount: new_summa,
-        name: "Штаны Hooli",
+        name: 'Услуга по пошиву '+"Штаны Hooli",
         price: new_summa,
         quantity: 1
     };

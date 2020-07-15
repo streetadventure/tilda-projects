@@ -552,7 +552,7 @@ function calc_total(summa) {
 
     window.tcart.products[0] = {
         amount: summa,
-        name: "Hooliстюм",
+        name: 'Услуга по пошиву '+"Hooliстюм",
         price: summa,
         quantity: 1
     };
