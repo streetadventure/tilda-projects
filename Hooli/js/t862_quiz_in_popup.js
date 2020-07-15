@@ -718,6 +718,7 @@ function calc_total(rec, summa) {
             || userPromocode.toUpperCase() =="ALINASMB"
             || userPromocode.toUpperCase() =="MAXON"
             || userPromocode.toUpperCase() =="PAPRIKA"
+            || userPromocode.toUpperCase() =="RAKITINA"
         ){
             new_summa = new_summa*0.9;
         }
