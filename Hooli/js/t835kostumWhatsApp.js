@@ -834,9 +834,6 @@ window.tildaForm.cloudpaymentPay = function(n, s) {
         $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
     });
 
-    calc_total(6990);
-    window.mev_amount = 6990;
-
     optional_dependency();
 
     $('.t835mev__capture-form').find('button').click(function(event) {
