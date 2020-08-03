@@ -64,6 +64,13 @@ function t835mev_init(recid) {
             quizQuestionNumber++;
             prevBtn.attr('disabled', !1);
 
+            if(quizQuestionNumber==1){
+                if (window.gtag != undefined && !window.gt_start_quiz) {
+                    gtag( 'event', 'start_quiz' );
+                    window.gt_start_quiz = true;
+                }
+            }
+
             if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
                 quizQuestionNumber = showHideStep(
                     $(quizQuestion[quizQuestionNumber]).data('whenshow'),
@@ -99,6 +106,14 @@ function t835mev_init(recid) {
             if (!showErrors) {
                 quizQuestionNumber++;
                 t835mev_setProgress(rec, 1);
+
+                if(quizQuestionNumber==1){
+                    if (window.gtag != undefined && !window.gt_start_quiz) {
+                        gtag( 'event', 'start_quiz' );
+                        window.gt_start_quiz = true;
+                    }
+                }
+
                 if (quizQuestionNumber < questionArr.length) {
 
                     if($(quizQuestion[quizQuestionNumber]).data('whenshow') != undefined){
@@ -127,6 +142,9 @@ function t835mev_init(recid) {
 
                     recalc(window.tcart.amount);
 
+                    var text = get_res_wa_text('001');
+                    $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79261632213&text='+text);
+
                     var form_data = form.serializeArray(),
                     data_to_send = {
                         form_data: form_data,
@@ -142,6 +160,16 @@ function t835mev_init(recid) {
                         'value':window.location.hostname+window.location.pathname
                     })
 
+                    if (fbq != undefined && !window.fblead) {
+                        fbq('track', 'Lead');
+                        window.fblead = true;
+                    }
+
+                    if (window.gtag != undefined && !window.gt_order_form) {
+                        gtag( 'event', 'order_form', {'value': window.tcart.amount} );
+                        window.gt_order_form = true;
+                    }
+
                     $.ajax({
                         url: 'https://todobox.ru/payment/kokoslook/quiz_puhan_a.php'+window.location.search,
                         type: 'post',
@@ -151,9 +179,7 @@ function t835mev_init(recid) {
                     .done(function(data) {
                         // data.id - номер заказа в retailCRM
                         // $('#order_id').val(data.id);
-                        if (fbq != undefined) {
-                            fbq('track', 'Lead');
-                        }
+
                         // window.open($('#write_to_whatsapp').attr('href'), "_blank");
                     })
                     .fail(function(data) {
@@ -172,9 +198,7 @@ function t835mev_init(recid) {
                     .done(function(data) {
                         // data.id - номер заказа в retailCRM
                         // $('#order_id').val(data.id);
-                        if (fbq != undefined) {
-                            fbq('track', 'Lead');
-                        }
+
                         $('<input></input>', {
                             'type': 'hidden',
                             'name': 'InvoiceId',
@@ -240,6 +264,16 @@ function t835mev_init(recid) {
                 'value':window.location.hostname+window.location.pathname
             })
 
+            if (fbq != undefined && !window.fblead) {
+                fbq('track', 'Lead');
+                window.fblead = true;
+            }
+
+            if (window.gtag != undefined && !window.gt_order_form) {
+                gtag( 'event', 'order_form', {'value': window.tcart.amount} );
+                window.gt_order_form = true;
+            }
+
             $.ajax({
                 url: 'https://todobox.ru/payment/kokoslook/quiz_puhan_a.php'+window.location.search,
                 type: 'post',
@@ -249,9 +283,7 @@ function t835mev_init(recid) {
             .done(function(data) {
                 // data.id - номер заказа в retailCRM
                 // $('#order_id').val(data.id);
-                if (fbq != undefined) {
-                    fbq('track', 'Lead');
-                }
+
                 // window.open($('#write_to_whatsapp').attr('href'), "_blank");
             })
             .fail(function(data) {
@@ -270,9 +302,7 @@ function t835mev_init(recid) {
             .done(function(data) {
                 // data.id - номер заказа в retailCRM
                 // $('#order_id').val(data.id);
-                if (fbq != undefined) {
-                    fbq('track', 'Lead');
-                }
+
                 $('<input></input>', {
                     'type': 'hidden',
                     'name': 'InvoiceId',
@@ -642,8 +672,20 @@ function showHideStep(whenshow,depend,disablereq,quizQuestionNumber,direction){
 $(document).ready(function() {
     $('#rec001').on('click', '.t835mev__btn_result', function(event) {
         var text = get_res_wa_text('001');
-        $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79160087490&text='+text);
+        $('#write_to_whatsapp').attr('href', 'https://api.whatsapp.com/send?phone=79261632213&text='+text);
     });
 
+    window.fblead = false;
+    window.gt_start_quiz = false;
+    window.gt_order_form = false;
+    window.gt_startpayment = false;
+
     optional_dependency();
+
+    $('.t835mev__capture-form').find('button').click(function(event) {
+        if(window.gtag!=undefined && !window.gt_startpayment){
+            gtag( 'event', 'startpayment', {'value': window.tcart.amount} );
+            window.gt_startpayment = true;
+        }
+    });
 });
