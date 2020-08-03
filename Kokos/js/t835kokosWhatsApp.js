@@ -691,7 +691,7 @@ $(document).ready(function() {
         // InitiateCheckout
         if (fbq != undefined && !window.fbinitcheckout) {
             fbq('track', 'InitiateCheckout');
-            window.fblead = fbinitcheckout;
+            window.fbinitcheckout = true;
         }
     });
 });
