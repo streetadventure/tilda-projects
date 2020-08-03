@@ -719,6 +719,14 @@ function calc_total(rec, summa) {
             || userPromocode.toUpperCase() =="MAXON"
             || userPromocode.toUpperCase() =="PAPRIKA"
             || userPromocode.toUpperCase() =="RAKITINA"
+            || userPromocode.toUpperCase() =="ПАПРИКА"
+            || userPromocode.toUpperCase() =="IDELUX127"
+            || userPromocode.toUpperCase() =="K_DIKUSAR"
+            || userPromocode.toUpperCase() =="IDELUX127"
+            || userPromocode.toUpperCase() =="STASMILEEV"
+            || userPromocode.toUpperCase() =="GRUSTNIYK0TIK"
+            || userPromocode.toUpperCase() =="ZHEKOKO"
+            || userPromocode.toUpperCase() =="ЗМЕЯ"
         ){
             new_summa = new_summa*0.9;
         }
