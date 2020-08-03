@@ -676,6 +676,7 @@ $(document).ready(function() {
     });
 
     window.fblead = false;
+    window.fbinitcheckout = false;
     window.gt_start_quiz = false;
     window.gt_order_form = false;
     window.gt_startpayment = false;
@@ -686,6 +687,11 @@ $(document).ready(function() {
         if(window.gtag!=undefined && !window.gt_startpayment){
             gtag( 'event', 'startpayment', {'value': window.tcart.amount} );
             window.gt_startpayment = true;
+        }
+        // InitiateCheckout
+        if (fbq != undefined && !window.fbinitcheckout) {
+            fbq('track', 'InitiateCheckout');
+            window.fblead = fbinitcheckout;
         }
     });
 });
