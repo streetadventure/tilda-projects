@@ -1,3 +1,9 @@
+window.fblead = false;
+window.fbinitcheckout = false;
+window.gt_start_quiz = false;
+window.gt_order_form = false;
+window.gt_startpayment = false;
+
 function get_products_from_cart(){
     var data = [];
 
@@ -21,6 +27,23 @@ $(document).ready(function() {
         if(arErrors.length>0){
             // ничего не делаем, есть ошибки при заполнении формы
         }else{
+
+            if (fbq != undefined && !window.fblead) {
+                fbq('track', 'Lead');
+                window.fblead = true;
+            }
+
+            if (window.gtag != undefined && !window.gt_order_form) {
+                gtag( 'event', 'order_form', {'value': window.tcart.amount} );
+                window.gt_order_form = true;
+            }
+
+            if(window.gtag!=undefined && !window.gt_startpayment){
+                gtag( 'event', 'startpayment', {'value': window.tcart.amount} );
+                window.gt_startpayment = true;
+            }
+
+
             var form_data = $mev_cart_deal_form.serializeArray(),
             details_data = get_products_from_cart();
 
