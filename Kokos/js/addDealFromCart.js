@@ -43,7 +43,6 @@ $(document).ready(function() {
                 window.gt_startpayment = true;
             }
 
-
             var form_data = $mev_cart_deal_form.serializeArray(),
             details_data = get_products_from_cart();
 

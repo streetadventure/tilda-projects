@@ -689,9 +689,9 @@ $(document).ready(function() {
             window.gt_startpayment = true;
         }
         // InitiateCheckout
-        if (fbq != undefined && !window.fbinitcheckout) {
+        /*if (fbq != undefined && !window.fbinitcheckout) {
             fbq('track', 'InitiateCheckout');
             window.fbinitcheckout = true;
-        }
+        }*/
     });
 });
