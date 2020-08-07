@@ -177,6 +177,9 @@ function t835mev_init(recid) {
                     if (window.gtag != undefined) {
                         gtag( 'event', 'order_form', {'value': window.tcart.amount} );
                     }
+                    if (window.ym != undefined) {
+                        ym(66248908,'reachGoal','order_form');
+                    }
 
                     $.ajax({
                         url: 'https://todobox.ru/payment/kokoslook/hooli/quiz_hooli.php'+window.location.search,
@@ -268,6 +271,9 @@ function t835mev_init(recid) {
             }
             if (window.gtag != undefined) {
                 gtag( 'event', 'order_form', {'value': window.tcart.amount} );
+            }
+            if (window.ym != undefined) {
+                ym(66248908,'reachGoal','order_form');
             }
 
             $.ajax({
@@ -797,6 +803,9 @@ window.tildaForm.cloudpaymentPay = function(n, s) {
     $('.t835mev__capture-form').find('button').click(function(event) {
         if(window.gtag!=undefined){
             gtag( 'event', 'startpayment', {'value': window.tcart.amount} );
+        }
+        if(window.ym!=undefined){
+            ym(66248908,'reachGoal','startpayment');
         }
     });
 
