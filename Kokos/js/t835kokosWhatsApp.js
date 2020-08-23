@@ -170,6 +170,11 @@ function t835mev_init(recid) {
                         window.gt_order_form = true;
                     }
 
+                    if (window.ym != undefined && !window.ym_order_form) {
+                        ym(46369422,'reachGoal','order_form');
+                        window.ym_order_form = true;
+                    }
+
                     $.ajax({
                         url: 'https://todobox.ru/payment/kokoslook/quiz_puhan_a.php'+window.location.search,
                         type: 'post',
@@ -272,6 +277,10 @@ function t835mev_init(recid) {
             if (window.gtag != undefined && !window.gt_order_form) {
                 gtag( 'event', 'order_form', {'value': window.tcart.amount} );
                 window.gt_order_form = true;
+            }
+            if (window.ym != undefined && !window.ym_order_form) {
+                ym(46369422,'reachGoal','order_form');
+                window.ym_order_form = true;
             }
 
             $.ajax({
@@ -680,6 +689,8 @@ $(document).ready(function() {
     window.gt_start_quiz = false;
     window.gt_order_form = false;
     window.gt_startpayment = false;
+    window.ym_order_form = false;
+    window.ym_startpayment = false;
 
     optional_dependency();
 
@@ -688,6 +699,12 @@ $(document).ready(function() {
             gtag( 'event', 'startpayment', {'value': window.tcart.amount} );
             window.gt_startpayment = true;
         }
+
+        if(window.ym!=undefined && !window.ym_startpayment){
+            ym(46369422,'reachGoal','startpayment');
+            window.ym_startpayment = true;
+        }
+
         // InitiateCheckout
         /*if (fbq != undefined && !window.fbinitcheckout) {
             fbq('track', 'InitiateCheckout');
