@@ -639,7 +639,7 @@ function get_res_wa_text(recid){
 function get_selected_values(recid){
     var data = [],
         rec = $('#rec' + recid);
-    rec.find(".t-input-group").each(function(index, el) {
+    rec.find(".t-input-group, .include-name").each(function(index, el) {
         var obj={},
             checked = $(el).find('input[type="radio"]:checked,input[type="checkbox"]:checked,input.y_rost');
 
