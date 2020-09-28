@@ -176,7 +176,11 @@ function t835mev_init(recid) {
                     form_data.push({
                         'name':'site_url',
                         'value':window.location.hostname+window.location.pathname
-                    })
+                    });
+                    details_data.push({
+                        'name':'Рост',
+                        'value':$('input[name="y_height"]').val()
+                    });
 
                     if (fbq != undefined) {
                         fbq('track', 'Lead');
@@ -275,7 +279,11 @@ function t835mev_init(recid) {
             form_data.push({
                 'name':'site_url',
                 'value':window.location.hostname+window.location.pathname
-            })
+            });
+            details_data.push({
+                'name':'Рост',
+                'value':$('input[name="y_height"]').val()
+            });
 
             if (fbq != undefined) {
                 fbq('track', 'Lead');
