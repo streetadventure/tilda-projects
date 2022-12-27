@@ -1,0 +1,25 @@
+<div class="submit-modal">
+    <div class="yes">
+        <p class="modal__title">Votre commande a été passée avec <br> succès</p>
+        <p>Le coût total de votre commande avec toutes les options sélectionnées: <b id="price-info"></b> au lieu de <s>160
+                €</s> Votre avantage si vous commandez aujourd'hui: <b id="price-economy"></b></p>
+        <p>Si vous n'êtes pas en mesure de payer la commande maintenant, demandez une réduction de réserve sur WhatsApp en cliquant sur le bouton suivant:</p>
+            <form role="form"  id="formnewconstructor" name="formnewconstructor" method='POST' data-formactiontype="2" class="t-form js-form-proccess" data-formcart="y">
+                <input type="hidden" name="formservices[]" value="e9f6f66114ab947456b16b576e0d1141" class="js-formaction-services">
+                <input type="hidden" name="formservices[]" value="2da646c5246d0ff660a1229136cc86ed" class="js-formaction-services">
+                <input type="hidden" name="orderId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceNoDB" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <button type="submit" class="btn">Payez la commande</button> 
+            </form>
+        <a href="https://api.whatsapp.com/send?phone=79160087490" target="_blank" 
+            class="btn_stroke">WhatsApp</a>
+        <p><b>Attention!</b> Si vous ne payez pas maintenant ou ne réservez pas de réduction, le prix promotionnel ne sera peut-être pas enregistré et pourrait être plus élevé.</p>
+        <p><b>Livraison: </b> lorsque le produit est prêt, nous vous enverrons un email avec un lien où vous pourrez choisir un mode de livraison pratique et le payer. </p>
+        <p><a class="btn_disable" href="/">Passer une autre commande</a></p>
+    </div>
+    <div class="no">
+        <p class="modal-submit__title">Erreur</p>
+        <p> Essayez de passer une nouvelle commande</p>
+    </div>
+</div>
