@@ -75,7 +75,7 @@ let parametersAllArr = {
         ["#E5E4EA", "Tofu", false, 0],
     ],
     cut: [
-        ["bochonok", "Oversize", false, 0],
+        ["bochonok", "Trop grand", false, 0],
         ["pryamoy", "Droite", false, 0],
         ["classic", "Classique", false, 0]
     ],
@@ -314,8 +314,8 @@ async function choiceActive() {
             bottomItem,
             pocketItem;
         if (item == "krop") {
-            choiceElem["pocket"] = ["pocket-no", "Без карманов", false, 0];
-            choiceElem["bottom"] = ["shov", "Шов", false, 0];
+            choiceElem["pocket"] = ["pocket-no", "Pas de poches", false, 0];
+            choiceElem["bottom"] = ["shov", "La couture", false, 0];
             lengthItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/length/${choiceElem[attr][0]}.svg`);
             bottomItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/bottom/${choiceElem[attr][0]}/${choiceElem["bottom"][0]}.svg`);
             pocketItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/pocket/${choiceElem["pocket"][0]}.svg`);
