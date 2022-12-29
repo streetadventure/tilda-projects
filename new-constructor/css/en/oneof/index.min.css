@@ -3594,8 +3594,9 @@ header {
   display: none;
 }
 #allrecords .constructor-hoodie .modal__box .left .modal-hudi__description {
-  padding: 0 20px;
-  margin-right: 20px;
+    padding: 0 20px;
+    margin-right: 20px;
+    width: 28%;
 }
 #allrecords .constructor-hoodie .modal__box .left .modal-hudi__description .title {
   font-size: 24px;
@@ -3623,7 +3624,7 @@ header {
 }
 #allrecords .constructor-hoodie .modal__box .left .modal-soc {
   display: flex;
-  padding: 30px;
+  padding: 35px;
   border-radius: 8px;
   box-shadow: 6px 4px 20px rgba(51, 43, 47, 0.1);
   flex-direction: column;
@@ -3651,8 +3652,8 @@ header {
   padding-bottom: 20px;
 }
 #allrecords .constructor-hoodie .modal__box .left .modal-soc__box p {
-  display: block;
-  width: 400px;
+    display: inline-block;
+    width: 435px;
 }
 #allrecords .constructor-hoodie .modal__box .right {
   width: 480px;
