@@ -71,7 +71,7 @@ function modalForm() {
             success: async function (data) {
                 const promise = new Promise(async (resolve, reject) => {
                     let ModalRight = document.querySelector(".modal__box .right"),
-                        submitModal = await fetch(`https://nautz.ru/new-constructor/modal/en/oneof/_submit.html`);
+                        submitModal = await fetch(`https://nautz.ru/new-constructor/modal/it/oneof/_submit.html`);
                     if (submitModal.ok) {
                         let text = await submitModal.text();
                         ModalRight.innerHTML = text;
