@@ -87,6 +87,8 @@ function modalForm() {
                             document.getElementsByName("orderId")[0].value = data.bitrix_id.deal_id
                             document.getElementsByName("InvoiceId")[0].value = data.InvoiceId
                             document.getElementsByName("InvoiceNoDB")[0].value = data.InvoiceNoDB
+                            document.getElementsByName("product_brand")[0].value = 2363
+                            document.getElementsByName("language")[0].value = "fr"
                             prevForm.classList.add("none")
                             deleteCookie(cookieName);
 
