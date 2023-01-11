@@ -45,110 +45,110 @@ $('.parameters-box__main').owlCarousel({
 //массив со всеми параметрами для рандома
 let parametersAllArr = {
     color: [
-        ["#000000", "Black", false, 0],
-        ["#804E82", "Violet", false, 0],
-        ["#E4CAF1", "Lavender", false, 0],
-        ["#FDD9E8", "Marshmallow", false, 0],
-        ["#E5CCAE", "Sand", false, 0],
-        ["#997D68", "Coffee", false, 0],
-        ["#FFFFFF", "White", false, 0],
-        ["#BAC1BF", "Smoky", false, 0],
-        ["#57555A", "Graphite", false, 0],
-        ["#E42C36", "Red", false, 0],
+        ["#000000", "Negro", false, 0],
+        ["#804E82", "Violeta", false, 0],
+        ["#E4CAF1", "Lavanda", false, 0],
+        ["#FDD9E8", "Malvavisco", false, 0],
+        ["#E5CCAE", "Arena", false, 0],
+        ["#997D68", "Café", false, 0],
+        ["#FFFFFF", "Blanco", false, 0],
+        ["#BAC1BF", "Humo", false, 0],
+        ["#57555A", "Grafito", false, 0],
+        ["#E42C36", "Rojo", false, 0],
         ["#FE6203", "Halloween", false, 0],
-        ["#FFE270", "Yellow", false, 0],
-        ["#F2EC7A", "Lemon", false, 0],
-        ["#E33D85", "Fuchsia", false, 0],
-        ["#74C86A", "Lime", false, 0],
-        ["#64762C", "Khaki", false, 0],
-        ["#97A38F", "Olive", false, 0],
-        ["#1F9480", "Emerald", false, 0],
+        ["#FFE270", "Amarillo", false, 0],
+        ["#F2EC7A", "Lima", false, 0],
+        ["#E33D85", "Fucsia", false, 0],
+        ["#74C86A", "Lima", false, 0],
+        ["#64762C", "Caqui", false, 0],
+        ["#97A38F", "Aceituna", false, 0],
+        ["#1F9480", "Esmeralda", false, 0],
         ["#B3E2D8", "Tiffany", false, 0],
-        ["#2E4393", "Blue", false, 0],
-        ["#83A3EC", "Cyan", false, 0],
-        ["#BB847F", "Dusty rose", false, 0],
-        ["#A2BEEE", "Dusty denim", false, 0],
-        ["#91B4B8", "Snow mint", false, 0],
-        ["#EDBFC1", "Peach", false, 0],
+        ["#2E4393", "Azul", false, 0],
+        ["#83A3EC", "Cian", false, 0],
+        ["#BB847F", "Rosa polvoriento", false, 0],
+        ["#A2BEEE", "Vaquero polvoriento", false, 0],
+        ["#91B4B8", "Menta nevada", false, 0],
+        ["#EDBFC1", "Durazno", false, 0],
         ["#FDAE97", "Coral", false, 0],
-        ["#E2E4E6", "Milk melange", false, 0],
+        ["#E2E4E6", "Melange de leche", false, 0],
         ["#E5E4EA", "Tofu", false, 0],
     ],
     cut: [
-        ["bochonok", "Oversize", false, 0],
-        ["pryamoy", "Straight", false, 0],
-        ["classic", "Classic", false, 0]
+        ["bochonok", "Excesivo", false, 0],
+        ["pryamoy", "Recto", false, 0],
+        ["classic", "Clásico", false, 0]
     ],
     length: [
-        ["long", "Long", false, 0],
-        ["midi", "Mid-length", false, 0],
-        ["short", "Short", false, 0],
-        ["krop", "Crop", false, 0]
+        ["long", "Largo", false, 0],
+        ["midi", "De longitud media", false, 0],
+        ["short", "Corto", false, 0],
+        ["krop", "Recortado", false, 0]
     ],
     bottom: [
-        ["na-zatyashke-so-shnurkom", "Elastic band with a drawstring", false, 0],
-        ["na-rezinke", "Elastic band", false, 0],
-        ["oborka", "Frill", false, 0],
-        ["obrezanniy-kray", "Cropped", false, 0],
-        ["kashkorse", "Decorative ribbed elastic band", false, 0],
-        ["shirokiy-manzhet", "Wide cuffs in main fabric", false, 0],
-        ["shov", "Without band", false, 0],
+        ["na-zatyashke-so-shnurkom", "Banda elástica con cordón", false, 0],
+        ["na-rezinke", "Banda elástica", false, 0],
+        ["oborka", "Volante", false, 0],
+        ["obrezanniy-kray", "Recortado", false, 0],
+        ["kashkorse", "Banda elástica decorativa ribeteada", false, 0],
+        ["shirokiy-manzhet", "Puños anchos en tela principal", false, 0],
+        ["shov", "Sin banda", false, 0],
     ],
     bottomKrop: [
-        ["na-zatyashke-so-shnurkom", "Elastic band with a drawstring", false, 0],
-        ["na-rezinke", "Elastic band", false, 0],
-        ["obrezanniy-kray", "Cropped", false, 0],
-        ["shov", "Without band", false, 0],
+        ["na-zatyashke-so-shnurkom", "Banda elástica con cordón", false, 0],
+        ["na-rezinke", "Banda elástica", false, 0],
+        ["obrezanniy-kray", "Recortado", false, 0],
+        ["shov", "Sin banda", false, 0],
     ],
     pocket: [
-        ["pocket-no", "No pockets", false, 0],
-        ["kenguru", "Kangaroo pocket", false, 0],
-        ["na-grudi", "Patch pockets with flaps", false, 0],
-        ["bokovie", "Side pockets", false, 0],
-        ["taynik", "Stash pocket", false, 0],
+        ["pocket-no", "Sin bolsillos", false, 0],
+        ["kenguru", "Bolsillo canguro", false, 0],
+        ["na-grudi", "Bolsillos parche con solapas", false, 0],
+        ["bokovie", "Bolsillos laterales", false, 0],
+        ["taynik", "Bolsillo escondido", false, 0],
     ],
     cuff: [
-        ["na-rezinke", "Elastic band", false, 0],
-        ["obrezanniy", "Cropped", false, 0],
-        ["manshet-s-dirkoy", "With a hole in the cuff", false, 0],
-        ["kashkorse", "Decorative ribbed elastic band", false, 0],
-        ["shov", "Without band", false, 0]
+        ["na-rezinke", "Banda elástica", false, 0],
+        ["obrezanniy", "Recortado", false, 0],
+        ["manshet-s-dirkoy", "Con un agujero en la manga", false, 0],
+        ["kashkorse", "Banda elástica decorativa ribeteada", false, 0],
+        ["shov", "Sin banda", false, 0]
     ],
     hood: [
-        ["klassika-s-verevkami", "Classic with a drawstring", false, 0],
-        ["vnakhlest-bez-verovok", "Overlapped without a drawstring", false, 0],
+        ["klassika-s-verevkami", "Clásico con cordón", false, 0],
+        ["vnakhlest-bez-verovok", "Superpuesto sin cordón", false, 0],
         ["anorak", "Anorak", false, 0],
-        ["dvoynoy-vorotnik", "Double hood", false, 0],
-        ["anorak-dvoynoy", "Double hood + anorak", false, 0],
-        ["na-molnii", "Zipper hood", false, 0],
-        ["s-molniyey-sboku", "Side zipper hood", false, 0],
-        ["vnakhlest-vorotnik", "Hood + collar", false, 0],
-        ["dino", "Dragon hood", false, 0],
-        ["rabbit", "Bunny hood", false, 0],
-        ["fox", "Cat hood", false, 0],
+        ["dvoynoy-vorotnik", "Doble capucha", false, 0],
+        ["anorak-dvoynoy", "Doble capucha + anorak", false, 0],
+        ["na-molnii", "Capucha con cierre", false, 0],
+        ["s-molniyey-sboku", "Capucha con cierre lateral", false, 0],
+        ["vnakhlest-vorotnik", "Capucha + cuello", false, 0],
+        ["dino", "Capucha de dragón", false, 0],
+        ["rabbit", "Capucha de conejito", false, 0],
+        ["fox", "Capucha de gato", false, 0],
     ],
     fastener: [
-        ["000000", "Black", false, 0],
-        ["FFFFFF", "White", false, 0],
-        ["804E82", "Violet", false, 0],
-        ["997D68", "Coffee", false, 0],
-        ["E4CAF1", "Lavender", false, 0],
-        ["E5CCAE", "Sand", false, 0]
+        ["000000", "Negro", false, 0],
+        ["FFFFFF", "Blanco", false, 0],
+        ["804E82", "Violeta", false, 0],
+        ["997D68", "Café", false, 0],
+        ["E4CAF1", "Lavanda", false, 0],
+        ["E5CCAE", "Arena", false, 0]
     ]
 },
     choiceKeyRu = {
         color: ["color"],
-        cut: ["cut"],
-        length: ["length"],
-        bottom: ["bottom"],
-        pocket: ["pocket"],
-        cuff: ["cuff"],
-        hood: ["hood"],
-        cloth: ["fabric"],
-        embroidery: ["embroidery"],
-        size: ["size"],
-        growth: ["height"],
-        fastener: ["fastener"],
+        cut: ["corte"],
+        length: ["longitud"],
+        bottom: ["bajo"],
+        pocket: ["bolsillo"],
+        cuff: ["puño"],
+        hood: ["capucha"],
+        cloth: ["tela"],
+        embroidery: ["bordado"],
+        size: ["tamaño"],
+        growth: ["altura"],
+        fastener: ["cierre"],
     }
 //Добавляем класс .human
 document.querySelector(".display-selection .clothes").addEventListener('click', delHuman)
@@ -245,17 +245,17 @@ if (choiceGetJson) {
     choiceElem = choiceGetJson;
 } else {
     choiceElem = {
-        color: ["#997D68", "Coffee", false, 0],
-        cut: ["pryamoy", "Straight", false, 0],
-        length: ["midi", "Mid-length", false, 0],
-        bottom: ["kashkorse", "Decorative ribbed elastic band", false, 0],
-        pocket: ["kenguru", "Kangaroo pocket", false, 0],
-        cuff: ["kashkorse", "Decorative ribbed elastic band", false, 0],
-        hood: ["vnakhlest-bez-verovok", "Overlapped without a drawstring", false, 0],
-        cloth: ["no", "without nap", false, 0],
+        color: ["#997D68", "Café", false, 0],
+        cut: ["pryamoy", "Recto", false, 0],
+        length: ["midi", "Longitud media", false, 0],
+        bottom: ["kashkorse", "Banda elástica decorativa ribeteada", false, 0],
+        pocket: ["kenguru", "Bolsillo canguro", false, 0],
+        cuff: ["kashkorse", "Banda elástica decorativa ribeteada", false, 0],
+        hood: ["vnakhlest-bez-verovok", "Superpuesto sin cordón", false, 0],
+        cloth: ["no", "Sin vellón", false, 0],
         // embroidery: ["no", "Не выбран", false, 0],
-        size: ["no", "No selected", false, 0],
-        growth: ["no", "No selected", false, 0],
+        size: ["no", "No seleccionado", false, 0],
+        growth: ["no", "No seleccionado", false, 0],
     }
 }
 
@@ -313,8 +313,8 @@ async function choiceActive() {
             bottomItem,
             pocketItem;
         if (item == "krop") {
-            choiceElem["pocket"] = ["pocket-no", "No pockets", false, 0];
-            choiceElem["bottom"] = ["shov", "Seam", false, 0];
+            choiceElem["pocket"] = ["pocket-no", "Sin bolsillos", false, 0];
+            choiceElem["bottom"] = ["shov", "Costura", false, 0];
             lengthItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/length/${choiceElem[attr][0]}.svg`);
             bottomItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/bottom/${choiceElem[attr][0]}/${choiceElem["bottom"][0]}.svg`);
             pocketItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/pocket/${choiceElem["pocket"][0]}.svg`);
@@ -496,7 +496,7 @@ modalPrev.addEventListener("click", modalDel);
 async function modalAdd() {
     const promise = new Promise(async (resolve, reject) => {
         let modalName = this.dataset.modal,
-            modalItem = await fetch(`https://nautz.ru/new-constructor/modal/en/oneof/_${modalName}.html`);
+            modalItem = await fetch(`https://nautz.ru/new-constructor/modal/es/oneof/_${modalName}.html`);
         modal.classList.add("active");
 
         if (this.dataset.modal == "form") {
@@ -517,7 +517,7 @@ async function modalAdd() {
             createTempOrder();
             if (this.dataset.modal === "form") {
                 if (typeof formFlag === "undefined") {
-                    await $.getScript("https://nautz.ru/new-constructor/js/en/oneof/_form.js");
+                    await $.getScript("https://nautz.ru/new-constructor/js/es/oneof/_form.js");
                 }
                 resolve(modalForm())
             }
@@ -812,7 +812,7 @@ function calc_total(length, summa) {
 
             window.tcart.products[0] = {
                 amount: summa,
-                name: 'Tailoring services ' + length,
+                name: 'Servicios de confección ' + length,
                 price: summa,
                 quantity: 1
             };
@@ -917,7 +917,7 @@ function closeIt() {
 
     window.onbeforeunload = () => {
         if (!linkClick) {
-            localStorage.status = 'Closed the tab';
+            localStorage.status = 'Cerrar pestaña';
         }
     };
     if (!sessionStorage.getItem('status')) {
