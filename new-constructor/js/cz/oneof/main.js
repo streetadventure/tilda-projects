@@ -140,7 +140,7 @@ let parametersAllArr = {
         color: ["barva"],
         cut: ["střih"],
         length: ["délka"],
-        bottom: ["spodní část"],
+        bottom: ["spodní"],
         pocket: ["kapsa"],
         cuff: ["manžeta"],
         hood: ["kapuce"],
@@ -542,6 +542,7 @@ function createTempOrder(){
 
     for_api.product_brand = 2363; // Hooli
     for_api.amount = finalPrice;
+    for_api.language = 'cz';
 
     var params = {};
     for (let key in choiceElem) {

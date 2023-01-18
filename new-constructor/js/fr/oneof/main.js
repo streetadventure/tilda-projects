@@ -543,6 +543,7 @@ function createTempOrder(){
 
     for_api.product_brand = 2363; // Hooli
     for_api.amount = finalPrice;
+    for_api.language = 'fr';
 
     var params = {};
     for (let key in choiceElem) {

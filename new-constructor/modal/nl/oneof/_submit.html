@@ -1,0 +1,25 @@
+<div class="submit-modal">
+    <div class="yes">
+        <p class="modal__title">Uw bestelling is succesvol <br> geplaatst</p>
+        <p>De totale kosten van uw bestelling met alle geselecteerde opties: <b id="price-info"></b> in plaats daarvan <s>160
+                €</s> Uw voordeel als u vandaag bestelt: <b id="price-economy"></b></p>
+        <p>Als u de bestelling nu niet kunt betalen - vraag een reserveringskorting aan via WhatsApp door op de volgende knop te klikken:</p>
+            <form role="form"  id="formnewconstructor" name="formnewconstructor" method='POST' data-formactiontype="2" class="t-form js-form-proccess" data-formcart="y">
+                <input type="hidden" name="orderId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceNoDB" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="product_brand" value = "">
+                <input type="hidden" name="language" value = "">
+                <button type="submit" class="btn">Betaal de bestelling</button> 
+            </form>
+        <a href="https://api.whatsapp.com/send?phone=35796779393" target="_blank" 
+            class="btn_stroke">WhatsApp</a>
+        <p><b>Let op!</b> Als u nu geen betaling doet of een korting boekt, kan de promotieprijs niet worden opgeslagen en kan deze hoger zijn.</p>
+        <p><b>Levering: </b>Wanneer het product klaar is, sturen wij een e-mail met een link waar u een geschikte leveringsmethode kunt kiezen en hiervoor kunt betalen. </p>
+        <p><a class="btn_disable" href="/">Plaats nog een bestelling</a></p>
+    </div>
+    <div class="no">
+        <p class="modal-submit__title">Fout</p>
+        <p> Probeer nogmaals een bestelling te plaatsen</p>
+    </div>
+</div>

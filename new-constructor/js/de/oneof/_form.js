@@ -66,7 +66,7 @@ function modalForm() {
         $.ajax({
 
             type: "POST",
-            url: "https://nautz.ru/api/bitrix/newConstructor",
+            url: "https://nautz.ru/api/bitrix/OneOfConstructor",
             data: $("#modal-form").serialize(),
             success: async function (data) {
                 const promise = new Promise(async (resolve, reject) => {
