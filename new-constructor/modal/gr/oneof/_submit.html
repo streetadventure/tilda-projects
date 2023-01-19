@@ -1,0 +1,25 @@
+<div class="submit-modal">
+    <div class="yes">
+        <p class="modal__title">Η παραγγελία σας έγινε με επιτυχία <br> τοποθετήθηκε</p>
+        <p>Το συνολικό κόστος της παραγγελίας σας με όλες τις επιλεγμένες επιλογές: <b id="price-info"></b> αντί <s>160
+                €</s> Το όφελός σας αν παραγγείλετε σήμερα: <b id="price-economy"></b></p>
+        <p>Εάν δεν είστε σε θέση να πληρώσετε την παραγγελία σας τώρα - ζητήστε μια έκπτωση αποθεματικού στο WhatsApp κάνοντας κλικ στο εξής button:</p>
+            <form role="form"  id="formnewconstructor" name="formnewconstructor" method='POST' data-formactiontype="2" class="t-form js-form-proccess" data-formcart="y">
+                <input type="hidden" name="orderId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceNoDB" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="product_brand" value = "">
+                <input type="hidden" name="language" value = "">
+                <button type="submit" class="btn">Πληρώστε για την παραγγελία</button> 
+            </form>
+        <a href="https://api.whatsapp.com/send?phone=35796779393" target="_blank" 
+            class="btn_stroke">WhatsApp</a>
+        <p><b>Προσοχή!</b> Εάν δεν κάνετε πληρωμή τώρα ή δεν κάνετε κράτηση με έκπτωση, η τιμή προσφοράς ενδέχεται να μην αποθηκευτεί και να είναι υψηλότερη.</p>
+        <p><b>Παράδοση: </b>Όταν το προϊόν είναι έτοιμο, θα σας στείλουμε ένα email με έναν σύνδεσμο όπου μπορείτε να επιλέξετε έναν βολικό τρόπο παράδοσης και να πληρώσετε για αυτό. </p>
+        <p><a class="btn_disable" href="/">Τοποθετήστε μια άλλη παραγγελία</a></p>
+    </div>
+    <div class="no">
+        <p class="modal-submit__title">Σφάλμα</p>
+        <p> Προσπαθήστε να δώσετε ξανά μια παραγγελία</p>
+    </div>
+</div>
