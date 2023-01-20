@@ -1,0 +1,26 @@
+<div class="submit-modal">
+    <div class="yes">
+        <p class="modal__title">Comanda dvs. a fost efectuată cu succes <br> plasată</p>
+        <p>Costul total al comenzii dvs. cu toate opțiunile selectate: <b id="price-info"></b> în loc de <s>160
+                €</s> Avantajul dumneavoastră dacă comandați astăzi: <b id="price-economy"></b></p>
+        <p>Dacă nu sunteți în măsură să plătiți comanda acum - solicitați o reducere de rezervă în WhatsApp, făcând clic pe următorul link 
+            butonul:</p>
+            <form role="form"  id="formnewconstructor" name="formnewconstructor" method='POST' data-formactiontype="2" class="t-form js-form-proccess" data-formcart="y">
+                <input type="hidden" name="orderId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceNoDB" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="product_brand" value = "">
+                <input type="hidden" name="language" value = "">
+                <button type="submit" class="btn">Plătiți comanda</button> 
+            </form>
+        <a href="https://api.whatsapp.com/send?phone=35796779393" target="_blank" 
+            class="btn_stroke">WhatsApp</a>
+        <p><b>Atenție!</b> Dacă nu efectuați o plată acum sau nu rezervați o reducere, este posibil ca prețul promoțional să nu fie salvat și să fie mai mare.</p>
+        <p><b>Livrare: </b>Când produsul este gata, vă vom trimite un e-mail cu un link prin care puteți alege o metodă de livrare convenabilă și plăti pentru aceasta </p>
+        <p><a class="btn_disable" href="/">Faceți o altă comandă</a></p>
+    </div>
+    <div class="no">
+        <p class="modal-submit__title">Eroare</p>
+        <p> Încercați să plasați din nou o comandă</p>
+    </div>
+</div>

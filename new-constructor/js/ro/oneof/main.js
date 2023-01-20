@@ -45,110 +45,110 @@ $('.parameters-box__main').owlCarousel({
 //массив со всеми параметрами для рандома
 let parametersAllArr = {
     color: [
-        ["#000000", "Μαύρο", false, 0],
-        ["#804E82", "Βιολετί", false, 0],
-        ["#E4CAF1", "Λεβάντα", false, 0],
+        ["#000000", "Negru", false, 0],
+        ["#804E82", "Violet", false, 0],
+        ["#E4CAF1", "Lavanda", false, 0],
         ["#FDD9E8", "Marshmallow", false, 0],
-        ["#E5CCAE", "Άμμος", false, 0],
-        ["#997D68", "Καφές", false, 0],
-        ["#FFFFFF", "Λευκό", false, 0],
-        ["#BAC1BF", "Καπνιστό", false, 0],
-        ["#57555A", "Γραφίτης", false, 0],
-        ["#E42C36", "Κόκκινο", false, 0],
-        ["#FE6203", "Απόκριες", false, 0],
-        ["#FFE270", "Κίτρινο", false, 0],
-        ["#F2EC7A", "Λεμόνι", false, 0],
-        ["#E33D85", "Φούξια", false, 0],
-        ["#74C86A", "Λεμόνι", false, 0],
-        ["#64762C", "Χακί", false, 0],
-        ["#97A38F", "Ελιά", false, 0],
-        ["#1F9480", "Σμαραγδένιο", false, 0],
-        ["#B3E2D8", "Τίφανι", false, 0],
-        ["#2E4393", "Μπλε", false, 0],
-        ["#83A3EC", "Κυανό", false, 0],
-        ["#BB847F", "Σκονισμένο τριαντάφυλλο", false, 0],
-        ["#A2BEEE", "Σκόνη τζιν", false, 0],
-        ["#91B4B8", "Χιόνι μέντα", false, 0],
-        ["#EDBFC1", "Ροδάκινο", false, 0],
-        ["#FDAE97", "Κοραλλί", false, 0],
-        ["#E2E4E6", "Μελάντζα γάλακτος", false, 0],
-        ["#E5E4EA", "Τόφου", false, 0],
+        ["#E5CCAE", "Nisip", false, 0],
+        ["#997D68", "Cafea", false, 0],
+        ["#FFFFFF", "Alb", false, 0],
+        ["#BAC1BF", "Smoky", false, 0],
+        ["#57555A", "Grafit", false, 0],
+        ["#E42C36", "Roșu", false, 0],
+        ["#FE6203", "Halloween", false, 0],
+        ["#FFE270", "Galben", false, 0],
+        ["#F2EC7A", "Lămâie", false, 0],
+        ["#E33D85", "Fuchsia", false, 0],
+        ["#74C86A", "Lime", false, 0],
+        ["#64762C", "Kaki", false, 0],
+        ["#97A38F", "Olive", false, 0],
+        ["#1F9480", "Smarald", false, 0],
+        ["#B3E2D8", "Tiffany", false, 0],
+        ["#2E4393", "Albastru", false, 0],
+        ["#83A3EC", "Cyan", false, 0],
+        ["#BB847F", "Trandafir prăfuit", false, 0],
+        ["#A2BEEE", "Denim prăfuit", false, 0],
+        ["#91B4B8", "Zăpadă mentă", false, 0],
+        ["#EDBFC1", "Piersică", false, 0],
+        ["#FDAE97", "Coral", false, 0],
+        ["#E2E4E6", "Lapte melange", false, 0],
+        ["#E5E4EA", "Tofu", false, 0],
     ],
     cut: [
-        ["bochonok", "Υπερμεγέθη", false, 0],
-        ["pryamoy", "Ευθεία", false, 0],
-        ["classic", "Κλασικό", false, 0]
+        ["bochonok", "Supradimensionare", false, 0],
+        ["pryamoy", "Drept", false, 0],
+        ["classic", "Clasic", false, 0]
     ],
     length: [
-        ["long", "Μακρύ", false, 0],
-        ["midi", "Μεσαίου μήκους", false, 0],
-        ["short", "Κοντό", false, 0],
-        ["krop", "Κοπή", false, 0]
+        ["long", "Lung", false, 0],
+        ["midi", "Lungime medie", false, 0],
+        ["short", "Scurt", false, 0],
+        ["krop", "Crop", false, 0]
     ],
     bottom: [
-        ["na-zatyashke-so-shnurkom", "Ελαστική ζώνη με κορδόνι", false, 0],
-        ["na-rezinke", "Ελαστική ζώνη", false, 0],
-        ["oborka", "Κρόσσια", false, 0],
-        ["obrezanniy-kray", "Περικομμένο", false, 0],
-        ["kashkorse", "Διακοσμητική ελαστική ζώνη με ραβδώσεις", false, 0],
-        ["shirokiy-manzhet", "Πλατιές μανσέτες από κύριο ύφασμα", false, 0],
-        ["shov", "Χωρίς ζώνη", false, 0],
+        ["na-zatyashke-so-shnurkom", "Bandă elastică cu cordon de strângere", false, 0],
+        ["na-rezinke", "Bandă elastică", false, 0],
+        ["oborka", "Volan", false, 0],
+        ["obrezanniy-kray", "Cropped", false, 0],
+        ["kashkorse", "Bandă elastică decorativă cu nervuri", false, 0],
+        ["shirokiy-manzhet", "Manșete largi din țesătură principală", false, 0],
+        ["shov", "Fără bandă", false, 0],
     ],
     bottomKrop: [
-        ["na-zatyashke-so-shnurkom", "Ελαστική ζώνη με κορδόνι", false, 0],
-        ["na-rezinke", "Ελαστική ζώνη", false, 0],
-        ["obrezanniy-kray", "Περικομμένο", false, 0],
-        ["shov", "Χωρίς ζώνη", false, 0],
+        ["na-zatyashke-so-shnurkom", "Bandă elastică cu cordon de strângere", false, 0],
+        ["na-rezinke", "Bandă elastică", false, 0],
+        ["obrezanniy-kray", "Cropped", false, 0],
+        ["shov", "Fără bandă", false, 0],
     ],
     pocket: [
-        ["pocket-no", "Χωρίς τσέπες", false, 0],
-        ["kenguru", "Τσέπη καγκουρό", false, 0],
-        ["na-grudi", "Τσέπες με πτερύγια", false, 0],
-        ["bokovie", "Πλευρικές τσέπες", false, 0],
-        ["taynik", "Τσέπη κρύπτης", false, 0],
+        ["pocket-no", "Fără buzunare", false, 0],
+        ["kenguru", "Buzunar Kangaroo", false, 0],
+        ["na-grudi", "Buzunare cu clapete", false, 0],
+        ["bokovie", "Buzunare laterale", false, 0],
+        ["taynik", "Buzunar de depozitare", false, 0],
     ],
     cuff: [
-        ["na-rezinke", "Ελαστική ζώνη", false, 0],
-        ["obrezanniy", "Περικομμένο", false, 0],
-        ["manshet-s-dirkoy", "Με τρύπα στη μανσέτα", false, 0],
-        ["kashkorse", "Διακοσμητική ελαστική ζώνη με ραβδώσεις", false, 0],
-        ["shov", "Χωρίς ζώνη", false, 0]
+        ["na-rezinke", "Bandă elastică", false, 0],
+        ["obrezanniy", "Cropped", false, 0],
+        ["manshet-s-dirkoy", "Cu o gaură în manșetă", false, 0],
+        ["kashkorse", "Bandă elastică decorativă cu nervuri", false, 0],
+        ["shov", "Fără bandă", false, 0]
     ],
     hood: [
-        ["klassika-s-verevkami", "Κλασικό με κορδόνι περίσφιξης", false, 0],
-        ["vnakhlest-bez-verovok", "Με επικάλυψη χωρίς κορδόνι", false, 0],
-        ["anorak", "Ανόρακ", false, 0],
-        ["dvoynoy-vorotnik", "Διπλή κουκούλα", false, 0],
-        ["anorak-dvoynoy", "Διπλή κουκούλα + ανόρακ", false, 0],
-        ["na-molnii", "Κουκούλα με φερμουάρ", false, 0],
-        ["s-molniyey-sboku", "Κουκούλα με φερμουάρ στο πλάι", false, 0],
-        ["vnakhlest-vorotnik", "Κουκούλα + γιακάς", false, 0],
-        ["dino", "Κουκούλα με δράκο", false, 0],
-        ["rabbit", "Κουκούλα λαγουδάκι", false, 0],
-        ["fox", "Κουκούλα γάτας", false, 0],
+        ["klassika-s-verevkami", "Clasic, cu un cordon de strângere", false, 0],
+        ["vnakhlest-bez-verovok", "Suprapusă fără cordon", false, 0],
+        ["anorak", "Hanorac", false, 0],
+        ["dvoynoy-vorotnik", "Glugă dublă", false, 0],
+        ["anorak-dvoynoy", "Glugă dublă + hanorac", false, 0],
+        ["na-molnii", "Glugă cu fermoar", false, 0],
+        ["s-molniyey-sboku", "Glugă cu fermoar lateral", false, 0],
+        ["vnakhlest-vorotnik", "Glugă + guler", false, 0],
+        ["dino", "Glugă dragon", false, 0],
+        ["rabbit", "Glugă iepuraș", false, 0],
+        ["fox", "Glugă pisică", false, 0],
     ],
     fastener: [
-        ["000000", "Μαύρο", false, 0],
-        ["FFFFFF", "Λευκό", false, 0],
-        ["804E82", "Βιολετί", false, 0],
-        ["997D68", "Καφές", false, 0],
-        ["E4CAF1", "Λεβάντα", false, 0],
-        ["E5CCAE", "Άμμος", false, 0]
+        ["000000", "Negru", false, 0],
+        ["FFFFFF", "Alb", false, 0],
+        ["804E82", "Violet", false, 0],
+        ["997D68", "Cafea", false, 0],
+        ["E4CAF1", "Lavanda", false, 0],
+        ["E5CCAE", "Nisip", false, 0]
     ]
 },
     choiceKeyRu = {
-        color: ["χρώμα"],
-        cut: ["κόψτε"],
-        length: ["μήκος"],
-        bottom: ["κάτω"],
-        pocket: ["τσέπη"],
-        cuff: ["μανσέτα"],
-        hood: ["κουκούλα"],
-        cloth: ["ύφασμα"],
-        embroidery: ["κέντημα"],
-        size: ["μέγεθος"],
-        growth: ["ύψος"],
-        fastener: ["συνδετήρας"],
+        color: ["culoare"],
+        cut: ["tăiat"],
+        length: ["lungime"],
+        bottom: ["partea de jos"],
+        pocket: ["buzunar"],
+        cuff: ["manșetă"],
+        hood: ["glugă"],
+        cloth: ["tesatura"],
+        embroidery: ["broderie"],
+        size: ["dimensiune"],
+        growth: ["înălțime"],
+        fastener: ["închizător"],
     }
 //Добавляем класс .human
 document.querySelector(".display-selection .clothes").addEventListener('click', delHuman)
@@ -245,17 +245,17 @@ if (choiceGetJson) {
     choiceElem = choiceGetJson;
 } else {
     choiceElem = {
-        color: ["#997D68", "Καφές", false, 0],
-        cut: ["pryamoy", "Σκέτο", false, 0],
-        length: ["midi", "Μεσαίου μήκους", false, 0],
-        bottom: ["kashkorse", "Διακοσμητική ελαστική ζώνη με ραβδώσεις", false, 0],
-        pocket: ["kenguru", "Τσέπη καγκουρό", false, 0],
-        cuff: ["kashkorse", "Διακοσμητική ελαστική ζώνη με ραβδώσεις", false, 0],
-        hood: ["vnakhlest-bez-verovok", "Επικαλυπτόμενο χωρίς κορδόνι", false, 0],
-        cloth: ["no", "Χωρίς υπνάκο", false, 0],
+        color: ["#997D68", "Cafea", false, 0],
+        cut: ["pryamoy", "Straight", false, 0],
+        length: ["midi", "Lungime medie", false, 0],
+        bottom: ["kashkorse", "Bandă elastică decorativă cu nervuri", false, 0],
+        pocket: ["kenguru", "Buzunar Kangaroo", false, 0],
+        cuff: ["kashkorse", "Bandă elastică decorativă cu nervuri", false, 0],
+        hood: ["vnakhlest-bez-verovok", "Suprapusă fără cordon de strângere", false, 0],
+        cloth: ["no", "Fără șervețel", false, 0],
         // embroidery: ["no", "Не выбран", false, 0],
-        size: ["no", "Χωρίς επιλεγμένο", false, 0],
-        growth: ["no", "Όχι επιλεγμένο", false, 0],
+        size: ["no", "Fără selecție", false, 0],
+        growth: ["no", "Nu este selectat", false, 0],
     }
 }
 
@@ -313,8 +313,8 @@ async function choiceActive() {
             bottomItem,
             pocketItem;
         if (item == "krop") {
-            choiceElem["pocket"] = ["pocket-no", "Χωρίς τσέπες", false, 0];
-            choiceElem["bottom"] = ["shov", "Ραφή", false, 0];
+            choiceElem["pocket"] = ["pocket-no", "Fără buzunare", false, 0];
+            choiceElem["bottom"] = ["shov", "Cusătură", false, 0];
             lengthItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/length/${choiceElem[attr][0]}.svg`);
             bottomItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/bottom/${choiceElem[attr][0]}/${choiceElem["bottom"][0]}.svg`);
             pocketItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/pocket/${choiceElem["pocket"][0]}.svg`);
@@ -496,7 +496,7 @@ modalPrev.addEventListener("click", modalDel);
 async function modalAdd() {
     const promise = new Promise(async (resolve, reject) => {
         let modalName = this.dataset.modal,
-            modalItem = await fetch(`https://nautz.ru/new-constructor/modal/gr/oneof/_${modalName}.html`);
+            modalItem = await fetch(`https://nautz.ru/new-constructor/modal/ro/oneof/_${modalName}.html`);
         modal.classList.add("active");
 
         if (this.dataset.modal == "form") {
@@ -517,7 +517,7 @@ async function modalAdd() {
             createTempOrder();
             if (this.dataset.modal === "form") {
                 if (typeof formFlag === "undefined") {
-                    await $.getScript("https://nautz.ru/new-constructor/js/gr/oneof/_form.js");
+                    await $.getScript("https://nautz.ru/new-constructor/js/ro/oneof/_form.js");
                 }
                 resolve(modalForm())
             }
@@ -542,7 +542,7 @@ function createTempOrder(){
 
     for_api.product_brand = 2363; // Hooli
     for_api.amount = finalPrice;
-    for_api.language = 'gr';
+    for_api.language = 'ro';
 
     var params = {};
     for (let key in choiceElem) {
@@ -813,7 +813,7 @@ function calc_total(length, summa) {
 
             window.tcart.products[0] = {
                 amount: summa,
-                name: 'Υπηρεσίες ραπτικής ' + length,
+                name: 'Tailoring services ' + length,
                 price: summa,
                 quantity: 1
             };
@@ -918,7 +918,7 @@ function closeIt() {
 
     window.onbeforeunload = () => {
         if (!linkClick) {
-            localStorage.status = 'Έκλεισε την καρτέλα';
+            localStorage.status = 'A închis fila';
         }
     };
     if (!sessionStorage.getItem('status')) {
