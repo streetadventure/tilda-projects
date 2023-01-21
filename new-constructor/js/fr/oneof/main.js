@@ -814,7 +814,7 @@ function calc_total(length, summa) {
 
             window.tcart.products[0] = {
                 amount: summa,
-                name: 'Услуга по пошиву ' + length,
+                name: 'Service de personnalisation ' + length,
                 price: summa,
                 quantity: 1
             };

@@ -813,7 +813,7 @@ function calc_total(length, summa) {
 
             window.tcart.products[0] = {
                 amount: summa,
-                name: 'Tailoring services ' + length,
+                name: 'Diensten op maat ' + length,
                 price: summa,
                 quantity: 1
             };

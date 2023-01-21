@@ -1,0 +1,26 @@
+<div class="submit-modal">
+    <div class="yes">
+        <p class="modal__title">Az Ön megrendelése sikeresen <br> leadva</p>
+        <p>A megrendelés teljes költsége az összes kiválasztott opcióval együtt: <b id="price-info"></b> helyette <s>160
+                €</s> Az Ön előnye, ha ma rendel: <b id="price-economy"></b></p>
+        <p>Ha nem tudod kifizetni a rendelést most - kérj tartalékkedvezményt a WhatsAppban az alábbiakra kattintva 
+            gombra:</p>
+            <form role="form"  id="formnewconstructor" name="formnewconstructor" method='POST' data-formactiontype="2" class="t-form js-form-proccess" data-formcart="y">
+                <input type="hidden" name="orderId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceNoDB" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="product_brand" value = "">
+                <input type="hidden" name="language" value = "">
+                <button type="submit" class="btn">Fizessen a rendelésért</button> 
+            </form>
+        <a href="https://api.whatsapp.com/send?phone=35796779393" target="_blank" 
+            class="btn_stroke">WhatsApp</a>
+        <p><b>Figyelem!</b> Ha nem fizet most, vagy nem foglal kedvezményt, az akciós ár nem kerül elmentésre, és magasabb lehet.</p>
+        <p><b>Szállítás: </b>Amikor a termék készen áll, küldünk egy e-mailt egy linkkel, ahol kiválaszthatja a megfelelő szállítási módot és kifizetheti azt. </p>
+        <p><a class="btn_disable" href="/">Adj egy másik rendelést</a></p>
+    </div>
+    <div class="no">
+        <p class="modal-submit__title">Hiba</p>
+        <p> Próbáljon meg újra rendelést leadni</p>
+    </div>
+</div>

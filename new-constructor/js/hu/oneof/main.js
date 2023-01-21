@@ -45,110 +45,110 @@ $('.parameters-box__main').owlCarousel({
 //массив со всеми параметрами для рандома
 let parametersAllArr = {
     color: [
-        ["#000000", "Negru", false, 0],
-        ["#804E82", "Violet", false, 0],
-        ["#E4CAF1", "Lavanda", false, 0],
+        ["#000000", "Fekete", false, 0],
+        ["#804E82", "Lila", false, 0],
+        ["#E4CAF1", "Levendula", false, 0],
         ["#FDD9E8", "Marshmallow", false, 0],
-        ["#E5CCAE", "Nisip", false, 0],
-        ["#997D68", "Cafea", false, 0],
-        ["#FFFFFF", "Alb", false, 0],
+        ["#E5CCAE", "Sand", false, 0],
+        ["#997D68", "Kávé", false, 0],
+        ["#FFFFFF", "Fehér", false, 0],
         ["#BAC1BF", "Smoky", false, 0],
-        ["#57555A", "Grafit", false, 0],
-        ["#E42C36", "Roșu", false, 0],
+        ["#57555A", "Graphite", false, 0],
+        ["#E42C36", "Red", false, 0],
         ["#FE6203", "Halloween", false, 0],
-        ["#FFE270", "Galben", false, 0],
-        ["#F2EC7A", "Lămâie", false, 0],
-        ["#E33D85", "Fuchsia", false, 0],
+        ["#FFE270", "Sárga", false, 0],
+        ["#F2EC7A", "Citrom", false, 0],
+        ["#E33D85", "Fukszia", false, 0],
         ["#74C86A", "Lime", false, 0],
-        ["#64762C", "Kaki", false, 0],
+        ["#64762C", "Khaki", false, 0],
         ["#97A38F", "Olive", false, 0],
-        ["#1F9480", "Smarald", false, 0],
+        ["#1F9480", "Smaragd", false, 0],
         ["#B3E2D8", "Tiffany", false, 0],
-        ["#2E4393", "Albastru", false, 0],
+        ["#2E4393", "Kék", false, 0],
         ["#83A3EC", "Cyan", false, 0],
-        ["#BB847F", "Trandafir prăfuit", false, 0],
-        ["#A2BEEE", "Denim prăfuit", false, 0],
-        ["#91B4B8", "Zăpadă mentă", false, 0],
-        ["#EDBFC1", "Piersică", false, 0],
-        ["#FDAE97", "Coral", false, 0],
-        ["#E2E4E6", "Lapte melange", false, 0],
+        ["#BB847F", "Poros rózsa", false, 0],
+        ["#A2BEEE", "Poros farmer", false, 0],
+        ["#91B4B8", "Hó menta", false, 0],
+        ["#EDBFC1", "Barack", false, 0],
+        ["#FDAE97", "Korall", false, 0],
+        ["#E2E4E6", "Milk melange", false, 0],
         ["#E5E4EA", "Tofu", false, 0],
     ],
     cut: [
-        ["bochonok", "Supradimensionare", false, 0],
-        ["pryamoy", "Drept", false, 0],
-        ["classic", "Clasic", false, 0]
+        ["bochonok", "Túlméretezett", false, 0],
+        ["pryamoy", "Egyenes", false, 0],
+        ["classic", "Klasszikus", false, 0]
     ],
     length: [
-        ["long", "Lung", false, 0],
-        ["midi", "Lungime medie", false, 0],
-        ["short", "Scurt", false, 0],
+        ["long", "Hosszú", false, 0],
+        ["midi", "Középhosszú", false, 0],
+        ["short", "Rövid", false, 0],
         ["krop", "Crop", false, 0]
     ],
     bottom: [
-        ["na-zatyashke-so-shnurkom", "Bandă elastică cu cordon de strângere", false, 0],
-        ["na-rezinke", "Bandă elastică", false, 0],
-        ["oborka", "Volan", false, 0],
-        ["obrezanniy-kray", "Cropped", false, 0],
-        ["kashkorse", "Bandă elastică decorativă cu nervuri", false, 0],
-        ["shirokiy-manzhet", "Manșete largi din țesătură principală", false, 0],
-        ["shov", "Fără bandă", false, 0],
+        ["na-zatyashke-so-shnurkom", "Rugalmas pánt húzózsinórral", false, 0],
+        ["na-rezinke", "Elasztikus pánt", false, 0],
+        ["oborka", "Fodros", false, 0],
+        ["obrezanniy-kray", "Vágott", false, 0],
+        ["kashkorse", "Dekoratív bordázott elasztikus pánt", false, 0],
+        ["shirokiy-manzhet", "Széles mandzsetta fő anyagból", false, 0],
+        ["shov", "Pánt nélkül", false, 0],
     ],
     bottomKrop: [
-        ["na-zatyashke-so-shnurkom", "Bandă elastică cu cordon de strângere", false, 0],
-        ["na-rezinke", "Bandă elastică", false, 0],
-        ["obrezanniy-kray", "Cropped", false, 0],
-        ["shov", "Fără bandă", false, 0],
+        ["na-zatyashke-so-shnurkom", "Gumiszalag húzózsinórral", false, 0],
+        ["na-rezinke", "Rugalmas pánt", false, 0],
+        ["obrezanniy-kray", "Vágott", false, 0],
+        ["shov", "Pánt nélkül", false, 0],
     ],
     pocket: [
-        ["pocket-no", "Fără buzunare", false, 0],
-        ["kenguru", "Buzunar Kangaroo", false, 0],
-        ["na-grudi", "Buzunare cu clapete", false, 0],
-        ["bokovie", "Buzunare laterale", false, 0],
-        ["taynik", "Buzunar de depozitare", false, 0],
+        ["pocket-no", "Nincsenek zsebek", false, 0],
+        ["kenguru", "Kenguru zseb", false, 0],
+        ["na-grudi", "Foltos zsebek patentokkal", false, 0],
+        ["bokovie", "Oldalsó zsebek", false, 0],
+        ["taynik", "Rejtőzködő zseb", false, 0],
     ],
     cuff: [
-        ["na-rezinke", "Bandă elastică", false, 0],
-        ["obrezanniy", "Cropped", false, 0],
-        ["manshet-s-dirkoy", "Cu o gaură în manșetă", false, 0],
-        ["kashkorse", "Bandă elastică decorativă cu nervuri", false, 0],
-        ["shov", "Fără bandă", false, 0]
+        ["na-rezinke", "Elasztikus szalag", false, 0],
+        ["obrezanniy", "Levágott", false, 0],
+        ["manshet-s-dirkoy", "Lyukas mandzsettával", false, 0],
+        ["kashkorse", "Dekoratív bordázott elasztikus pánt", false, 0],
+        ["shov", "Pánt nélkül", false, 0]
     ],
     hood: [
-        ["klassika-s-verevkami", "Clasic, cu un cordon de strângere", false, 0],
-        ["vnakhlest-bez-verovok", "Suprapusă fără cordon", false, 0],
-        ["anorak", "Hanorac", false, 0],
-        ["dvoynoy-vorotnik", "Glugă dublă", false, 0],
-        ["anorak-dvoynoy", "Glugă dublă + hanorac", false, 0],
-        ["na-molnii", "Glugă cu fermoar", false, 0],
-        ["s-molniyey-sboku", "Glugă cu fermoar lateral", false, 0],
-        ["vnakhlest-vorotnik", "Glugă + guler", false, 0],
-        ["dino", "Glugă dragon", false, 0],
-        ["rabbit", "Glugă iepuraș", false, 0],
-        ["fox", "Glugă pisică", false, 0],
+        ["klassika-s-verevkami", "Klasszikus húzózsinórral", false, 0],
+        ["vnakhlest-bez-verovok", "Átlapolt zsinór nélkül", false, 0],
+        ["anorak", "Anorák", false, 0],
+        ["dvoynoy-vorotnik", "Dupla kapucni", false, 0],
+        ["anorak-dvoynoy", "Dupla kapucni + anorák", false, 0],
+        ["na-molnii", "Cipzáras kapucni", false, 0],
+        ["s-molniyey-sboku", "Oldalsó cipzáras kapucni", false, 0],
+        ["vnakhlest-vorotnik", "Kapucni + gallér", false, 0],
+        ["dino", "Sárkányos kapucni", false, 0],
+        ["rabbit", "Nyuszi kapucni", false, 0],
+        ["fox", "Macska kapucni", false, 0],
     ],
     fastener: [
-        ["000000", "Negru", false, 0],
-        ["FFFFFF", "Alb", false, 0],
-        ["804E82", "Violet", false, 0],
-        ["997D68", "Cafea", false, 0],
-        ["E4CAF1", "Lavanda", false, 0],
-        ["E5CCAE", "Nisip", false, 0]
+        ["000000", "Fekete", false, 0],
+        ["FFFFFF", "Fehér", false, 0],
+        ["804E82", "Lila", false, 0],
+        ["997D68", "Kávé", false, 0],
+        ["E4CAF1", "Levendula", false, 0],
+        ["E5CCAE", "Homok", false, 0]
     ]
 },
     choiceKeyRu = {
-        color: ["culoare"],
-        cut: ["tăiat"],
-        length: ["lungime"],
-        bottom: ["fundul"],
-        pocket: ["buzunar"],
-        cuff: ["manșetă"],
-        hood: ["glugă"],
-        cloth: ["tesatura"],
-        embroidery: ["broderie"],
-        size: ["dimensiune"],
-        growth: ["înălțime"],
-        fastener: ["închizător"],
+        color: ["szín"],
+        cut: ["vágott"],
+        length: ["hossz"],
+        bottom: ["alsó"],
+        pocket: ["zseb"],
+        cuff: ["mandzsetta"],
+        hood: ["kapucni"],
+        cloth: ["szövet"],
+        embroidery: ["hímzés"],
+        size: ["méret"],
+        growth: ["magasság"],
+        fastener: ["rögzítő"],
     }
 //Добавляем класс .human
 document.querySelector(".display-selection .clothes").addEventListener('click', delHuman)
@@ -245,17 +245,17 @@ if (choiceGetJson) {
     choiceElem = choiceGetJson;
 } else {
     choiceElem = {
-        color: ["#997D68", "Cafea", false, 0],
-        cut: ["pryamoy", "Straight", false, 0],
-        length: ["midi", "Lungime medie", false, 0],
-        bottom: ["kashkorse", "Bandă elastică decorativă cu nervuri", false, 0],
-        pocket: ["kenguru", "Buzunar Kangaroo", false, 0],
-        cuff: ["kashkorse", "Bandă elastică decorativă cu nervuri", false, 0],
-        hood: ["vnakhlest-bez-verovok", "Suprapusă fără cordon de strângere", false, 0],
-        cloth: ["no", "Fără șervețel", false, 0],
+        color: ["#997D68", "Kávé", false, 0],
+        cut: ["pryamoy", "Egyenes", false, 0],
+        length: ["midi", "Középhosszú", false, 0],
+        bottom: ["kashkorse", "Dekoratív bordázott elasztikus pánt", false, 0],
+        pocket: ["kenguru", "Kenguru zseb", false, 0],
+        cuff: ["kashkorse", "Dekoratív bordázott elasztikus pánt", false, 0],
+        hood: ["vnakhlest-bez-verovok", "Átlapolt, húzózsinór nélkül", false, 0],
+        cloth: ["no", "szundikálás nélkül", false, 0],
         // embroidery: ["no", "Не выбран", false, 0],
-        size: ["no", "Fără selecție", false, 0],
-        growth: ["no", "Nu este selectat", false, 0],
+        size: ["no", "Nincs kiválasztva", false, 0],
+        growth: ["no", "Nincs kiválasztva", false, 0],
     }
 }
 
@@ -313,8 +313,8 @@ async function choiceActive() {
             bottomItem,
             pocketItem;
         if (item == "krop") {
-            choiceElem["pocket"] = ["pocket-no", "Fără buzunare", false, 0];
-            choiceElem["bottom"] = ["shov", "Cusătură", false, 0];
+            choiceElem["pocket"] = ["pocket-no", "Nincsenek zsebek", false, 0];
+            choiceElem["bottom"] = ["shov", "Varrás", false, 0];
             lengthItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/length/${choiceElem[attr][0]}.svg`);
             bottomItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/bottom/${choiceElem[attr][0]}/${choiceElem["bottom"][0]}.svg`);
             pocketItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/pocket/${choiceElem["pocket"][0]}.svg`);
@@ -496,7 +496,7 @@ modalPrev.addEventListener("click", modalDel);
 async function modalAdd() {
     const promise = new Promise(async (resolve, reject) => {
         let modalName = this.dataset.modal,
-            modalItem = await fetch(`https://nautz.ru/new-constructor/modal/ro/oneof/_${modalName}.html`);
+            modalItem = await fetch(`https://nautz.ru/new-constructor/modal/hu/oneof/_${modalName}.html`);
         modal.classList.add("active");
 
         if (this.dataset.modal == "form") {
@@ -517,7 +517,7 @@ async function modalAdd() {
             createTempOrder();
             if (this.dataset.modal === "form") {
                 if (typeof formFlag === "undefined") {
-                    await $.getScript("https://nautz.ru/new-constructor/js/ro/oneof/_form.js");
+                    await $.getScript("https://nautz.ru/new-constructor/js/hu/oneof/_form.js");
                 }
                 resolve(modalForm())
             }
@@ -542,7 +542,7 @@ function createTempOrder(){
 
     for_api.product_brand = 2363; // Hooli
     for_api.amount = finalPrice;
-    for_api.language = 'ro';
+    for_api.language = 'hu';
 
     var params = {};
     for (let key in choiceElem) {
@@ -813,7 +813,7 @@ function calc_total(length, summa) {
 
             window.tcart.products[0] = {
                 amount: summa,
-                name: 'Servicii de croitorie ' + length,
+                name: 'Szabási szolgáltatások ' + length,
                 price: summa,
                 quantity: 1
             };
@@ -918,7 +918,7 @@ function closeIt() {
 
     window.onbeforeunload = () => {
         if (!linkClick) {
-            localStorage.status = 'A închis fila';
+            localStorage.status = 'Bezárta a lapot';
         }
     };
     if (!sessionStorage.getItem('status')) {
