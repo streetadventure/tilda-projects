@@ -1,0 +1,26 @@
+<div class="submit-modal">
+    <div class="yes">
+        <p class="modal__title">Поръчката ви е успешно изпълнена <br> поставена</p>
+        <p>Общата стойност на поръчката с всички избрани опции: <b id="price-info"></b> вместо <s>160
+                €</s> Вашата полза, ако поръчате днес: <b id="price-economy"></b></p>
+        <p>Ако не сте в състояние да платите поръчката сега - поискайте отстъпка за резерва в WhatsApp, като кликнете върху следното 
+            бутон:</p>
+            <form role="form"  id="formnewconstructor" name="formnewconstructor" method='POST' data-formactiontype="2" class="t-form js-form-proccess" data-formcart="y">
+                <input type="hidden" name="orderId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceNoDB" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="product_brand" value = "">
+                <input type="hidden" name="language" value = "">
+                <button type="submit" class="btn">Плащане на поръчката</button> 
+            </form>
+        <a href="https://api.whatsapp.com/send?phone=35796779393" target="_blank" 
+            class="btn_stroke">WhatsApp</a>
+        <p><b>Внимание!</b> Ако не извършите плащане сега или не резервирате отстъпка, промоционалната цена може да не бъде запазена и да бъде по-висока.</p>
+        <p><b>Доставка: </b>Когато продуктът е готов, ще ви изпратим имейл с линк, където можете да изберете удобен начин на доставка и да я заплатите. </p>
+        <p><a class="btn_disable" href="/">Поставете друга поръчка</a></p>
+    </div>
+    <div class="no">
+        <p class="modal-submit__title">Грешка</p>
+        <p> Опитайте се да направите поръчка отново</p>
+    </div>
+</div>
