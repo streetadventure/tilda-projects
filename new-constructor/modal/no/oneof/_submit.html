@@ -1,0 +1,25 @@
+<div class="submit-modal">
+    <div class="yes">
+        <p class="modal__title">Bestillingen din er vellykket  <br> plassert</p>
+        <p>Totalkostnaden for bestillingen din med alle valgte alternativer i: <b id="price-info"></b> stedet <s>160
+                €</s> Fordelen din hvis du bestiller i dag: <b id="price-economy"></b></p>
+        <p>Hvis du ikke kan betale for bestillingen nå - be om en reservasjonsrabatt på WhatsApp ved å klikke på følgende knapp:</p>
+            <form role="form"  id="formnewconstructor" name="formnewconstructor" method='POST' data-formactiontype="2" class="t-form js-form-proccess" data-formcart="y">
+                <input type="hidden" name="orderId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceNoDB" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="product_brand" value = "">
+                <input type="hidden" name="language" value = "">
+                <button type="submit" class="btn">Betal for bestillingen</button> 
+            </form>
+        <a href="https://api.whatsapp.com/send?phone=35796779393" target="_blank" 
+            class="btn_stroke">WhatsApp</a>
+        <p><b>Oppmerksomhet!</b> Hvis du ikke gjør en betaling nå eller bestiller en rabatt, kan den promoverte prisen ikke lagres og kan være høyere.</p>
+        <p><b>Levering: </b>Når produktet er klart, sender vi en e-post med en lenke der du kan velge en praktisk leveringsmetode og betale for det. </p>
+        <p><a class="btn_disable" href="/">Legg inn en annen bestilling</a></p>
+    </div>
+    <div class="no">
+        <p class="modal-submit__title">Feil</p>
+        <p> Prøv å legge inn en bestilling igjen</p>
+    </div>
+</div>
