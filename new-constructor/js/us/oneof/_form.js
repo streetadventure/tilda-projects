@@ -71,7 +71,7 @@ function modalForm() {
             success: async function (data) {
                 const promise = new Promise(async (resolve, reject) => {
                     let ModalRight = document.querySelector(".modal__box .right"),
-                        submitModal = await fetch(`https://nautz.ru/new-constructor/modal/fr/oneof/_submit.html`);
+                        submitModal = await fetch(`https://nautz.ru/new-constructor/modal/us/oneof/_submit.html`);
                     if (submitModal.ok) {
                         let text = await submitModal.text();
                         ModalRight.innerHTML = text;
@@ -88,7 +88,7 @@ function modalForm() {
                             document.getElementsByName("InvoiceId")[0].value = data.InvoiceId
                             document.getElementsByName("InvoiceNoDB")[0].value = data.InvoiceNoDB
                             document.getElementsByName("product_brand")[0].value = 2363
-                            document.getElementsByName("language")[0].value = "fr"
+                            document.getElementsByName("language")[0].value = "en"
                             prevForm.classList.add("none")
                             deleteCookie(cookieName);
 

@@ -45,111 +45,110 @@ $('.parameters-box__main').owlCarousel({
 //массив со всеми параметрами для рандома
 let parametersAllArr = {
     color: [
-        ["#000000", "Noir", false, 0],
-        ["#804E82", "Violet", false, 0],
-        ["#E4CAF1", "Lavande", false, 0],
-        ["#FDD9E8", "Guimauve", false, 0],
-        ["#E5CCAE", "Sable", false, 0],
-        ["#997D68", "Café", false, 0],
-        ["#FFFFFF", "Blanc", false, 0],
-        ["#BAC1BF", "Fumé", false, 0],
-        ["#57555A", "Graphite", false, 0],
-        ["#E42C36", "Rouge", false, 0],
+        ["#000000", "Čierna", false, 0],
+        ["#804E82", "Fialová", false, 0],
+        ["#E4CAF1", "Levanduľa", false, 0],
+        ["#FDD9E8", "Marshmallow", false, 0],
+        ["#E5CCAE", "Piesok", false, 0],
+        ["#997D68", "Káva", false, 0],
+        ["#FFFFFF", "Biela", false, 0],
+        ["#BAC1BF", "Dymová", false, 0],
+        ["#57555A", "Grafitový", false, 0],
+        ["#E42C36", "Červená", false, 0],
         ["#FE6203", "Halloween", false, 0],
-        ["#FFE270", "Jaune", false, 0],
-        ["#F2EC7A", "Citron", false, 0],
-        ["#E33D85", "Fuchsia", false, 0],
-        ["#74C86A", "Vert citron", false, 0],
-        ["#64762C", "Kaki", false, 0],
-        ["#97A38F", "Olive", false, 0],
-        ["#1F9480", "Emeraude", false, 0],
+        ["#FFE270", "Žltá", false, 0],
+        ["#F2EC7A", "Citrónová", false, 0],
+        ["#E33D85", "Fuksia", false, 0],
+        ["#74C86A", "Limetka", false, 0],
+        ["#64762C", "Khaki", false, 0],
+        ["#97A38F", "Olivová", false, 0],
+        ["#1F9480", "Smaragdová", false, 0],
         ["#B3E2D8", "Tiffany", false, 0],
-        ["#2E4393", "Bleu", false, 0],
-        ["#83A3EC", "Cyan", false, 0],
-        ["#BB847F", "Rose poudré", false, 0],
-        ["#A2BEEE", "Jean poudré", false, 0],
-        ["#91B4B8", "Menthe neigeuse", false, 0],
-        ["#EDBFC1", "Pêche", false, 0],
-        ["#FDAE97", "Corail", false, 0],
-        ["#E2E4E6", "Mélange lait", false, 0],
+        ["#2E4393", "Modrá", false, 0],
+        ["#83A3EC", "Azúrová", false, 0],
+        ["#BB847F", "Prašná ruža", false, 0],
+        ["#A2BEEE", "Dusty denim", false, 0],
+        ["#91B4B8", "Snehová mäta", false, 0],
+        ["#EDBFC1", "Broskyňa", false, 0],
+        ["#FDAE97", "Koralová", false, 0],
+        ["#E2E4E6", "Mliečna melanž", false, 0],
         ["#E5E4EA", "Tofu", false, 0],
     ],
     cut: [
-        ["bochonok", "Trop grand", false, 0],
-        ["pryamoy", "Droite", false, 0],
-        ["classic", "Classique", false, 0]
+        ["bochonok", "Nadrozmerné", false, 0],
+        ["pryamoy", "Rovný", false, 0],
+        ["classic", "Classic", false, 0]
     ],
     length: [
-        ["long", "Longue", false, 0],
-        ["midi", "Standard", false, 0],
-        ["short", "Courte", false, 0],
+        ["long", "Dlhé", false, 0],
+        ["midi", "Stredná dĺžka", false, 0],
+        ["short", "Krátke", false, 0],
         ["krop", "Crop", false, 0]
     ],
     bottom: [
-        ["na-zatyashke-so-shnurkom", "Bande élastique avec cordon de serrage", false, 0],
-        ["na-rezinke", "Bande élastique", false, 0],
-        ["oborka", "Volant", false, 0],
-        ["obrezanniy-kray", "Crop", false, 0],
-        ["kashkorse", "Bande élastique décorative à côtes", false, 0],
-        ["shirokiy-manzhet", "Large ourlet en tissu principal", false, 0],
-        ["shov", "Sans bande", false, 0],
+        ["na-zatyashke-so-shnurkom", "Elastický pás so šnúrkou na stiahnutie", false, 0],
+        ["na-rezinke", "Elastický pás", false, 0],
+        ["oborka", "Volánik", false, 0],
+        ["obrezanniy-kray", "Orezané", false, 0],
+        ["kashkorse", "Ozdobná rebrovaná gumička", false, 0],
+        ["shirokiy-manzhet", "Široké manžety z hlavnej tkaniny", false, 0],
+        ["shov", "Bez pásu", false, 0],
     ],
     bottomKrop: [
-        ["na-zatyashke-so-shnurkom", "Bande élastique avec cordon de serrage", false, 0],
-        ["na-rezinke", "Bande élastique", false, 0],
-        ["obrezanniy-kray", "Crop", false, 0],
-        ["shov", "Sans bande", false, 0],
+        ["na-zatyashke-so-shnurkom", "Elastický pás so šnúrkou na stiahnutie", false, 0],
+        ["na-rezinke", "Elastický pás", false, 0],
+        ["obrezanniy-kray", "Orezané", false, 0],
+        ["shov", "Bez pásu", false, 0],
     ],
     pocket: [
-        ["pocket-no", "Pas de poches", false, 0],
-        ["kenguru", "Poche kangourou", false, 0],
-        ["na-grudi", "Poches à rabat avec patte", false, 0],
-        ["bokovie", "Poches latérales", false, 0],
-        ["taynik", "Poche cachée", false, 0],
+        ["pocket-no", "Žiadne vrecká", false, 0],
+        ["kenguru", "Klokanie vrecko", false, 0],
+        ["na-grudi", "Záplatované vrecká s chlopňami", false, 0],
+        ["bokovie", "Bočné vrecká", false, 0],
+        ["taynik", "Úložné vrecko", false, 0],
     ],
     cuff: [
-        ["na-rezinke", "Bande élastique", false, 0],
-        ["obrezanniy", "Crop", false, 0],
-        ["manshet-s-dirkoy", "Avec un trou dans le poignet", false, 0],
-        ["kashkorse", "Bande élastique décorative à côtes", false, 0],
-        ["shov", "Sans bande", false, 0]
+        ["na-rezinke", "Elastický pás", false, 0],
+        ["obrezanniy", "Orezané", false, 0],
+        ["manshet-s-dirkoy", "S otvorom v manžete", false, 0],
+        ["kashkorse", "Ozdobná rebrovaná gumička", false, 0],
+        ["shov", "Bez pásu", false, 0]
     ],
     hood: [
-        ["klassika-s-verevkami", "Classique avec cordon de serrage", false, 0],
-        ["vnakhlest-bez-verovok", "Recouverte sans cordon de serrage", false, 0],
+        ["klassika-s-verevkami", "Klasické so šnúrkou na stiahnutie", false, 0],
+        ["vnakhlest-bez-verovok", "Prekrývané bez šnúrky", false, 0],
         ["anorak", "Anorak", false, 0],
-        ["dvoynoy-vorotnik", "Double capuche", false, 0],
-        ["anorak-dvoynoy", "Double capuche + anorak", false, 0],
-        ["na-molnii", "Capuche à fermeture éclair", false, 0],
-        ["s-molniyey-sboku", "Capuche latérale à fermeture éclair", false, 0],
-        ["vnakhlest-vorotnik", "Capuche + col", false, 0],
-        ["dino", "Capuche de dragon", false, 0],
-        ["rabbit", "Capuche de lapin", false, 0],
-        ["fox", "Capuche de chat", false, 0],
+        ["dvoynoy-vorotnik", "Dvojitá kapucňa", false, 0],
+        ["anorak-dvoynoy", "Dvojitá kapucňa + anorak", false, 0],
+        ["na-molnii", "Kapucňa na zips", false, 0],
+        ["s-molniyey-sboku", "Bočná kapucňa na zips", false, 0],
+        ["vnakhlest-vorotnik", "Kapucňa + golier", false, 0],
+        ["dino", "Dračia kapucňa", false, 0],
+        ["rabbit", "Kapucňa so zajačikom", false, 0],
+        ["fox", "Mačacia kapucňa", false, 0],
     ],
     fastener: [
-        ["000000", "Noir", false, 0],
-        ["FFFFFF", "Blanc", false, 0],
-        ["804E82", "Violet", false, 0],
-        ["997D68", "Café", false, 0],
-        ["E4CAF1", "Lavande", false, 0],
-        ["E5CCAE", "Sable", false, 0]
+        ["000000", "Čierna", false, 0],
+        ["FFFFFF", "Biela", false, 0],
+        ["804E82", "Fialová", false, 0],
+        ["997D68", "Káva", false, 0],
+        ["E4CAF1", "Levanduľová", false, 0],
+        ["E5CCAE", "Piesok", false, 0]
     ]
 },
     choiceKeyRu = {
-        color: ["Couleur"],
-        cut: ["Style"],
-        length: ["Longueur"],
-        bottom: ["Bas"],
-        pocket: ["Poche"],
-        cuff: ["Poignet"],
-        hood: ["Capuche"],
-        cloth: ["Tissu"],
-        embroidery: ["Broderie"],
-        size: ["Taille"],
-        fastener: ["Fermeture"],
-        growth: ["Hauteur"],
-        
+        color: ["farba"],
+        cut: ["rez"],
+        length: ["dĺžka"],
+        bottom: ["spodná časť"],
+        pocket: ["vrecko"],
+        cuff: ["manžeta"],
+        hood: ["kapucňa"],
+        cloth: ["látka"],
+        embroidery: ["výšivka"],
+        size: ["veľkosť"],
+        growth: ["výška"],
+        fastener: ["zapínanie"],
     }
 //Добавляем класс .human
 document.querySelector(".display-selection .clothes").addEventListener('click', delHuman)
@@ -218,8 +217,8 @@ function progres() {
     }
 }
 //Формирование цены
-let basePrice = 129,
-    finalPrice = 129,
+let basePrice = 99,
+    finalPrice = 99,
     basePriceElem = document.querySelector(".parameters-box__footer .price span");
 function basePriceHTML() {
     let priceItem = basePrice;
@@ -246,17 +245,17 @@ if (choiceGetJson) {
     choiceElem = choiceGetJson;
 } else {
     choiceElem = {
-        color: ["#997D68", "Café", false, 0],
-        cut: ["pryamoy", "Droit", false, 0],
-        length: ["midi", "Standard", false, 0],
-        bottom: ["kashkorse", "Bande élastique décorative à côtes", false, 0],
-        pocket: ["kenguru", "Poche kangourou", false, 0],
-        cuff: ["kashkorse", "Bande élastique décorative à côtes", false, 0],
-        hood: ["vnakhlest-bez-verovok", "Recouverte sans cordon de serrage", false, 0],
-        cloth: ["no", "Sans poil", false, 0],
+        color: ["#997D68", "Káva", false, 0],
+        cut: ["pryamoy", "Priamo", false, 0],
+        length: ["midi", "Stredná dĺžka", false, 0],
+        bottom: ["kashkorse", "Ozdobná rebrovaná gumička", false, 0],
+        pocket: ["kenguru", "Klokanie vrecko", false, 0],
+        cuff: ["kashkorse", "Ozdobná rebrovaná gumička", false, 0],
+        hood: ["vnakhlest-bez-verovok", "Prekrývajú sa bez šnúrky na stiahnutie", false, 0],
+        cloth: ["no", "bez vlasu", false, 0],
         // embroidery: ["no", "Не выбран", false, 0],
-        size: ["no", "Aucun sélectionné", false, 0],
-        growth: ["no", "Aucun sélectionné", false, 0],
+        size: ["no", "Bez vybraných", false, 0],
+        growth: ["no", "Nie je vybraný", false, 0],
     }
 }
 
@@ -280,7 +279,7 @@ async function choiceActive() {
         choiceElem[attr] = [item, title, true, price];
         style = document.querySelector('style#forChangeColorCorrect');
         style.innerHTML = `.color-shadow-dark, .color-shadow, .color-base {fill: ${choiceElem[attr][0]} !important; stroke: ${choiceElem[attr][0]} !important;}`;
-        choiceTitle("Цвет: ", choiceElem[attr][1]);
+        choiceTitle("Color: ", choiceElem[attr][1]);
 
     }
     //Крой
@@ -289,7 +288,7 @@ async function choiceActive() {
         let lengthItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem[attr][0]}/length/${choiceElem["length"][0]}.svg`),
             bottomItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem[attr][0]}/bottom/${choiceElem["length"][0]}/${choiceElem["bottom"][0]}.svg`),
             cuffItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem[attr][0]}/cuff/${choiceElem["cuff"][0]}.svg`);
-        choiceTitle("Крой: ", choiceElem[attr][1]);
+        choiceTitle("Cut: ", choiceElem[attr][1]);
         if (lengthItem.ok) {
             let text = await lengthItem.text();
             let urlDoom = document.querySelector(".design-box__length");
@@ -314,8 +313,8 @@ async function choiceActive() {
             bottomItem,
             pocketItem;
         if (item == "krop") {
-            choiceElem["pocket"] = ["pocket-no", "Pas de poches", false, 0];
-            choiceElem["bottom"] = ["shov", "La couture", false, 0];
+            choiceElem["pocket"] = ["pocket-no", "Žiadne vrecká", false, 0];
+            choiceElem["bottom"] = ["shov", "Šev", false, 0];
             lengthItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/length/${choiceElem[attr][0]}.svg`);
             bottomItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/bottom/${choiceElem[attr][0]}/${choiceElem["bottom"][0]}.svg`);
             pocketItem = await fetch(`https://nautz.ru/new-constructor/img/svg/gerl/${choiceElem["cut"][0]}/pocket/${choiceElem["pocket"][0]}.svg`);
@@ -497,7 +496,7 @@ modalPrev.addEventListener("click", modalDel);
 async function modalAdd() {
     const promise = new Promise(async (resolve, reject) => {
         let modalName = this.dataset.modal,
-            modalItem = await fetch(`https://nautz.ru/new-constructor/modal/fr/oneof/_${modalName}.html`);
+            modalItem = await fetch(`https://nautz.ru/new-constructor/modal/sk/oneof/_${modalName}.html`);
         modal.classList.add("active");
 
         if (this.dataset.modal == "form") {
@@ -518,7 +517,7 @@ async function modalAdd() {
             createTempOrder();
             if (this.dataset.modal === "form") {
                 if (typeof formFlag === "undefined") {
-                    await $.getScript("https://nautz.ru/new-constructor/js/fr/oneof/_form.js");
+                    await $.getScript("https://nautz.ru/new-constructor/js/sk/oneof/_form.js");
                 }
                 resolve(modalForm())
             }
@@ -543,7 +542,7 @@ function createTempOrder(){
 
     for_api.product_brand = 2363; // Hooli
     for_api.amount = finalPrice;
-    for_api.language = 'fr';
+    for_api.language = 'sk';
 
     var params = {};
     for (let key in choiceElem) {
@@ -814,7 +813,7 @@ function calc_total(length, summa) {
 
             window.tcart.products[0] = {
                 amount: summa,
-                name: 'Service de personnalisation ' + length,
+                name: 'Krajčírske služby ' + length,
                 price: summa,
                 quantity: 1
             };
@@ -919,7 +918,7 @@ function closeIt() {
 
     window.onbeforeunload = () => {
         if (!linkClick) {
-            localStorage.status = 'Closed the tab';
+            localStorage.status = 'Zatvorená karta';
         }
     };
     if (!sessionStorage.getItem('status')) {

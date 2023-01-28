@@ -71,7 +71,7 @@ function modalForm() {
             success: async function (data) {
                 const promise = new Promise(async (resolve, reject) => {
                     let ModalRight = document.querySelector(".modal__box .right"),
-                        submitModal = await fetch(`https://nautz.ru/new-constructor/modal/fr/oneof/_submit.html`);
+                        submitModal = await fetch(`https://nautz.ru/new-constructor/modal/sk/oneof/_submit.html`);
                     if (submitModal.ok) {
                         let text = await submitModal.text();
                         ModalRight.innerHTML = text;
@@ -83,12 +83,12 @@ function modalForm() {
                         if (typeof (data.bitrix_id.deal_id) != "undefined") {
                             submitInfo.classList.add("yes");
                             document.getElementById("price-info").innerHTML = finalPrice + " €"
-                            document.getElementById("price-economy").innerHTML = (180 - finalPrice) + " €"
+                            document.getElementById("price-economy").innerHTML = (160 - finalPrice) + " €"
                             document.getElementsByName("orderId")[0].value = data.bitrix_id.deal_id
                             document.getElementsByName("InvoiceId")[0].value = data.InvoiceId
                             document.getElementsByName("InvoiceNoDB")[0].value = data.InvoiceNoDB
                             document.getElementsByName("product_brand")[0].value = 2363
-                            document.getElementsByName("language")[0].value = "fr"
+                            document.getElementsByName("language")[0].value = "sk"
                             prevForm.classList.add("none")
                             deleteCookie(cookieName);
 
