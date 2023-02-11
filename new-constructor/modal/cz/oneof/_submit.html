@@ -1,22 +1,33 @@
 <div class="submit-modal">
     <div class="yes">
-        <p class="modal__title">Vaše objednávka byla úspěšně <br> odeslána</p>
-        <p>Celková cena vaší objednávky s vybranými možnostmi: <b id="price-info"></b> místo toho <s>160
-                €</s> Vaše výhoda, pokud objednáte dnes: <b id="price-economy"></b></p>
-        <p>Pokud nyní nemůžete zaplatit objednávku - požádejte o slevu rezervace v WhatsApp kliknutím na následující tlačítko:</p>
-            <form role="form"  id="formnewconstructor" name="formnewconstructor" method='POST' data-formactiontype="2" class="t-form js-form-proccess" data-formcart="y">
+        <p class="modal__title">Děkujeme vám za objednávku!</p><p>
+<table style="width:100%">
+  <tr>
+    <td style="text-align:left;">Celková cena s vybranými možnostmi:</td>
+    <td style="text-align:right;">€160</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;">Sleva pro první objednávku:</td>
+    <td style="text-align:right;"><div id="price-economy"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left;"><br><b>Konečná cena včetně DPH:</td>
+    <td style="text-align:right;"><b id="price-info"></td>
+  </tr>
+</table>
+           <form role="form"  id="formnewconstructor" name="formnewconstructor" method='POST' data-formactiontype="2" class="t-form js-form-proccess" data-formcart="y">
                 <input type="hidden" name="orderId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
                 <input type="hidden" name="InvoiceId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
                 <input type="hidden" name="InvoiceNoDB" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
                 <input type="hidden" name="product_brand" value = "">
                 <input type="hidden" name="language" value = "">
-                <button type="submit" class="btn">Zaplatit objednávku</button> 
+                <button type="submit" class="btn">Koupit nyní</button> 
             </form>
+        <p>Pokud si chcete rozdělit platby nebo využít slevy na pozdější platbu, kontaktujte nás prosím přes WhatsApp:</p>    
         <a href="https://api.whatsapp.com/send?phone=35796779393" target="_blank" 
             class="btn_stroke">WhatsApp</a>
-        <p><b>Pozor!</b> Pokud nyní neprovedete platbu nebo si neobjednáte slevu, akční cena nemusí být uložena a může být vyšší.</p>
-        <p><b>Dodání: </b>Až bude produkt připraven, pošleme e-mailem odkaz, kde si můžete vybrat pohodlný způsob dodání a zaplatit za něj. </p>
-        <p><a class="btn_disable" href="/">Zadat další objednávku</a></p>
+        <p><b>Doručení: </b> Jakmile bude váš produkt připraven, zašleme vám e-mail s odkazem na výběr preferovaného způsobu doručení.</p>
+        <p><a class="btn_disable" href="/">Vytvořit další objednávku</a></p>
     </div>
     <div class="no">
         <p class="modal-submit__title">Chyba</p>

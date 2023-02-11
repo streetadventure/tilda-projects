@@ -218,8 +218,8 @@ function progres() {
     }
 }
 //Формирование цены
-let basePrice = 129,
-    finalPrice = 129,
+let basePrice = 49,
+    finalPrice = 49,
     basePriceElem = document.querySelector(".parameters-box__footer .price span");
 function basePriceHTML() {
     let priceItem = basePrice;
@@ -502,7 +502,7 @@ async function modalAdd() {
 
         if (this.dataset.modal == "form") {
             modal.classList.add("full");
-            calc_total("Худи", finalPrice)
+            calc_total("sweat à capuche", finalPrice)
             // закончил квиз
             if (typeof (window.ym) != "undefined") {
                 ym(66248908, 'reachGoal', 'quiz_finish')
@@ -547,7 +547,7 @@ function createTempOrder(){
 
     var params = {};
     for (let key in choiceElem) {
-        params[choiceKeyRu[key]] = choiceElem[key][1];
+    params[key] = choiceElem[key][1] + " (" +choiceElem[key][0]+ ")";
     }
 
     for_api.params = params;

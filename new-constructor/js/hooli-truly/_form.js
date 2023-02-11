@@ -66,12 +66,12 @@ function modalForm() {
         $.ajax({
 
             type: "POST",
-            url: "https://nautz.loc/api/bitrix/OneOfConstructor",
+            url: "https://nautz.ru/api/bitrix/newConstructor",
             data: $("#modal-form").serialize(),
             success: async function (data) {
                 const promise = new Promise(async (resolve, reject) => {
                     let ModalRight = document.querySelector(".modal__box .right"),
-                        submitModal = await fetch(`https://nautz.ru/new-constructor/modal/en/oneof/test/_submit.html`);
+                        submitModal = await fetch(`https://nautz.ru/new-constructor/modal/hooli-truly/_submit.html`);
                     if (submitModal.ok) {
                         let text = await submitModal.text();
                         ModalRight.innerHTML = text;
@@ -82,13 +82,11 @@ function modalForm() {
                     function () {
                         if (typeof (data.bitrix_id.deal_id) != "undefined") {
                             submitInfo.classList.add("yes");
-                            document.getElementById("price-info").innerHTML = "€" + finalPrice
-                            document.getElementById("price-economy").innerHTML = "€" + (160 - finalPrice)
+                            document.getElementById("price-info").innerHTML = finalPrice + " ₽"
+                            document.getElementById("price-economy").innerHTML = (14990 - finalPrice) + " ₽"
                             document.getElementsByName("orderId")[0].value = data.bitrix_id.deal_id
                             document.getElementsByName("InvoiceId")[0].value = data.InvoiceId
                             document.getElementsByName("InvoiceNoDB")[0].value = data.InvoiceNoDB
-                            document.getElementsByName("product_brand")[0].value = 2363
-                            document.getElementsByName("language")[0].value = "it"
                             prevForm.classList.add("none")
                             deleteCookie(cookieName);
 
@@ -114,7 +112,7 @@ function modalForm() {
                                 gtag('event', 'order_form', { 'value': window.tcart.amount });
                             }
                             if (typeof (window.ym) != "undefined") {
-                                ym(66248908, 'reachGoal', 'order_form');
+                                ym(92187423,'reachGoal','order_form');
                             }
                             
                             window.statisticDataSendedCounter = 2
@@ -137,23 +135,16 @@ function modalForm() {
     }
 
     );
+    
 
     //Инпут маска
-    // $("#modal-form__tel").mask("(999) 999-9999");
+    $("#modal-form__tel").mask("(999) 999-9999");
     let input = document.querySelector("#modal-form__tel");
     window.intlTelInput(input, {
-        nationalMode: false,
+        //nationalMode: false,
         // preferredCountries: ["ru", "kz", "by", "ua",],
-        initialCountry: "auto",
-          geoIpLookup: function(callback) {
-            $.get('https://ipinfo.io', function() {}, "jsonp").always(function(resp) {
-              var countryCode = (resp && resp.country) ? resp.country : "us";
-              callback(countryCode);
-            });
-          },
-          hiddenInput: "full_phone",
-        // autoPlaceholder: false,
-        // preferredCountries: ["us"],
+        autoPlaceholder: false,
+        preferredCountries: ["ru"],
         utilsScript: "https://nautz.ru/new-constructor/js/intlTelInput/utils.js",
     }
 
@@ -162,7 +153,7 @@ function modalForm() {
     let hudiInfoParm = document.querySelector(".modal-hudi__params"),
         hudiInfoPice = document.querySelector(".modal-hudi__description .price"),
         hudiInfoImg = document.querySelector(".modal-hudi__img");
-    hudiInfoPice.innerHTML = finalPrice + " €";
+    hudiInfoPice.innerHTML = finalPrice + " ₽";
     for (let key in choiceElem) {
         let hudiInfoParmLi = document.createElement('li');
         hudiInfoParmLi.innerHTML = `<b>${choiceKeyRu[key]}: </b><span>${choiceElem[key][1]}</span>`;

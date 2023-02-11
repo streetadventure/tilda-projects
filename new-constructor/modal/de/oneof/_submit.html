@@ -1,22 +1,33 @@
 <div class="submit-modal">
     <div class="yes">
-        <p class="modal__title">Deine Bestellung wurde erfolgreich <br> aufgegeben</p>
-        <p>Die Gesamtkosten deiner Bestellung mit allen ausgewählten Optionen: <b id="price-info"></b> stattdessen <s>160
-                €</s> Dein Vorteil, wenn du heute bestellst: <b id="price-economy"></b></p>
-        <p>Wenn du die Bestellung jetzt nicht bezahlen kannst - beantrage einen Reserve-Rabatt in WhatsApp, indem du auf den folgenden Button klickst:</p>
-            <form role="form"  id="formnewconstructor" name="formnewconstructor" method='POST' data-formactiontype="2" class="t-form js-form-proccess" data-formcart="y">
+        <p class="modal__title">Vielen Dank für Ihre Bestellung!</p><p>
+<table style="width:100%">
+  <tr>
+    <td style="text-align:left;">Gesamtkosten mit allen ausgewählten Optionen:</td>
+    <td style="text-align:right;">€160</td>
+  </tr>
+  <tr>
+    <td style="text-align:left;">Erster Bestell-Promo-Rabatt:</td>
+    <td style="text-align:right;"><div id="price-economy"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left;"><br><b>Endpreis inkl. MwSt.:</td>
+    <td style="text-align:right;"><b id="price-info"></td>
+  </tr>
+</table>
+           <form role="form"  id="formnewconstructor" name="formnewconstructor" method='POST' data-formactiontype="2" class="t-form js-form-proccess" data-formcart="y">
                 <input type="hidden" name="orderId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
                 <input type="hidden" name="InvoiceId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
                 <input type="hidden" name="InvoiceNoDB" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
                 <input type="hidden" name="product_brand" value = "">
                 <input type="hidden" name="language" value = "">
-                <button type="submit" class="btn">Bezahle die Bestellung</button> 
+                <button type="submit" class="btn">Jetzt kaufen</button> 
             </form>
+        <p>Wenn Sie Ihre Zahlungen aufteilen oder später einen Rabatt nutzen möchten, kontaktieren Sie uns bitte über WhatsApp:</p>    
         <a href="https://api.whatsapp.com/send?phone=35796779393" target="_blank" 
             class="btn_stroke">WhatsApp</a>
-        <p><b>Achtung!</b> Wenn du jetzt keine Zahlung leistest oder einen Rabatt buchen lässt, kann der Aktionspreis möglicherweise nicht gespeichert werden und könnte höher sein.</p>
-        <p><b>Lieferung: </b> Wenn das Produkt bereit ist, werden wir eine E-Mail mit einem Link senden, über den du eine bequeme Liefermethode auswählen und bezahlen kannst. </p>
-        <p><a class="btn_disable" href="/">Lege eine weitere Bestellung auf</a></p>
+        <p><b>Lieferung: </b> Sobald Ihr Produkt bereit ist, senden wir Ihnen eine E-Mail mit einem Link, über den Sie Ihre bevorzugte Liefermethode auswählen können. </p>
+        <p><a class="btn_disable" href="/">Eine weitere Bestellung aufgeben</a></p>
     </div>
     <div class="no">
         <p class="modal-submit__title">Fehler</p>

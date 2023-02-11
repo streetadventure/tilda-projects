@@ -3493,10 +3493,10 @@ header {
   font-style: normal;
   padding-left: 10px;
 }
-#allrecords .constructor-hoodie__parameters .parameters-box__footer .price span::after {
+#allrecords .constructor-hoodie__parameters .parameters-box__footer .price span::before {
   content: "€";
   display: inline-flex;
-  padding-left: 8px;
+  padding-right: 4px;
 }
 #allrecords .constructor-hoodie .modal {
   display: none;

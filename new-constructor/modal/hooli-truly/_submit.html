@@ -1,0 +1,29 @@
+<div class="submit-modal">
+    <div class="yes">
+        <p class="modal__title">Ваш заказ успешно<br>оформлен</p>
+        <p>Итоговая стоимость вашего заказа со всеми выбранными опциями: <b id="price-info"></b> вместо <s>14990
+                руб.</s> Экономия при заказе сегодня: <b id="price-economy"></b></p>
+        <p>Если вы не имеете возможности оплатить заказ сейчас - запросите резерв скидки в WhatsApp, нажав следующую
+            кнопку:</p>
+            <form role="form"  id="formnewconstructor" name="formnewconstructor" method='POST' data-formactiontype="2" class="t-form js-form-proccess" data-formcart="y">
+                <input type="hidden" name="formservices[]" value="e9f6f66114ab947456b16b576e0d1141" class="js-formaction-services">
+                <input type="hidden" name="formservices[]" value="2da646c5246d0ff660a1229136cc86ed" class="js-formaction-services">
+                <input type="hidden" name="orderId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceId" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <input type="hidden" name="InvoiceNoDB" value="" class="t-input js-tilda-rule" data-tilda-req="1" data-tilda-rule="number">
+                <button type="submit" class="btn">Оплатить заказ</button> 
+            </form>
+        <a href="https://api.whatsapp.com/send?phone=79160087490" target="_blank" 
+            class="btn_stroke">WhatsApp</a>
+        <p><b>Внимание!</b> Если вы не произведёте оплату сейчас или не забронируете скидку акционная цена может не
+            сохраниться и быть выше.</p>
+        <p><b>Доставка: </b>Когда изделие будет готово, мы отправим письмо со ссылкой, где вы сможете выбрать удобный
+            способ доставки и оплатить ее. </p>
+        <p><a class="btn_disable" href="/">Оформить еще заказ</a></p>
+    </div>
+    <div class="no">
+        <p class="modal-submit__title">Ошибка</p>
+        <p> Перезвоните нам +7 495 414-22-64 и мы решим проблему
+            или попробуйте оформить заказ снова</p>
+    </div>
+</div>

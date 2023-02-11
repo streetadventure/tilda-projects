@@ -82,8 +82,8 @@ function modalForm() {
                     function () {
                         if (typeof (data.bitrix_id.deal_id) != "undefined") {
                             submitInfo.classList.add("yes");
-                            document.getElementById("price-info").innerHTML = finalPrice + " €"
-                            document.getElementById("price-economy").innerHTML = (180 - finalPrice) + " €"
+                            document.getElementById("price-info").innerHTML = "€" + finalPrice
+                            document.getElementById("price-economy").innerHTML = "€" + (160 - finalPrice)
                             document.getElementsByName("orderId")[0].value = data.bitrix_id.deal_id
                             document.getElementsByName("InvoiceId")[0].value = data.InvoiceId
                             document.getElementsByName("InvoiceNoDB")[0].value = data.InvoiceNoDB
